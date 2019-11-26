@@ -1,0 +1,124 @@
+﻿{
+  "BleedPower": {
+    "NAME": "Bleed",
+    "DESCRIPTIONS": [
+      "Lose #r2 HP at the end of turn."
+    ]
+  },
+  "DeepSleep": {
+    "NAME": "Sleep...",
+    "DESCRIPTIONS": [
+      "You fall asleep..."
+    ]
+  },
+  "DespairBlessPower": {
+    "NAME": "Blessing of the knight",
+    "DESCRIPTIONS": [
+      "Increases #yBlock gained from cards by #b50% ."
+    ]
+  },
+  "Gospel": {
+    "NAME": "Gospel",
+    "DESCRIPTIONS": [
+      "Heal all of your HP on victory."
+    ]
+  },
+  "InspiredPower": {
+    "NAME": "Inspired",
+    "DESCRIPTIONS": [
+      "Reckless Courage",
+      "#bThe #bcourage #bgrows #band #bmakes #beverything #bseem #bpossible!",
+      "#bThe #boverflowing #bcourage #bis #bconstantly #blooking #bto #bkill!",
+      "#yThe courage that is endlessly sprouting may soon cut everything off.",
+      "#rThe ever-growing courage gave raise to recklessness and devoured everything."
+    ]
+  },
+  "TwilightPower": {
+    "NAME": "Twilight",
+    "DESCRIPTIONS": [
+      "Increases attack damage by #b",
+      "% ."
+    ]
+  },
+  "YinYangPower": {
+    "NAME": "Life Link",
+    "DESCRIPTIONS": [
+      "If another fish are still alive, revives at the end of your turn."
+    ]
+  },
+  "YangHealPower": {
+    "NAME": "Yang",
+    "DESCRIPTIONS": [
+      "When attacked, you heal #b",
+      " HP."
+    ]
+  },
+  "PinkArmyPower": {
+    "NAME": "Intervene",
+    "DESCRIPTIONS": [
+      "Reduce received damage by #b20% , 每回合结束时恢复 #b1 点生命."
+    ]
+  },
+  "BloodyDesirePower": {
+    "NAME": "Bloody Desire",
+    "DESCRIPTIONS": [
+      "Lose #r",
+      " HP at the start of your next turn. Ends when you lose HP."
+    ]
+  },
+  "MimicryPower": {
+    "NAME": "Mimicry",
+    "DESCRIPTIONS": [
+      "Immune #pthorns damage and #rHP losing."
+    ]
+  },
+  "ChristmasPower": {
+    "NAME": "Christmas",
+    "DESCRIPTIONS": [
+      "Whenever you #yExhaust a card, add a random card into your hand."
+    ]
+  },
+  "WristCuterPower": {
+    "NAME": "Wrist Cuter",
+    "DESCRIPTIONS": [
+      "When attacked, lose #r",
+      " HP."
+    ]
+  },
+  "SodaPower": {
+    "NAME": "Soda",
+    "DESCRIPTIONS": [
+      "After played #b",
+      " cards, heal #g",
+      " HP."
+    ]
+  },
+  "RegretPower": {
+    "NAME": "Regret",
+    "DESCRIPTIONS": [
+      "Whenever you #yExhaust a card, gain #b",
+      " #yMetallicize."
+    ]
+  },
+  "LanternPower": {
+    "NAME": "Lantern",
+    "DESCRIPTIONS": [
+      "When attacked, deals #b",
+      " damage back."
+    ]
+  },
+  "CherryBlossomPower": {
+    "NAME": "Cherry Blossom",
+    "DESCRIPTIONS": [
+      "Whenever you #yExhaust a card, deal #b",
+      " to a random enemy."
+    ]
+  },
+
+  "MutekiPower": {
+    "NAME": "Pray",
+    "DESCRIPTIONS": [
+      "Immune all damage. Deals equal damage back when attacked."
+    ]
+  }
+}

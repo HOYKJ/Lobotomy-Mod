@@ -1,0 +1,182 @@
+﻿{
+  "WhiteNightMonster": {
+    "MOVES": [
+      "\"福音\""
+    ],
+    "NAME": "白夜",
+    "DIALOG": [
+      "不要相信时间, 我会指引你.",
+      "不要害怕, 我与你同在. 除非我允许, 否则你永远都不能离开.",
+      "不要否认我的存在, 我就在你的眼前.",
+      "我的事迹, 无人知晓, 无处可寻."
+    ]
+  },
+  "BigEyes": {
+    "MOVES": [
+    ],
+    "NAME": "大眼",
+    "DIALOG": [
+    ]
+  },
+  "LongArm": {
+    "MOVES": [
+    ],
+    "NAME": "长臂",
+    "DIALOG": [
+    ]
+  },
+  "SmallBeak": {
+    "MOVES": [
+    ],
+    "NAME": "小喙",
+    "DIALOG": [
+    ]
+  },
+  "ApocalypseBirdMonster": {
+    "MOVES": [
+    ],
+    "NAME": "天启鸟",
+    "DIALOG": [
+    ]
+  },
+  "YinMonster": {
+    "MOVES": [
+    ],
+    "NAME": "阴",
+    "DIALOG": [
+    ]
+  },
+  "YangMonster": {
+    "MOVES": [
+    ],
+    "NAME": "阳",
+    "DIALOG": [
+    ]
+  },
+  "MachineDawn": {
+    "MOVES": [
+    ],
+    "NAME": "怀疑",
+    "DIALOG": [
+    ]
+  },
+  "MachineNoon": {
+    "MOVES": [
+    ],
+    "NAME": "理解的过程",
+    "DIALOG": [
+    ]
+  },
+  "MachineNight": {
+    "MOVES": [
+    ],
+    "NAME": "前往何处",
+    "DIALOG": [
+    ]
+  },
+  "MachineMidnight": {
+    "MOVES": [
+    ],
+    "NAME": "终末螺旋",
+    "DIALOG": [
+    ]
+  },
+  "BugDawn": {
+    "MOVES": [
+    ],
+    "NAME": "新鲜的食物",
+    "DIALOG": [
+    ]
+  },
+  "BugNight": {
+    "MOVES": [
+    ],
+    "NAME": "食物链",
+    "DIALOG": [
+    ]
+  },
+  "BugMidnight": {
+    "MOVES": [
+    ],
+    "NAME": "永恒的盛宴",
+    "DIALOG": [
+    ]
+  },
+  "OutterGodDawn": {
+    "MOVES": [
+    ],
+    "NAME": "理解的果实",
+    "DIALOG": [
+    ]
+  },
+  "OutterGodNoon": {
+    "MOVES": [
+    ],
+    "NAME": "请给我们爱!!!",
+    "DIALOG": [
+    ]
+  },
+  "OutterGodMidnight": {
+    "MOVES": [
+    ],
+    "NAME": "神明的迷思",
+    "DIALOG": [
+    ]
+  },
+  "CircusDawn": {
+    "MOVES": [
+    ],
+    "NAME": "开始欢呼吧",
+    "DIALOG": [
+    ]
+  },
+  "Cleaner": {
+    "MOVES": [
+    ],
+    "NAME": "清道夫",
+    "DIALOG": [
+    ]
+  },
+  "RedFixer": {
+    "MOVES": [
+    ],
+    "NAME": "红色收尾人",
+    "DIALOG": [
+    ]
+  },
+  "BlackFixer": {
+    "MOVES": [
+    ],
+    "NAME": "黑色收尾人",
+    "DIALOG": [
+    ]
+  },
+  "WhiteFixer": {
+    "MOVES": [
+    ],
+    "NAME": "白色收尾人",
+    "DIALOG": [
+    ]
+  },
+  "PaleFixer": {
+    "MOVES": [
+    ],
+    "NAME": "蓝色收尾人",
+    "DIALOG": [
+    ]
+  },
+  "Claw": {
+    "MOVES": [
+    ],
+    "NAME": "爪牙",
+    "DIALOG": [
+    ]
+  },
+  "RabbitTeam": {
+    "MOVES": [
+    ],
+    "NAME": "兔子小队",
+    "DIALOG": [
+    ]
+  }
+}

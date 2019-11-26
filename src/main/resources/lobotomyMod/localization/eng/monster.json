@@ -1,0 +1,182 @@
+﻿{
+  "WhiteNightMonster": {
+    "MOVES": [
+      "\"gospel\""
+    ],
+    "NAME": "WhiteNight",
+    "DIALOG": [
+      "Do not trust the time, for I will guide you.",
+      "Do not fear, for I am with you. You cannot leave until I allow you to.",
+      "Do not deny me, for I am in front of your eyes.",
+      "My story is nowhere, unknown."
+    ]
+  },
+  "BigEyes": {
+    "MOVES": [
+    ],
+    "NAME": "Big Eyes",
+    "DIALOG": [
+    ]
+  },
+  "LongArm": {
+    "MOVES": [
+    ],
+    "NAME": "Long Arm",
+    "DIALOG": [
+    ]
+  },
+  "SmallBeak": {
+    "MOVES": [
+    ],
+    "NAME": "Small Beak",
+    "DIALOG": [
+    ]
+  },
+  "ApocalypseBirdMonster": {
+    "MOVES": [
+    ],
+    "NAME": "Apocalypse Bird",
+    "DIALOG": [
+    ]
+  },
+  "YinMonster": {
+    "MOVES": [
+    ],
+    "NAME": "Yin",
+    "DIALOG": [
+    ]
+  },
+  "YangMonster": {
+    "MOVES": [
+    ],
+    "NAME": "Yang",
+    "DIALOG": [
+    ]
+  },
+  "MachineDawn": {
+    "MOVES": [
+    ],
+    "NAME": "Doubt",
+    "DIALOG": [
+    ]
+  },
+  "MachineNoon": {
+    "MOVES": [
+    ],
+    "NAME": "Process of Understanding",
+    "DIALOG": [
+    ]
+  },
+  "MachineNight": {
+    "MOVES": [
+    ],
+    "NAME": "Where to reach",
+    "DIALOG": [
+    ]
+  },
+  "MachineMidnight": {
+    "MOVES": [
+    ],
+    "NAME": "Last Helix",
+    "DIALOG": [
+    ]
+  },
+  "BugDawn": {
+    "MOVES": [
+    ],
+    "NAME": "Complete food",
+    "DIALOG": [
+    ]
+  },
+  "BugNight": {
+    "MOVES": [
+    ],
+    "NAME": "Food Chain",
+    "DIALOG": [
+    ]
+  },
+  "BugMidnight": {
+    "MOVES": [
+    ],
+    "NAME": "Eternal Meal",
+    "DIALOG": [
+    ]
+  },
+  "OutterGodDawn": {
+    "MOVES": [
+    ],
+    "NAME": "Fruit of Understanding",
+    "DIALOG": [
+    ]
+  },
+  "OutterGodNoon": {
+    "MOVES": [
+    ],
+    "NAME": "Great Love For Us",
+    "DIALOG": [
+    ]
+  },
+  "OutterGodMidnight": {
+    "MOVES": [
+    ],
+    "NAME": "The God Delusion",
+    "DIALOG": [
+    ]
+  },
+  "CircusDawn": {
+    "MOVES": [
+    ],
+    "NAME": "Cheers for the Start",
+    "DIALOG": [
+    ]
+  },
+  "Cleaner": {
+    "MOVES": [
+    ],
+    "NAME": "Sweeper",
+    "DIALOG": [
+    ]
+  },
+  "RedFixer": {
+    "MOVES": [
+    ],
+    "NAME": "Red Fixer",
+    "DIALOG": [
+    ]
+  },
+  "BlackFixer": {
+    "MOVES": [
+    ],
+    "NAME": "Black Fixer",
+    "DIALOG": [
+    ]
+  },
+  "WhiteFixer": {
+    "MOVES": [
+    ],
+    "NAME": "White Fixer",
+    "DIALOG": [
+    ]
+  },
+  "PaleFixer": {
+    "MOVES": [
+    ],
+    "NAME": "Pale Fixer",
+    "DIALOG": [
+    ]
+  },
+  "Claw": {
+    "MOVES": [
+    ],
+    "NAME": "The Claw",
+    "DIALOG": [
+    ]
+  },
+  "RabbitTeam": {
+    "MOVES": [
+    ],
+    "NAME": "Rabbit",
+    "DIALOG": [
+    ]
+  }
+}

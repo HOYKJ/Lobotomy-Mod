@@ -1,0 +1,24 @@
+{
+  "LobotomyTutorial": {
+    "TEXT": [
+      "The counter above this relic shows your PE points. PE points will persist between runs. NL NL You can gain a #pspecial #preward at the end of combat with this relic, some combats will be replaced with an #rOrdeal.",
+      "#rOrdeals can be canceled at the main screen-mods-config. NL NL #rWarning!: If this mod is run in tandem with Super Fast mode, this mod's animations and some effect will be abnormal, please consider that before using it!(not recommended to use)",
+      "Right click this relic to activate Abnormality's special effect. (There is only 1 Abnormality can be active till now)",
+      "Abnormality are a kind of special cards, you can't see their real information including their rarity. NL At the end of combat, if you have Abnormality cards, you'll gain PE points. NL NL You can unlock Abnormality's information at the single card view screen. It 'll require PE according to its rarity: NL #gCommon-30PE NL #yUncommon-60PE NL #rRare-90PE ",
+      "Abnormality card have several effects, these information can't unlock once. NL NL You can check unlocked information in the #bLibrary, but can't unlock new information there. NL NL Unlocked information will saved as PE.",
+      "During the Abnormality Selection, if you have more than 20 PE, you can get another selection of Abnormalities to pick by incurring a 20 PE cost.",
+      "Specific combats will be replaced with an #rOrdeal, #rOrdeals will go in order as: Dawn-Noon-Dusk. NL NL Defeating an #rOrdeal can net you a #pspecial #preward. NL NL After you defeat the Dusk #rOrdeal, the BOSS of Beyond will be replaced with the Midnight #rOrdeal.",
+      "Angela can expand Departments to provide convenciences for combat. You can expand 3 Departments at the start of your run. NL NL Each Department can be expanded several times. Effects on card are for the current expansion and the tips is for the following ones.",
+      "Angela also can expand Departments at Rest Site.",
+      "Angela can gain LP on victory, LP will persist during a run. NL NL You can use LP to upgrade Departments or use 5 LP to expand Departments.",
+      "Left is the Bullets Tab. You can unlock different types of bullets through depanding Departments. NL NL Select a bullet will shift all your bullet cards to specific cards."
+    ],
+    "LABEL": [
+      "Next",
+      "Got it",
+      "Tutorial",
+      "(Page: ",
+      ")"
+    ]
+  }
+}

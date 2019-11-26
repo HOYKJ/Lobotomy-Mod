@@ -1,0 +1,206 @@
+﻿{
+  "RewardItem_Lob": {
+    "TEXT": [
+      "Reward...?",
+      "[#bObtain #p\"Bucket\"]",
+      "Extract an Abnormality",
+      "LOB POINT",
+      "Gain 2 LP on victory. You can use LP to upgrade Departments or use 5 LP to expand Departments. LP will persist during a run."
+    ]
+  },
+  "CardType": {
+    "TEXT": [
+      "Abnormality"
+    ]
+  },
+  "ReExtractButton": {
+    "TEXT": [
+      "Re-extraction"
+    ]
+  },
+  "OrdealTitle": {
+    "TEXT": [
+      "Green",
+      "Amber",
+      "Violet",
+      "Crimson",
+      "Indigo",
+      "White",
+      "Dawn",
+      "Noon",
+      "Dusk",
+      "Midnight"
+    ]
+  },
+  "OrdealName": {
+    "TEXT": [
+      "Doubt",
+      "Process of Understanding",
+      "Where to reach",
+      "Last Helix",
+
+      "Complete food",
+      "",
+      "Food Chain",
+      "Eternal Meal",
+
+      "Fruit of Understanding",
+      "Great Love For Us",
+      "",
+      "The God Delusion",
+
+      "Cheers for the Start",
+      "The harmony of the skin",
+      "Struggle of the Peak",
+      "",
+
+      "",
+      "Sweeper",
+      "",
+      "",
+
+      "Request",
+      "Weapon",
+      "Fixer",
+      "The Claw"
+    ]
+  },
+  "OrdealText": {
+    "TEXT": [
+      "One day we got a question. Where did we come from?",
+      "Received a life to someone, and left unattended irresponsibly.",
+      "Living is painful.",
+
+      "They eventually bounded in life.",
+      "We were only to throw out despair and anger.",
+      "We will understand life and soul through our hands.",
+
+      "They set up a far high tower to go where they came.",
+      "There was no answer. They did not get what they wanted. They saw only the death of life.",
+
+      "The tower is touched by the sky, and nothing will remain on the ground.",
+      "Who pays for the pain and the price of deeds given in our life",//9
+
+      "Complete food, perfect substitute material.",
+      "We ate endlessly to live. Inevitable depletion, garbage...",
+
+      "Getting to know its taste was an unavoidable process.",
+      "We were able to live. We could continue eating.",
+
+      "They fought to eat each other..",
+      "The stronger survives. That is all.", //15
+
+      "To understand what is beyond comprehension, They see and dreaming.",
+      "They have not paid for understanding. Just do it.",
+
+      "Only weak actions were heard to us, and we sought mercy and love for them.",
+      "We can not understand them, nor they understand us.",
+
+      "We tried to accept it endlessly.",
+      "We wanted to understand them in our head whatever the consequences.",
+      "In order not to collapse oneself.",
+      "Because what they can't understand and what they can't reach is not acceptable...", //23
+
+      "Let's make a stronger fire in a life like a candle that will someday end!",
+      "Life means get desire.",
+
+      "We march every time and share our joy.",
+      "",
+
+      "Abandon the old body and become all one,",
+      "and continues the red carnival constantly.",
+      "Someday everyone will know, and tomorrow we will march together.", //30
+
+      "When the night falls in the Backstreet, they will come.",
+      "When the sun raise up, there will be no remains anymore.",
+
+      "From minor chores to murder by contract,",
+      "they do anything you want once they have paycheck.",
+      "They are usually hired to the office, the syndicate, and the wings.",
+      "Their work range from mere chores to something sublime.",
+
+      "They search endlessly.",
+      "Patron by the Wings, Inventions from the backstreet,",
+      "Loots from the Outskirt, Artifacts from the Ruins...",
+      "They just overcome whatever's in front of them, with their weapons in hands,",
+      "just as they've done for a long time.",
+
+      "The colossal tower of light is called The Library.",
+      "It is natural for Fixers to be drawn to such a mystical place of life and death.",
+      "Book Hunters, who will rummage through the library ruled by Pale Librarian someday",
+      "Are former Fixers.",
+
+      "They handle the secrets of the world.",
+      "That is the privilege and absolute power of the Head, the Eye, and The Claw.",
+      "None can stand against them. The story of the Nest will never end if they exist."
+    ]
+  },
+  "CreatePanelLobotomy": {
+    "TEXT": [
+      "Active Ordeals(Ordeals will reward Tool Abnormality)"
+    ]
+  },
+  "RelicViewScreenPatch": {
+    "TEXT": [
+      "Abnormality",
+      "Tool Abnormality."
+    ]
+  },
+  "RabbitTeam": {
+    "TEXT": [
+      "RABBIT",
+      "PROTOCOL",
+      "TERMINATE",
+      "·RABBIT TEAM USE MANUAL·",
+      " #y1.The Rabbit team can be called once per run. NL NL #y2.Maximum 4 targets can point. NL NL #y3.You will pay 250 PE per pointed target. NL NL #y4.The Rabbit team automatically withdraws when all targets die.",
+      "CALLABLE TARGET",
+      "",
+      "CALL COST",
+      "CURRENT HP",
+      "PURIFICATION",
+      "CALL AUTHORIZATION",
+      "EXIT",
+      "DISABLE"
+    ]
+  },
+  "AimSelect": {
+    "TEXT": [
+      "HP-N Bullet",
+      "The HP bullet manufactured by the Nano Technology Agreement with K Corp will speed up recovery of the physical body.",
+      "SP-E Bullet",
+      "Applies weakened Enkephalin to you. The carefully refined Enkephalin will heal the target’s mind without addiction.",
+      "Physical Intervention Shield",
+      "Attaches a shield that absorbs physical attacks.",
+      "Trauma Shield",
+      "Attaches a shield that reduces the perception of the target, protecting it from spiritual attacks from the outside.",
+      "Erosion Shield",
+      "Attaches a shield that seals vulnerable openings of a human, including spiritual ones to prevent the erosion thorn from infiltrating deep into the target.",
+      "Pale Shield",
+      "CENSORED",
+      "Qliphoth Intervention Field",
+      "Reduces the movement speed of a target by overloading the Qliphoth control.",
+      "Execution Bullet",
+      "A bullet to remove unstable elements. Remove a low HP enemy.",
+      "Locked",
+      "Can't use this ammo."
+    ]
+  },
+  "ExpandOption": {
+    "TEXT": [
+      "Expand Department",
+      "Choose a Department to expand."
+    ]
+  },
+  "PrayOption": {
+    "TEXT": [
+      "Pray",
+      "Choose a special upgrade for Paradise Lost."
+    ]
+  },
+  "CampfirePrayEffect": {
+    "TEXT": [
+      "Choose a Paradise Lost",
+      "Choose a special upgrade"
+    ]
+  }
+}

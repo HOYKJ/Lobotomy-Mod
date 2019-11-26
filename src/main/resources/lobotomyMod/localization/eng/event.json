@@ -1,0 +1,83 @@
+﻿{
+  "WhiteNightEvent": {
+    "NAME": "\"Blessing\"",
+    "DESCRIPTIONS": [
+      "You was in combat, however all enemies disappear in the blink of an eye... That confuses you. NL Only a #bfetal-looking creature, with two red #reyes, and five pairs of white, feathered #bwings remains. NL A #yhalo #yof #ythorns floats above his head, and he wears a #ygolden #ycollar with the number '666' engraved into it.",
+      "You guess the enemies' disappearandce relates to his presence. NL A ~voice~ floats into your mind, it must be from the creature in front of you.",
+      "\"I knocked on the door, and it opened. NL I am from the end, I am merely staying. NL I am the one who kindled the lantern to face the world. NL My loved ones, I shall show thou the best path from now on.\"",
+      "You try to leave, but he bars your way. NL It seems you must do something before you may leave.",
+      "You try to use #yT-06-27 to distort the view within this room. Although you can't see anything, you manage to feel your way out.",
+      "",
+      "\"Thou shall not worry, I have heard your prayers. NL Have thou not yet realized that pain is nothing? NL Thou want me to prove the miracle. NL Thou shall believe in me and granted with life. I shall show you the power.\""
+    ],
+    "OPTIONS": [
+      "[Continue]",
+      "[Pray] ???",
+      "[Leave]",
+      "[Blaspheme] ???"
+    ]
+  },
+  "ApocalypseBirdEvent": {
+    "NAME": "<The tale of the Black Forest>",
+    "DESCRIPTIONS": [
+      "A long time ago, in a warm and dense forest lived three happy birds. NL The birds had no names, but creatures in the forest called them Big Bird, Long Bird, and Little Bird. NL A stranger visited the peaceful forest, the birds didn’t let him because they found him suspicious.",
+      "The stranger, angered, told the birds as he left. NL #r@Tragedies@ will come to this forest soon. NL It will be tainted with sins and evil, and fights will never stop. Tragedies will stop once a #r@terrible@ #r@monster@ devours everything! NL NL The birds decided to become sentinels of the forest. They loved this forest, so they wanted to protect the creatures living in it and keep the peace.",
+      "Big Bird, with many eyes, watched over the forest to seek trespassers.",
+      "Big Bird's eyes can see very far, and things we can't see.",
+      "Long Bird weighed the sins of creatures that enter the forest to keep peace.",
+      "Long Bird's scales could measure every sins, and were fair and just.",
+      "Little Bird decided to punish bad creatures with his beak.",
+      "In chaotic cries of fear, somebody shouted.",
+      "\"It's the monster! Big terrible monster lives in the dark, black forest!\"",
+      "Far-sighted eyes of Big Bird have been blinded,",
+      "",
+      "A head that looked up to the cosmos has been lowered,",
+      "",
+      "Little Bird's mouth that devours everything has been shut,",
+      "",
+      "Three birds, now as one, looked around to find the monster but couldn't find it.",
+      "There were no creatures, no sun and moon, and no monster.",
+      "All that left is just a bird, and the black forest."
+    ],
+    "OPTIONS": [
+      "[Continue]",
+      "[Skip]"
+    ]
+  },
+  "FirstMeet": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      "[Look Back]",
+      "When you look back, you feel your spirit leaving your body and going to a strange place. NL NL You see a beautiful lady stand in front of you.",
+      "\"Hello. Excuse my bluntness. Allow me to introduce myself, I am Angela, an AI.\" NL \"The object you carried called 'Bucket', belongs to the Lobotomy Corporation.\" NL \"And I stand before you as a representative of said corporation.\"",
+      "\"Don't worry, I won't ask you give it back.\" NL \"And don't blame you.\" NL \"It is rather that your effort interests me.\"",
+      "\"Now you may choose. If you are not ready, you may consider further and answer next time.\" NL \"If you wish to give the 'Bucket' back, we will compensate you.\" NL \"If you want to continue, we won't refuse. For it will benefit both of us...\"",
+      "\"Well\" NL You're back in the spire in the span of a single blink."
+    ],
+    "OPTIONS": [
+      "[Continue]",
+      "[Give Back] Unlock a new character after this run (Need restart game)",
+      "[Challenge] Ordeals this run will be 'White'",
+      "[Consider] Answer next time(?)",
+      "[Locked]",
+      "[Leave]",
+      "[Locked] Requires: infomation of Abnormalities unlocked more than 30%",
+      "[Locked] Requires: infomation of Abnormalities unlocked more than 60%"
+    ]
+  },
+  "RabbitProtocol": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      "...",
+      "......",
+      "\"Ah, it got through!\" NL \"(clears her throat)!\" NL NL \"Hello, I'm Myo, I have come to tell you something in Angela's stead.\"",
+      "\"We adopted a special protocol recently, its sphere of application includes this strange place.\" NL NL \"Simply, you can employ Rabbit with PE.\" NL \"We are professional mercenaries. We will solve any problem for you if the protocol permits it.\"",
+      "\"So, that's all, see you next time.\" NL NL \"I believe you will need us.\""
+    ],
+    "OPTIONS": [
+      "[...]",
+      "[Continue]",
+      "[Leave]"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+﻿{
+  "ExcitationPotion": {
+    "NAME": "兴奋剂",
+    "DESCRIPTIONS": [
+      "你的所有带层数的状态增加 #b",
+      " 层."
+    ]
+  },
+  "TestPotion": {
+    "NAME": "test potion",
+    "DESCRIPTIONS": [
+      "test potion 0",
+      "test potion 1",
+      "test potion 2"
+    ]
+  }
+}

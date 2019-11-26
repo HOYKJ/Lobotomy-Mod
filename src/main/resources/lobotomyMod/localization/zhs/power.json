@@ -1,0 +1,124 @@
+﻿{
+  "BleedPower": {
+    "NAME": "流血",
+    "DESCRIPTIONS": [
+      "每回合结束失去 #r2 点生命."
+    ]
+  },
+  "DeepSleep": {
+    "NAME": "睡眠...",
+    "DESCRIPTIONS": [
+      "你睡着了..."
+    ]
+  },
+  "DespairBlessPower": {
+    "NAME": "骑士祝福",
+    "DESCRIPTIONS": [
+      "你获得的 #y格挡 增加 #b50% ."
+    ]
+  },
+  "Gospel": {
+    "NAME": "福音",
+    "DESCRIPTIONS": [
+      "战斗结束后恢复全部生命."
+    ]
+  },
+  "InspiredPower": {
+    "NAME": "内在勇气",
+    "DESCRIPTIONS": [
+      "匹夫之勇",
+      " #b勇气愈发强大, #b一切都成为可能!",
+      " #b充满勇气的战士时刻准备着冲锋陷阵!",
+      " #y过度的勇气可能会铸成大错.",
+      " #r匹夫之勇, #r终将葬送一切."
+    ]
+  },
+  "TwilightPower": {
+    "NAME": "破晓",
+    "DESCRIPTIONS": [
+      "额外造成 #b",
+      "% 伤害"
+    ]
+  },
+  "YinYangPower": {
+    "NAME": "生命链接",
+    "DESCRIPTIONS": [
+      "如果阴阳鱼的另一半没有死亡, 在你的回合结束时复活."
+    ]
+  },
+  "YangHealPower": {
+    "NAME": "治愈",
+    "DESCRIPTIONS": [
+      "受到攻击时为攻击者恢复 #b",
+      " 点生命."
+    ]
+  },
+  "PinkArmyPower": {
+    "NAME": "援护",
+    "DESCRIPTIONS": [
+      "受到的伤害减少 #b20% , 每回合结束时恢复 #b1 点生命."
+    ]
+  },
+  "BloodyDesirePower": {
+    "NAME": "血之渴望",
+    "DESCRIPTIONS": [
+      "下回合开始时失去 #r",
+      " 点生命. 当你失去生命时结束."
+    ]
+  },
+  "MimicryPower": {
+    "NAME": "拟态",
+    "DESCRIPTIONS": [
+      "不会再受到 #p荆棘伤害 或 #r生命流失 ."
+    ]
+  },
+  "ChristmasPower": {
+    "NAME": "悲惨圣诞",
+    "DESCRIPTIONS": [
+      "每当你 #y消耗 1张卡, 将1张随机卡加入你的手牌."
+    ]
+  },
+  "WristCuterPower": {
+    "NAME": "割腕者",
+    "DESCRIPTIONS": [
+      "每当受到攻击时失去 #r",
+      " 点生命."
+    ]
+  },
+  "SodaPower": {
+    "NAME": "美味苏打",
+    "DESCRIPTIONS": [
+      "打出 #b",
+      " 张卡后恢复 #g",
+      " 点生命."
+    ]
+  },
+  "RegretPower": {
+    "NAME": "悔恨",
+    "DESCRIPTIONS": [
+      "每当 #y消耗 1张卡, 获得 #b",
+      " 层 #y金属化 ."
+    ]
+  },
+  "LanternPower": {
+    "NAME": "诱捕幻灯",
+    "DESCRIPTIONS": [
+      "每当你受到攻击, 给予攻击者 #b",
+      " 点伤害."
+    ]
+  },
+  "CherryBlossomPower": {
+    "NAME": "落樱",
+    "DESCRIPTIONS": [
+      "每当 #y消耗 1张卡, 对随机敌人造成 #b",
+      " 点伤害."
+    ]
+  },
+
+  "MutekiPower": {
+    "NAME": "祈祷",
+    "DESCRIPTIONS": [
+      "免受一切伤害, 并等额返还受到的伤害."
+    ]
+  }
+}

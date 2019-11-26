@@ -1,0 +1,32 @@
+﻿{
+  "Keyword":[
+    {
+      "NAMES": [
+        "Abnormality",
+        "abnormality"
+      ],
+      "DESCRIPTION": "A #bspecial card. Can only be obtain from #p\"Bucket\"'s #yreward."
+    },
+    {
+      "NAMES": [
+        "Uncontrollable",
+        "uncontrollable"
+      ],
+      "DESCRIPTION": "Effect triggers when drawn."
+    },
+    {
+      "NAMES": [
+        "Active",
+        "active"
+      ],
+      "DESCRIPTION": "Right click to use."
+    },
+    {
+      "NAMES": [
+        "Erase",
+        "erase"
+      ],
+      "DESCRIPTION": "Remove from your deck."
+    }
+  ]
+}
