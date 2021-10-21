@@ -2,8 +2,8 @@
   "WhiteNightEvent": {
     "NAME": "\"Blessing\"",
     "DESCRIPTIONS": [
-      "You was in combat, however all enemies disappear in the blink of an eye... That confuses you. NL Only a #bfetal-looking creature, with two red #reyes, and five pairs of white, feathered #bwings remains. NL A #yhalo #yof #ythorns floats above his head, and he wears a #ygolden #ycollar with the number '666' engraved into it.",
-      "You guess the enemies' disappearandce relates to his presence. NL A ~voice~ floats into your mind, it must be from the creature in front of you.",
+      "You are in combat, however all enemies disappear in the blink of an eye... That confuses you. NL Only a #bfetal-looking creature, with two red #reyes, and five pairs of white, feathered #bwings remains. NL A #yhalo #yof #ythorns floats above his head, and he wears a #ygolden #ycollar with the number '666' engraved into it.",
+      "You guess that the enemies' disappearance is related to his presence. NL A ~voice~ floats into your mind, it must be from the creature in front of you.",
       "\"I knocked on the door, and it opened. NL I am from the end, I am merely staying. NL I am the one who kindled the lantern to face the world. NL My loved ones, I shall show thou the best path from now on.\"",
       "You try to leave, but he bars your way. NL It seems you must do something before you may leave.",
       "You try to use #yT-06-27 to distort the view within this room. Although you can't see anything, you manage to feel your way out.",
@@ -48,11 +48,11 @@
     "NAME": "",
     "DESCRIPTIONS": [
       "[Look Back]",
-      "When you look back, you feel your spirit leaving your body and going to a strange place. NL NL You see a beautiful lady stand in front of you.",
-      "\"Hello. Excuse my bluntness. Allow me to introduce myself, I am Angela, an AI.\" NL \"The object you carried called 'Bucket', belongs to the Lobotomy Corporation.\" NL \"And I stand before you as a representative of said corporation.\"",
-      "\"Don't worry, I won't ask you give it back.\" NL \"And don't blame you.\" NL \"It is rather that your effort interests me.\"",
-      "\"Now you may choose. If you are not ready, you may consider further and answer next time.\" NL \"If you wish to give the 'Bucket' back, we will compensate you.\" NL \"If you want to continue, we won't refuse. For it will benefit both of us...\"",
-      "\"Well\" NL You're back in the spire in the span of a single blink."
+      "When you look back, you feel your spirit leaving your body and going to a strange place. NL NL You see a beautiful lady standing in front of you.",
+      "\"Hello. Excuse my bluntness. Allow me to introduce myself, I am Angela, an AI.\" NL \"The object you're carrying called 'Bucket', belongs to the Lobotomy Corporation.\" NL \"And I stand before you as a representative of said corporation.\"",
+      "\"Don't worry, I won't ask you to give it back.\" NL \"And it's not your responsibility.\" NL \"It is rather your effort that interests me.\"",
+      "\"Now you may choose. If you are not ready, you may consider further and answer next time.\" NL \"If you wish to give the 'Bucket' back, we will compensate you.\" NL \"If you want to continue, we won't refuse. For it will benefit the both of us...\"",
+      "\"Very well\" NL You're back in the spire in the span of a single blink."
     ],
     "OPTIONS": [
       "[Continue]",
@@ -61,8 +61,8 @@
       "[Consider] Answer next time(?)",
       "[Locked]",
       "[Leave]",
-      "[Locked] Requires: infomation of Abnormalities unlocked more than 30%",
-      "[Locked] Requires: infomation of Abnormalities unlocked more than 60%"
+      "[Locked] Requires: information of Abnormalities unlocked more than 30%",
+      "[Locked] Requires: information of Abnormalities unlocked more than 60%"
     ]
   },
   "RabbitProtocol": {
@@ -78,6 +78,61 @@
       "[...]",
       "[Continue]",
       "[Leave]"
+    ]
+  },
+  "Champagne": {
+    "NAME": "A Little Help",
+    "DESCRIPTIONS": [
+      "I noticed that things are #pnot #pgoing #psmoothly for you recently.",
+      "Perhaps you feel a sense of #pdefeat , but I hope you don't mind it too much. NL As you continue to #bwork #bharder , everything will be alright, although nothing will take effect immediately.",
+      "It can be said that your previous failures have brought #gbenefits to the future. NL NL Don't you think this is worth celebrating?",
+      "For this, I have prepared a bottle of #yChampagne , which has been treasured for a long time. NL I hope this brings you a bit of consolation, and also to celebrate your previous results. NL NL Cheers.",
+      "Do you know the proper way to drink a glass of champagne? NL Hold onto the lower stem of the glass, and savor the bubbles. NL NL Yes, just like that.",
+      "Do you think now is not the right time, or do you wish to keep it for next time? NL I shall keep it for now.",
+      "No matter what happens now, this is not the reason I'm here now. NL NL I'm here to provide some assistance for you. What do you need now?",
+      "I hope this helps you."
+    ],
+    "OPTIONS": [
+      "[Continue]",
+      "[Drink]",
+      "[Refuse]",
+      "[Energy] #gGain #g100 #gPE.",
+      "[Gold] #gGain #g160 #ggold.",
+      "[Support] #gUnlock #g1 #gextra #gdeployment #gof #gRabbit #gTeam.",
+      "[Leave]",
+      "[Locked] Requires: Bucket"
+    ]
+  },
+  "BossRushEvent": {
+    "NAME": "Core Suppression",
+    "DESCRIPTIONS": [
+      "Your progression is quite impressive. NL NL What do you think about your strength now? If you wish to know, I can provide you some assistance.",
+      "There were some #pproblems that have appeared in the past, and I can replicate them. NL NL Only if you want challenge them. NL NL Of course, this is your choice to make.",
+      "No problem.",
+      " #y\"Willingness #yto #ystand #yup #ystraight\" ",
+      " #p\"Distinctive #pReasoning\" ",
+      " #g\"Courageous #gFortitude\" ",
+      " #y\"The #yHope #yto #ybe #ya #yBetter #yPerson\" ",
+      " #y\"Expectation #yof #ythe #yMeaning #yof #yExistence\" ",
+      " #b\"Someone #bFaithful #band #bTrustworthy\" ",
+      " #r\"Courage #rto #rDefend\" ",
+      "\"The eye embracing the past, creating the future.\"",
+      "\"The eye facing the fear, cutting the cycle.\"",
+      "What do you think? NL NL No matter what, you still have one last battle to fight. NL Are you prepared for it?",
+      "Interesting, even though all of this is just an illusion, you have indeed brought me a lot of enjoyment.",
+      "Of course, you will be rewarded, as you truly deserve it. NL NL Restart the game, then take a look at the config for this mod. NL You can find it in the mods section in the main menu."
+    ],
+    "OPTIONS": [
+      "[Continue]",
+      "[Accept]",
+      "[Refuse]",
+      "[Choose]",
+      "[Leave]",
+      "[Continue] #gHeal #g50% #gof #gyour #gmax #gHP.",
+      "[Victory]",
+      " Control Team", " Information Team", " Security Team", " Training Team",
+      " Central Command Team", " Welfare Team", " Disciplinary Team",
+      " Record Team", " Extraction Team"
     ]
   }
 }

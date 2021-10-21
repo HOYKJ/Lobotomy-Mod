@@ -32,7 +32,7 @@ public class QueenOfHatred extends AbstractLobotomyCard implements CustomSavable
     public int counter;
 
     public QueenOfHatred() {
-        super("QueenOfHatred", QueenOfHatred.NAME, QueenOfHatred.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, 4, 3, 1);
+        super("QueenOfHatred", QueenOfHatred.NAME, QueenOfHatred.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, 4, 3, 1, CardTarget.ALL);
         this.baseDamage = 6;
         this.baseMagicNumber = 6;
         this.magicNumber = this.baseMagicNumber;

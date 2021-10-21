@@ -22,6 +22,7 @@ import lobotomyMod.card.deriveCard.SilentSonata;
 import lobotomyMod.character.LobotomyHandler;
 import lobotomyMod.event.WhiteNightEvent;
 import lobotomyMod.relic.CogitoBucket;
+import lobotomyMod.room.NewVictoryRoom;
 import lobotomyMod.vfx.action.LatterEffect;
 
 import java.io.IOException;
@@ -38,7 +39,7 @@ public class PlagueDoctor extends AbstractLobotomyCard implements CustomSavable<
     public static final String[] EXTENDED_DESCRIPTION;
 
     public PlagueDoctor() {
-        super("PlagueDoctor", PlagueDoctor.NAME, PlagueDoctor.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 45, 2, -2);
+        super("PlagueDoctor", PlagueDoctor.NAME, PlagueDoctor.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 45, 2, -2, CardTarget.NONE);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
         initInfo();
@@ -55,6 +56,9 @@ public class PlagueDoctor extends AbstractLobotomyCard implements CustomSavable<
     @Override
     public void ExhaustCard(AbstractCard card, boolean hand) {
         super.ExhaustCard(card, hand);
+        if (AbstractDungeon.getCurrRoom() instanceof NewVictoryRoom){
+            return;
+        }
         AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, this.magicNumber));
         LobotomyMod.apostles ++;
         if(LobotomyMod.apostles >= 11){

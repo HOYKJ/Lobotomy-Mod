@@ -73,16 +73,18 @@ public class AtMidnight extends AbstractLobotomyRelic{
                 tmp[2] = false;
                 break;
         }
-        switch (AbstractDungeon.bossList.get(1)) {
-            case "Donu and Deca":
-                tmp[0] = false;
-                break;
-            case "Time Eater":
-                tmp[1] = false;
-                break;
-            case "Awakened One":
-                tmp[2] = false;
-                break;
+        if(AbstractDungeon.bossList.size() > 1) {
+            switch (AbstractDungeon.bossList.get(1)) {
+                case "Donu and Deca":
+                    tmp[0] = false;
+                    break;
+                case "Time Eater":
+                    tmp[1] = false;
+                    break;
+                case "Awakened One":
+                    tmp[2] = false;
+                    break;
+            }
         }
         AbstractDungeon.actionManager.addToBottom(new LatterAction(()-> {
             this.end = true;

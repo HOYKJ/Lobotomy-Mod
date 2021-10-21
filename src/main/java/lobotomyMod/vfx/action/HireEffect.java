@@ -6,7 +6,11 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import lobotomyMod.LobotomyMod;
+import lobotomyMod.card.angelaCard.bullets.SpecialBullet;
 import lobotomyMod.card.angelaCard.department.*;
+import lobotomyMod.card.deriveCard.AddBullet;
 import lobotomyMod.card.deriveCard.ExpandDepartment;
 import lobotomyMod.character.Angela;
 
@@ -45,31 +49,32 @@ public class HireEffect extends AbstractGameEffect {
                 }
                 else if(AbstractDungeon.gridSelectScreen.selectedCards.get(0) instanceof ExpandDepartment) {
                     this.choices = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-                    if (Angela.departments[Malkuth.departmentCode[0]] < 4) {
+                    int max = LobotomyMod.useBlackAngela? 5: 4;
+                    if (Angela.departments[Malkuth.departmentCode[0]] < max) {
                         this.choices.addToTop(new Malkuth(true));
                     }
-                    if (Angela.departments[Yesod.departmentCode[0]] < 4) {
+                    if (Angela.departments[Yesod.departmentCode[0]] < max) {
                         this.choices.addToTop(new Yesod(true));
                     }
-                    if (Angela.departments[Netzach.departmentCode[0]] < 4) {
+                    if (Angela.departments[Netzach.departmentCode[0]] < max) {
                         this.choices.addToTop(new Netzach(true));
                     }
-                    if (Angela.departments[Hod.departmentCode[0]] < 4) {
+                    if (Angela.departments[Hod.departmentCode[0]] < max) {
                         this.choices.addToTop(new Hod(true));
                     }
-                    if (Angela.departments[Tiphereth.departmentCode[0]] < 4) {
+                    if (Angela.departments[Tiphereth.departmentCode[0]] < max) {
                         this.choices.addToTop(new Tiphereth(true));
                     }
-                    if (Angela.departments[Chesed.departmentCode[0]] < 4) {
+                    if (Angela.departments[Chesed.departmentCode[0]] < max) {
                         this.choices.addToTop(new Chesed(true));
                     }
-                    if (Angela.departments[Geburah.departmentCode[0]] < 4) {
+                    if (Angela.departments[Geburah.departmentCode[0]] < max) {
                         this.choices.addToTop(new Geburah(true));
                     }
-                    if (Angela.departments[Hokma.departmentCode[0]] < 4) {
+                    if (Angela.departments[Hokma.departmentCode[0]] < max) {
                         this.choices.addToTop(new Hokma(true));
                     }
-                    if (Angela.departments[Binah.departmentCode[0]] < 4) {
+                    if (Angela.departments[Binah.departmentCode[0]] < max) {
                         this.choices.addToTop(new Binah(true));
                     }
 
@@ -77,6 +82,10 @@ public class HireEffect extends AbstractGameEffect {
                     AbstractDungeon.gridSelectScreen.open(this.choices, 1, true, Angela.TEXT[3]);
                     AbstractDungeon.gridSelectScreen.selectedCards.clear();
                     return;
+                }
+                else if (AbstractDungeon.gridSelectScreen.selectedCards.get(0) instanceof AddBullet) {
+                    AbstractDungeon.effectsQueue.add(new ShowCardAndObtainEffect(new SpecialBullet(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+                    Angela.departments[18] -= 2;
                 }
                 else{
                     return;
@@ -120,7 +129,12 @@ public class HireEffect extends AbstractGameEffect {
         if(Angela.departments[Binah.departmentCode[1]] < 5 && Angela.departments[Binah.departmentCode[0]] > 0) {
             this.choices.addToTop(new Binah(false));
         }
-        this.choices.addToTop(new ExpandDepartment());
+        if(Angela.departments[18] >= 2) {
+            this.choices.addToTop(new AddBullet());
+        }
+        if(Angela.departments[18] >= 5) {
+            this.choices.addToTop(new ExpandDepartment());
+        }
     }
 
     @Override

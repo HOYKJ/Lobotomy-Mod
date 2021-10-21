@@ -28,7 +28,7 @@ public class Bloodbath extends AbstractLobotomyCard implements CustomSavable<int
     private int BloodHand;
 
     public Bloodbath() {
-        super("Bloodbath", Bloodbath.NAME, Bloodbath.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 51, 3, 0);
+        super("Bloodbath", Bloodbath.NAME, Bloodbath.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 51, 3, 0, CardTarget.SELF);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
         initInfo();

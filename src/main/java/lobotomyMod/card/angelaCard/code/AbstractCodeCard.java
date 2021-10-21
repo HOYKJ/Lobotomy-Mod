@@ -1,6 +1,8 @@
 package lobotomyMod.card.angelaCard.code;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import lobotomyMod.LobotomyMod;
 import lobotomyMod.character.LobotomyHandler;
 import lobotomyMod.patch.AbstractCardEnum;
 
@@ -16,13 +18,15 @@ public abstract class AbstractCodeCard extends CustomCard {
     }
 
     public AbstractCodeCard(final String id, final String name, String imgId, final int cost, final String description, final CardTarget target) {
-        super(id, name, LobotomyHandler.angelaCardImage(imgId), cost, description, CardType.SKILL, AbstractCardEnum.Angela, CardRarity.SPECIAL, target);
+        super(id, name, (LobotomyMod.useBlackAngela? LobotomyHandler.angelaBlackCardImage(imgId): LobotomyHandler.angelaCardImage(imgId)), cost, description, CardType.SKILL, AbstractCardEnum.Angela, CardRarity.SPECIAL, target);
         this.dep = true;
     }
 
     public void endOfTurn(boolean hand){}
 
     public void onVictory(){}
+
+    public void onEnterRoom(AbstractRoom room){}
 
     public void expand(){
 

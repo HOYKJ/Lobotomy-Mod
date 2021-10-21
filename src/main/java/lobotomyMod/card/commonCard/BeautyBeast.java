@@ -29,7 +29,7 @@ public class BeautyBeast extends AbstractLobotomyCard implements CustomSavable<i
     public static final String[] EXTENDED_DESCRIPTION;
 
     public BeautyBeast() {
-        super("BeautyBeast", BeautyBeast.NAME, BeautyBeast.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 44, 3, 0);
+        super("BeautyBeast", BeautyBeast.NAME, BeautyBeast.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 44, 3, 0, CardTarget.SELF);
         this.baseBlock = 6;
         initInfo();
     }

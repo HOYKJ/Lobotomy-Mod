@@ -3,6 +3,7 @@ package lobotomyMod.monster.Ordeal;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
+import com.esotericsoftware.spine.Event;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
@@ -13,10 +14,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import lobotomyMod.LobotomyMod;
-import lobotomyMod.action.animation.clawRedAttackAction;
-import lobotomyMod.action.animation.ultiAttackAction;
+import lobotomyMod.action.animation.ClawRedAttackAction;
+import lobotomyMod.action.animation.UltiAttackAction;
+import lobotomyMod.action.common.DelayDamageAction;
 import lobotomyMod.action.common.LatterAction;
 import lobotomyMod.vfx.action.LatterEffect;
 import lobotomyMod.vfx.ordeal.OrdealTitleBack;
@@ -41,6 +42,7 @@ public class Claw extends AbstractOrdealMonster {
     private boolean firstUlti;
     private boolean groggy;
     private float duration;
+    private DelayDamageAction delay;
 
     public Claw(float x, float y) {
         super(NAME, "Claw", 1000, 0.0F, -20.0F, 250.0F, 400.0F, null, x, y);
@@ -143,7 +145,7 @@ public class Claw extends AbstractOrdealMonster {
                 setMove((byte) 2, Intent.ATTACK, this.damage.get(1).base);
             }
         }
-        //setMove((byte) 0, Intent.UNKNOWN);
+        //setMove((byte) 4, Intent.ATTACK_DEBUFF, this.damage.get(3).base, 7, true);
     }
 
     public void takeTurn() {
@@ -151,7 +153,7 @@ public class Claw extends AbstractOrdealMonster {
         //AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "RED_ATTACK"));
 
 //        AbstractDungeon.actionManager.addToTop(new LatterAction(()->{
-//            AbstractDungeon.actionManager.addToTop(new clawRedAttackAction(this,
+//            AbstractDungeon.actionManager.addToTop(new ClawRedAttackAction(this,
 //                    new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.NONE)));
 //        }, 5.0F));
 
@@ -175,7 +177,7 @@ public class Claw extends AbstractOrdealMonster {
             case 3:
                 AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "RED_ATTACK"));
                 AbstractDungeon.actionManager.addToBottom(new LatterAction(() -> {
-                    AbstractDungeon.actionManager.addToTop(new clawRedAttackAction(this,
+                    AbstractDungeon.actionManager.addToTop(new ClawRedAttackAction(this,
                             new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.NONE)));
                     AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Wound(), 1));
                 }, 5.0F));
@@ -185,7 +187,7 @@ public class Claw extends AbstractOrdealMonster {
                 AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "BLUE_ATTACK"));
                 AbstractDungeon.actionManager.addToBottom(new LatterAction(() -> {
                     AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-                }, 0.3F));
+                }, 2.8F));
                 AbstractDungeon.actionManager.addToBottom(new LatterAction(() -> {
                     AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
                 }, 0.6F));
@@ -204,6 +206,22 @@ public class Claw extends AbstractOrdealMonster {
                 AbstractDungeon.actionManager.addToBottom(new LatterAction(() -> {
                     AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
                 }, 0.6F));
+//                this.delay = new DelayDamageAction(AbstractDungeon.player);
+//                final int[] counter = {7};
+//                AbstractDungeon.actionManager.addToBottom(new LatterAction(()->{
+//                    this.state.getTracks().get(0).setListener(new AnimationState.AnimationStateAdapter() {
+//                        public void event(int trackIndex, Event event) {
+//                            if (event.getData().getName().equals("Damage") && !delay.isDone) {
+//                                delay.damage(damage.get(3));
+//                                counter[0]--;
+//                                if(counter[0] <= 0){
+//                                    delay.laterEnd();
+//                                }
+//                            }
+//                        }
+//                    });
+//                }));
+//                AbstractDungeon.actionManager.addToBottom(this.delay);
                 AbstractDungeon.actionManager.addToBottom(new LatterAction(() -> {
                     if(AbstractDungeon.player.drawPile.size() > 0){
                         AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(AbstractDungeon.player.drawPile.getRandomCard(true), AbstractDungeon.player.drawPile));
@@ -222,8 +240,8 @@ public class Claw extends AbstractOrdealMonster {
             case 6:
                 AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "ULTI_START"));
                 AbstractDungeon.actionManager.addToBottom(new LatterAction(()->{
-                    AbstractDungeon.actionManager.addToTop(new ultiAttackAction(this,
-                            AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+                    AbstractDungeon.actionManager.addToTop(new UltiAttackAction(this,
+                            AbstractDungeon.player, this.damage.get(4), AbstractGameAction.AttackEffect.SLASH_HEAVY));
                 }, 2.83F));
                 break;
         }

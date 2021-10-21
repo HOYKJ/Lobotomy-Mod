@@ -1,7 +1,6 @@
 package lobotomyMod.card.deriveCard;
 
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import lobotomyMod.action.animation.silentMovementAction;
+import lobotomyMod.action.animation.SilentMovementAction;
 
 /**
  * @author hoykj
@@ -32,7 +31,7 @@ public class SilentRondo extends AbstractDeriveCard{
     @Override
     public void triggerWhenDrawn() {
         super.triggerWhenDrawn();
-        AbstractDungeon.actionManager.addToTop(new silentMovementAction(4));
+        AbstractDungeon.actionManager.addToTop(new SilentMovementAction(4));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new WeakPower(AbstractDungeon.player, this.magicNumber, false), this.magicNumber));
         for (int i = (AbstractDungeon.getCurrRoom().monsters.monsters.size() - 1); i >= 0; i--) {
             AbstractMonster target = AbstractDungeon.getCurrRoom().monsters.monsters.get(i);

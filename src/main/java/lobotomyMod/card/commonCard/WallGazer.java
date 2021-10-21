@@ -28,7 +28,7 @@ public class WallGazer extends AbstractLobotomyCard implements CustomSavable<int
     public static final String[] EXTENDED_DESCRIPTION;
 
     public WallGazer() {
-        super("WallGazer", WallGazer.NAME, WallGazer.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 18, 2, -2);
+        super("WallGazer", WallGazer.NAME, WallGazer.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 18, 2, -2, CardTarget.NONE);
         initInfo();
     }
 
@@ -50,7 +50,10 @@ public class WallGazer extends AbstractLobotomyCard implements CustomSavable<int
                 total ++;
             }
         }
-        int result = AbstractDungeon.cardRng.random(0, total);
+        if (total < 1){
+            return;
+        }
+        int result = AbstractDungeon.cardRng.random(0, total - 1);
 //        if(result == 0){
 //            AbstractDungeon.actionManager.addToBottom(new RemoveRandomBuffAction(AbstractDungeon.player));
 //        }

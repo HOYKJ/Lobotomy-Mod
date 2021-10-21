@@ -4,11 +4,19 @@ import basemod.abstracts.CustomPlayer;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.blue.EchoForm;
+import com.megacrit.cardcrawl.cards.green.Burst;
+import com.megacrit.cardcrawl.cards.red.DoubleTap;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -18,16 +26,26 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.BurstPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.DoubleTapPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.relics.PandorasBox;
 import com.megacrit.cardcrawl.relics.PrismaticShard;
+import com.megacrit.cardcrawl.scenes.TheBeyondScene;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import lobotomyMod.LobotomyMod;
+import lobotomyMod.action.common.ChooseAction;
+import lobotomyMod.action.unique.RecordCodeAction;
+import lobotomyMod.card.AbstractLobotomyCard;
 import lobotomyMod.card.angelaCard.bullets.SpecialBullet;
+import lobotomyMod.card.angelaCard.code.AbstractCodeCard;
 import lobotomyMod.card.angelaCard.department.*;
 import lobotomyMod.patch.AbstractCardEnum;
 import lobotomyMod.patch.CharacterEnum;
+import lobotomyMod.power.TurnEchoPower;
 import lobotomyMod.relic.CogitoBucket;
 import lobotomyMod.relic.RabbitCall;
 import lobotomyMod.reward.CogitoReward;
@@ -56,7 +74,7 @@ public class Angela extends CustomPlayer {
         NORMAL, HP, SP, RED, WHITE, BLACK, PALE, SLOW, EXECUTE
     }
     public AimType aimType = AimType.NORMAL;
-    public static int departments[] = LobotomyMod.departments.clone();
+    public static int departments[] = LobotomyMod.departments.clone(), tmpD[];
 
     public Angela(final String name) {
         super(name, CharacterEnum.Angela, orbTextures, orbVfx, (String) null, null);
@@ -65,21 +83,35 @@ public class Angela extends CustomPlayer {
         this.dialogX = (this.drawX + 0.0F * Settings.scale);
         this.dialogY = (this.drawY + 220.0F * Settings.scale);
 
-        initializeClass(null, "lobotomyMod/images/characters/angela/angela_white/shoulder.png", "lobotomyMod/images/characters/angela/angela_white/shoulder2.png", "lobotomyMod/images/characters/angela/angela_white/corpse.png",
+        if(LobotomyMod.useBlackAngela){
+            initializeClass(null, "lobotomyMod/images/characters/angela/angela_black/shoulder.png",
+                    "lobotomyMod/images/characters/angela/angela_black/shoulder2.png", "lobotomyMod/images/characters/angela/angela_black/corpse.png",
+                    getLoadout(), 0.0F, 0.0F, 240.0F, 400.0F, new EnergyManager(3));
 
-                getLoadout(), 0.0F, 0.0F, 240.0F, 400.0F, new EnergyManager(3));
+            loadAnimation("lobotomyMod/images/characters/angela/angela_black/idle/angela_black.atlas", "lobotomyMod/images/characters/angela/angela_black/idle/angela_black.json", 2.8F);
 
-        loadAnimation("lobotomyMod/images/characters/angela/angela_white/idle/angela_white.atlas", "lobotomyMod/images/characters/angela/angela_white/idle/angela_white.json", 2.8F);
+            AnimationState.TrackEntry e = this.state.setAnimation(0, "newAnimation", true);
+            e.setTimeScale(1.0F);
+        }
+        else {
+            initializeClass(null, "lobotomyMod/images/characters/angela/angela_white/shoulder.png",
+                    "lobotomyMod/images/characters/angela/angela_white/shoulder2.png", "lobotomyMod/images/characters/angela/angela_white/corpse.png",
+                    getLoadout(), 0.0F, 0.0F, 240.0F, 400.0F, new EnergyManager(3));
 
-        AnimationState.TrackEntry e = this.state.setAnimation(0, "newAnimation", true);
-        e.setTimeScale(0.6F);
+            loadAnimation("lobotomyMod/images/characters/angela/angela_white/idle/angela_white.atlas", "lobotomyMod/images/characters/angela/angela_white/idle/angela_white.json", 2.8F);
+
+            AnimationState.TrackEntry e = this.state.setAnimation(0, "newAnimation", true);
+            e.setTimeScale(0.6F);
+        }
         this.bless = true;
     }
 
     @Override
     public void movePosition(float x, float y) {
         super.movePosition(x, y);
-        this.drawY -= 30;
+        if (y >= AbstractDungeon.floorY) {
+            this.drawY -= 30;
+        }
     }
 
     public ArrayList<String> getStartingDeck() {
@@ -197,8 +229,67 @@ public class Angela extends CustomPlayer {
     }
 
     @Override
+    public void applyStartOfCombatLogic() {
+        super.applyStartOfCombatLogic();
+        if(departments[3] > 3){
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 3), 3));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, 3), 3));
+        }
+        else if(departments[3] > 1){
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, 1), 1));
+        }
+        if(departments[Yesod.departmentCode[0]] == 5){
+            for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                m.maxHealth *= 0.75F;
+                if(m.currentHealth > m.maxHealth){
+                    m.currentHealth = m.maxHealth;
+                }
+                m.healthBarUpdatedEvent();
+            }
+        }
+    }
+
+    @Override
+    public void applyStartOfCombatPreDrawLogic() {
+        super.applyStartOfCombatPreDrawLogic();
+        if(departments[Hod.departmentCode[0]] == 5){
+            for (AbstractCard card : AbstractDungeon.player.drawPile.group){
+                if(card.baseDamage > 0){
+                    card.baseDamage *= 1.25F;
+                }
+                if(card.baseBlock > 0){
+                    card.baseBlock *= 1.25F;
+                }
+            }
+        }
+    }
+
+    @Override
+    public void applyStartOfTurnRelics() {
+        super.applyStartOfTurnRelics();
+        if(departments[Chesed.departmentCode[0]] == 5){
+            AbstractDungeon.actionManager.addToBottom(new RecordCodeAction(1));
+        }
+        if(departments[Geburah.departmentCode[0]] == 5){
+            final ChooseAction choice = new ChooseAction(null, null, AbstractLobotomyCard.EXTENDED_DESCRIPTION[2],true, 1, true);
+            choice.add(new DoubleTap(), ()->{
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new DoubleTapPower(this, 1), 1));
+            });
+            choice.add(new Burst(), ()->{
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BurstPower(this, 1), 1));
+            });
+            choice.add(new EchoForm(), Geburah.EXTENDED_DESCRIPTION[8], ()->{
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new TurnEchoPower(this, 1), 1));
+            });
+            AbstractDungeon.actionManager.addToBottom(choice);
+        }
+    }
+
+    @Override
     public void update() {
         super.update();
+
         if(this.aimSelectBack == null){
             this.aimSelectBack = new AimSelectBack();
         }
@@ -211,6 +302,11 @@ public class Angela extends CustomPlayer {
             }
         }
         if(this.bless){
+            for(AbstractCard card : AbstractDungeon.player.masterDeck.group){
+                if(card instanceof AbstractCodeCard){
+                    AbstractDungeon.player.masterDeck.removeCard(card);
+                }
+            }
             this.bless = false;
             if(LobotomyMod.activeTutorials[3]) {
                 AbstractDungeon.ftue = new LobotomyFtue(3);
@@ -219,6 +315,12 @@ public class Angela extends CustomPlayer {
                 this.bless();
             }
         }
+    }
+
+    @Override
+    public void onVictory() {
+        AbstractDungeon.getCurrRoom().rewards.add(new LobPoint());
+        super.onVictory();
     }
 
     public void bless(){
@@ -250,6 +352,12 @@ public class Angela extends CustomPlayer {
         }));
     }
 
+    public static void reset(){
+        if(tmpD != null){
+            departments = tmpD.clone();
+        }
+    }
+
     @Override
     public boolean hasRelic(String targetID) {
         if(departments[1] < 3 && targetID.equals("Runic Dome")){
@@ -261,26 +369,20 @@ public class Angela extends CustomPlayer {
         return super.hasRelic(targetID);
     }
 
-    @Override
-    public void onVictory() {
-        AbstractDungeon.getCurrRoom().rewards.add(new LobPoint());
-        super.onVictory();
-    }
-
     public void changeAim(AimType aimType){
         this.aimType = aimType;
     }
 
-    @Override
-    public void applyStartOfCombatLogic() {
-        super.applyStartOfCombatLogic();
-        if(departments[3] > 3){
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 3), 3));
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, 3), 3));
-        }
-        else if(departments[3] > 1){
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, 1), 1));
+    @SpirePatch(
+            clz= AbstractDungeon.class,
+            method="initializeRelicList"
+    )
+    public static class initializeRelicList {
+        @SpirePrefixPatch
+        public static void prefix(){
+            if(AbstractDungeon.player instanceof Angela) {
+                AbstractDungeon.relicsToRemoveOnStart.add(PandorasBox.ID);
+            }
         }
     }
 

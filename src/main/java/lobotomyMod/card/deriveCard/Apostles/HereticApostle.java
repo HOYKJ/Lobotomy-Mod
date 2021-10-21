@@ -1,5 +1,6 @@
 package lobotomyMod.card.deriveCard.Apostles;
 
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -48,7 +49,8 @@ public class HereticApostle extends AbstractApostleCard {
             }
         }
         if(AbstractDungeon.getCurrRoom().monsters.monsters.get(0) instanceof WhiteNightMonster){
-            AbstractDungeon.getCurrRoom().monsters.monsters.get(0).damage(new DamageInfo(AbstractDungeon.player, 666, DamageInfo.DamageType.HP_LOSS));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getCurrRoom().monsters.monsters.get(0), new DamageInfo(AbstractDungeon.player, 666, DamageInfo.DamageType.HP_LOSS)));
+            //AbstractDungeon.getCurrRoom().monsters.monsters.get(0).damage(new DamageInfo(AbstractDungeon.player, 666, DamageInfo.DamageType.HP_LOSS));
         }
     }
 

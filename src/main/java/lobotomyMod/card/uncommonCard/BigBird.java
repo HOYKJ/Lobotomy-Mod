@@ -38,7 +38,7 @@ public class BigBird extends AbstractLobotomyCard implements CustomSavable<int[]
     public ArrayList<AbstractCard> focus2 = new ArrayList<>();
 
     public BigBird() {
-        super("BigBird", BigBird.NAME, BigBird.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 40, 4, -2);
+        super("BigBird", BigBird.NAME, BigBird.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 40, 4, -2, CardTarget.NONE);
         this.baseMagicNumber = 5;
         this.magicNumber = this.baseMagicNumber;
         this.counter = 0;

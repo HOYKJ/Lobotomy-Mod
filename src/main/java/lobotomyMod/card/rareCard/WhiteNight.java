@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import lobotomyMod.action.common.LatterAction;
 import lobotomyMod.card.AbstractLobotomyCard;
 import lobotomyMod.card.deriveCard.Apostles.*;
@@ -35,7 +36,7 @@ public class WhiteNight extends AbstractLobotomyCard implements CustomSavable<in
     public static boolean active;
 
     public WhiteNight() {
-        super("WhiteNight", WhiteNight.NAME, WhiteNight.DESCRIPTION, CardRarity.RARE, CardTarget.ENEMY, 46, 4, 2);
+        super("WhiteNight", WhiteNight.NAME, WhiteNight.DESCRIPTION, CardRarity.RARE, CardTarget.ENEMY, 46, 5, 2, CardTarget.NONE);
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
         initInfo();
@@ -57,9 +58,9 @@ public class WhiteNight extends AbstractLobotomyCard implements CustomSavable<in
         super.atBattleStart();
         active = true;
         canHeal = false;
-        CardCrawlGame.music.silenceTempBgmInstantly();
-        CardCrawlGame.music.silenceBGMInstantly();
-        AbstractDungeon.getCurrRoom().playBgmInstantly("Lucifer_standbg0.mp3");
+//        CardCrawlGame.music.silenceTempBgmInstantly();
+//        CardCrawlGame.music.silenceBGMInstantly();
+        //AbstractDungeon.getCurrRoom().playBgmInstantly("Lucifer_standbg0.mp3");
         ArrayList<AbstractCard> list = new ArrayList<>();
         list.add(new GuardApostle());
         list.add(new GuardApostle());
@@ -192,6 +193,12 @@ public class WhiteNight extends AbstractLobotomyCard implements CustomSavable<in
 
     public AbstractCard makeCopy() {
         return new WhiteNight();
+    }
+
+    @Override
+    public void obtain() {
+        super.obtain();
+        UnlockTracker.unlockCard(this.cardID);
     }
 
     @Override

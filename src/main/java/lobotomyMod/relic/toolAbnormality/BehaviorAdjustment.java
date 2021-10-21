@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import lobotomyMod.card.relicCard.AbstractLobotomyRelicCard;
@@ -26,8 +27,13 @@ public class BehaviorAdjustment extends AbstractLobotomyAbnRelic {
         super.onCardDraw(drawnCard);
         if(drawnCard.type == AbstractCard.CardType.STATUS || drawnCard.type == AbstractCard.CardType.CURSE){
             AbstractDungeon.actionManager.addToBottom(new DiscardSpecificCardAction(drawnCard));
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
             AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, 1, DamageInfo.DamageType.HP_LOSS)));
+            AbstractPlayer p = AbstractDungeon.player;
+            if(p.drawPile.getCardsOfType(AbstractCard.CardType.STATUS).size() +  p.drawPile.getCardsOfType(AbstractCard.CardType.CURSE).size() == p.drawPile.size() &&
+                    p.discardPile.getCardsOfType(AbstractCard.CardType.STATUS).size() +  p.discardPile.getCardsOfType(AbstractCard.CardType.CURSE).size() == p.discardPile.size()){
+                return;
+            }
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
         }
     }
 

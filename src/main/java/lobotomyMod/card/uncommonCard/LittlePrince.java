@@ -39,7 +39,7 @@ public class LittlePrince extends AbstractLobotomyCard implements CustomSavable<
     public ArrayList<AbstractCard> prince = new ArrayList<>();
 
     public LittlePrince() {
-        super("LittlePrince", LittlePrince.NAME, LittlePrince.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 66, 4, -2);
+        super("LittlePrince", LittlePrince.NAME, LittlePrince.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 66, 4, -2, CardTarget.NONE);
         initInfo();
     }
 
@@ -69,7 +69,7 @@ public class LittlePrince extends AbstractLobotomyCard implements CustomSavable<
         super.triggerWhenDrawn();
         AbstractDungeon.actionManager.addToBottom(new LatterAction(()->{
             for(AbstractCard card : AbstractDungeon.player.hand.group){
-                card.modifyCostForTurn(-1);
+                card.setCostForTurn(card.costForTurn - 1);
             }
         }));
     }

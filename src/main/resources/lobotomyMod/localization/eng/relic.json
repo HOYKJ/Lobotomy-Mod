@@ -3,7 +3,8 @@
     "NAME": "\"Bucket\"",
     "FLAVOR": "We use the \"Bucket\" to get them out from the \"Well\" of origin... To avoid unnecessary mental loss, we CENSORED it.",
     "DESCRIPTIONS": [
-      "At the end of combat, gain a #bspecial #yreword. Gain PE based on your #pAbnormality cards. You can use PE to unlock #pAbnormality card's information. In combat you can #yright #yclick this relic to active an #pAbnormality."
+      "At the end of combat, gain a #bspecial #yreward. Gain PE based on your #pAbnormality cards. You can use PE to unlock information for #pAbnormality cards.",
+	  "Abnormalities that can be activated"
     ]
   },
   "ApostleMask": {
@@ -17,7 +18,7 @@
     "NAME": "Paradise Lost",
     "FLAVOR": "The time has come. The bell will ring. The new world will come.",
     "DESCRIPTIONS": [
-      "The immune threshold of #yWhiteNight is increased by #b5. Gain #b16 #yBlock when you play #yWhiteNight."
+      "The immune threshold of #yWhiteNight is increased by #b5. Gain #b16 #yBlock whenever you play #yWhiteNight."
     ]
   },
   "Twilight": {
@@ -31,15 +32,15 @@
     "NAME": "Feather of Honor",
     "FLAVOR": "It is Fiery Bird's wish that people don't lose their passion forever.",
     "DESCRIPTIONS": [
-      "Upon pickup and whenever you enter a Rest Site, #gheal to full HP. You won't lose max health when you play 3-cost #yFiery #yBird. #yFiery #yBird won't deal damage to you. Damage of #yFiery #yBird is increased by 50%."
+      "Upon pickup and whenever you enter a Rest Site, #gheal all of your HP. You no longer lose max health when you play a 3-cost #yFiery #yBird. #yFiery #yBird no longer deals damage to yourself. Damage of #yFiery #yBird is increased by 50%."
     ]
   },
-  "Yang": {
+  "Yang_Lob": {
     "NAME": "Yang",
     "FLAVOR": "However, the world has more than warmth and light.",
     "DESCRIPTIONS": [
-      "Gain 1 artifact at the end of your turn when this is activated. This relic will lose its effect if you don't have ",
-      ". At the start of combat, this relic activates. Right click this relic to disable."
+      "Gain 1 artifact at the end of your turn if active. This relic will lose its effect if you don't have ",
+      ". At the start of combat, this relic activates by itself. #yRight #yclick to disable it."
     ]
   },
 
@@ -49,7 +50,7 @@
     "NAME": "Theresia",
     "FLAVOR": "Remember this melody? The professor played this song when the students were sleepy. Happy birthday.",
     "DESCRIPTIONS": [
-      "At the start of your turn, draw #b1 card. Whenever you play #6 cards, shuffle a #yDazed into your discard pile."
+      "Draw #b1 additional card each turn. Whenever you play #b6 cards, shuffle a #yDazed into your discard pile."
     ]
   },
   "TouchMe": {
@@ -64,63 +65,63 @@
     "NAME": "The Heart of Aspiration",
     "FLAVOR": "Excessive aspiration will result in a frenzy.",
     "DESCRIPTIONS": [
-      "Raise your max HP by #g10. Whenever an enemy dies, draw #b1 card. If you end a combat with all enemies alive, reduce your max health by 50%."
+      "Raise your max HP by #g10. Whenever an enemy dies, draw #b1 card. If you end a combat with all enemies alive, lose 50% max HP."
     ]
   },
   "ResearcherNote": {
     "NAME": "Note from a Crazed Researcher",
     "FLAVOR": "The final chapter ends with a sentence, \"Born again\".",
     "DESCRIPTIONS": [
-      "Your hand max size is infinite. If you lose more than #r60 health in one combat, #rdie immediately."
+      "Your have no maximum hand size. If you lose more than #r60 HP in a single combat, you #rdie."
     ]
   },
   "FleshIdol": {
     "NAME": "Flesh Idol",
     "FLAVOR": "And the prayer always ends with eternal despair of the worshipper.",
     "DESCRIPTIONS": [
-      "At the end of your turn, receive #b2 damage at the first #b4 turns, Heal #g2 HP after the #b4th turn and Heal #g4 HP from the #b9th turn onwards. #rDie at the end of #b18th turn."
+      "At the end of your turn, deal #b2 damage to yourself at the first #b4 turns. Heal #g2 HP after the #b4th turn and Heal #g4 HP from the #b9th turn onwards. At the end of #b18th turn, you #rdie."
     ]
   },
   "TreeSap": {
     "NAME": "Giant Tree Sap",
     "FLAVOR": "The tree reaped from what it sowed.",
     "DESCRIPTIONS": [
-      "#yActive: Gain #g6 #gRegen. Has a chance to reduce your max health by #r15. Increase the chance on use, and reset when happens."
+      "#yActive: Gain #g6 #gRegen. Has a chance to reduce your max health by #r15. The chance increases on consecutive uses, and resets when the effect is triggered."
     ]
   },
   "AdjustmentMirror": {
     "NAME": "Mirror of Adjustment",
     "FLAVOR": "\"Satisfaction is only temporary.\"",
     "DESCRIPTIONS": [
-      "#yActive: Shuffle all your card into random pile. If use more than once in a combat, put #b2 random cards that are yours into the exhaust pile."
+      "#yActive: Shuffle all your card into random piles. If used more than once in a combat, put #b2 random cards that are yours into the exhaust pile."
     ]
   },
   "ChangeAnything": {
     "NAME": "We Can Change Anything",
     "FLAVOR": "Now everything will be just fine!",
     "DESCRIPTIONS": [
-      "You can #yActive at the first turn of each combat: At the end of your turn, Lose #r1 HP and gain #y10 gold. Every #b2 turns, the HP loss will increase by #b1."
+      "#yActivate only at the first turn of each combat: At the end of your turn, Lose #r1 HP and gain #y10 gold. Every #b2 turns, the HP loss is increased by #b1."
     ]
   },
   "HellTrain": {
     "NAME": "Express Train to Hell",
     "FLAVOR": "When the time comes, the train chugs down the tracks and sounds its mighty horn.",
     "DESCRIPTIONS": [
-      "At the end of your turn, light up #b1 light. If #b4 lights are lit, deal 50 damage to all creatures and extinguish all lights. #yActive: #yUpgrade your cards according to lit lights, extinguish all lights."
+      "At the end of your turn, light up #b1 light. If #b4 lights are lit at the end of your turn, deal 50 damage to all creatures and extinguish all lights. #yActive: #yUpgrade your cards according to lit lights and extinguish all lights."
     ]
   },
   "SkinProphecy": {
     "NAME": "Prophecy of the Skin",
     "FLAVOR": "Save us now and forevermore. The truth shall set us free!",
     "DESCRIPTIONS": [
-      "Raise your max HP by #b2 and lose #r4 HP at the start of combat."
+      "Raise your max HP by #b2 and lose #r4 HP at the start of each combat."
     ]
   },
   "LuminousBracelet": {
     "NAME": "Luminous Bracelet",
     "FLAVOR": "This bracelet does not forgive those with greed so it should be only be worn by those in need.",
     "DESCRIPTIONS": [
-      "Raise your max HP by #g15. Whenever you lose HP, gain 1 #gRegen. If you didn't lose HP for #b6 turns, reduce your max HP by #r10."
+      "Raise your max HP by #g15. Whenever you lose HP, gain 1 #gRegen. If you don't lose HP for #b6 turns, lose #r10 max HP."
     ]
   },
   "BehaviorAdjustment": {
@@ -134,7 +135,7 @@
     "NAME": "Backward Clock",
     "FLAVOR": "Have you fallen to the lowest bottom?",
     "DESCRIPTIONS": [
-      "#yActive: Record your state. Next #yActive in this combat will recover your state to the record (Not entirely reliable), then lose this #yrelic."
+      "#yActive: Record your current state. The next time you #yActivate this relic in this combat, restore your state to the recorded state (not entirely reliable), and lose this #yrelic."
     ]
   },
 
@@ -144,14 +145,14 @@
     "NAME": "Rabbit Team",
     "FLAVOR": "The Rabbit came to graze the grass.",
     "DESCRIPTIONS": [
-      "#yActive in your turn: Open Protocol window."
+      "#yActive during your turn: Open Protocol window."
     ]
   },
   "AtMidnight": {
     "NAME": "At Midnight",
     "FLAVOR": "Certificate for those who defeated the Dusk.",
     "DESCRIPTIONS": [
-      "Right click to toggle. Replace the BOSS of Beyond to Midnight if this is turned on."
+      "#yRight #yclick to toggle. Replace the current BOSS of The Beyond to a random boss from a Midnight Ordeal if active."
     ]
   }
 }

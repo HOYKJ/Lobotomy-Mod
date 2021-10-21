@@ -29,7 +29,7 @@ public class Mercenary extends AbstractLobotomyCard implements CustomSavable<int
     private int counter;
 
     public Mercenary() {
-        super("Mercenary", Mercenary.NAME, Mercenary.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 57, 3, 1);
+        super("Mercenary", Mercenary.NAME, Mercenary.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 57, 3, 1, CardTarget.NONE);
         initInfo();
     }
 

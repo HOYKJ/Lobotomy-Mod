@@ -29,6 +29,8 @@ public abstract class AbstractEgoCard extends CustomCard {
 
     public abstract void addTips();
 
+
+
     public void ExhaustCard(AbstractCard card, boolean hand){}
 
     public void endOfTurn(boolean hand){}

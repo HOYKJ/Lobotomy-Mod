@@ -29,7 +29,7 @@ public class Rudolta extends AbstractLobotomyCard implements CustomSavable<int[]
     public static final String[] EXTENDED_DESCRIPTION;
 
     public Rudolta() {
-        super("Rudolta", Rudolta.NAME, Rudolta.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 49, 2, 0);
+        super("Rudolta", Rudolta.NAME, Rudolta.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 49, 2, 0, CardTarget.NONE);
         initInfo();
     }
 

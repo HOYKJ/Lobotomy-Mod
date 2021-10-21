@@ -31,7 +31,7 @@ public class Laetitia extends AbstractLobotomyCard implements CustomSavable<int[
     public ArrayList<AbstractCard> list = new ArrayList<>();
 
     public Laetitia() {
-        super("Laetitia", Laetitia.NAME, Laetitia.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 67, 3, -2);
+        super("Laetitia", Laetitia.NAME, Laetitia.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 67, 3, -2, CardTarget.NONE);
         initInfo();
     }
 

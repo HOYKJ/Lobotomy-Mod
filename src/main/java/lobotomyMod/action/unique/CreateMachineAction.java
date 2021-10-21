@@ -72,10 +72,10 @@ public class CreateMachineAction extends AbstractGameAction
                 return;
             }
             if(this.type){
-                AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new MachineNoon(this.x, this.y), false));
+                AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new MachineNoon(this.x, this.y), false, AbstractDungeon.getCurrRoom().monsters.monsters.size()));
             }
             else {
-                AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new MachineDawn(this.x, this.y), false));
+                AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new MachineDawn(this.x, this.y), false, AbstractDungeon.getCurrRoom().monsters.monsters.size()));
             }
         }
         tickDuration();

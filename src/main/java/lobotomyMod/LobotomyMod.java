@@ -8,12 +8,15 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.map.DungeonMap;
 import com.megacrit.cardcrawl.vfx.RestartForChangesEffect;
 import lobotomyMod.card.rareCard.PlagueDoctor;
+import lobotomyMod.card.uncommonCard.Freischutz;
 import lobotomyMod.character.Angela;
 import lobotomyMod.character.LobotomyCardPool;
 import lobotomyMod.character.LobotomyHandler;
@@ -23,6 +26,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import lobotomyMod.event.BossRushEvent;
 import lobotomyMod.helper.LobotomyFontHelper;
 import lobotomyMod.helper.LobotomyImageMaster;
 import lobotomyMod.patch.CharacterEnum;
@@ -50,6 +54,8 @@ public class LobotomyMod implements StartGameSubscriber, PostInitializeSubscribe
     public static int[] levelSave = new int[120];
     public static int apostles;
     public static int usedFixer;
+    public static int deadTime;
+    public static int meltdownCode;
     public static boolean enableOrdeal;
     public static boolean hasYin;
     public static boolean hasBackward;
@@ -57,7 +63,12 @@ public class LobotomyMod implements StartGameSubscriber, PostInitializeSubscribe
     public static boolean defeatFixer;
     public static boolean activeRabbit;
     public static boolean activeAngela;
-    public static boolean[] activeTutorials = new boolean[]{true, true, true, true, true};
+    public static boolean activeChampagne;
+    public static boolean activeBlackAngela;
+    public static boolean useBlackAngela;
+    public static boolean[] activeTutorials = new boolean[]{true, true, true, true, true, true};
+    public static boolean deleteSave;
+    public static boolean challengeEvent;
     public static RabbitOrderScreen rabbitOrderScreen;
     public static int departments[] = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -72,6 +83,8 @@ public class LobotomyMod implements StartGameSubscriber, PostInitializeSubscribe
             defaults.setProperty("PE", "0");
             defaults.setProperty("apostles", "0");
             defaults.setProperty("usedFixer", "0");
+            defaults.setProperty("deadTime", "0");
+            defaults.setProperty("meltdownCode", "0");
             defaults.setProperty("enableOrdeal", "true");
             defaults.setProperty("hasYin", "false");
             defaults.setProperty("hasBackward", "false");
@@ -79,6 +92,10 @@ public class LobotomyMod implements StartGameSubscriber, PostInitializeSubscribe
             defaults.setProperty("defeatFixer", "false");
             defaults.setProperty("activeRabbit", "false");
             defaults.setProperty("activeAngela", "false");
+            defaults.setProperty("activeChampagne", "false");
+            defaults.setProperty("activeBlackAngela", "false");
+            defaults.setProperty("useBlackAngela", "false");
+            defaults.setProperty("challengeEvent", "true");
             for(int i = 0; i < levelSave.length; i ++) {
                 defaults.setProperty("levelSave" + i, "0");
             }
@@ -92,6 +109,8 @@ public class LobotomyMod implements StartGameSubscriber, PostInitializeSubscribe
             LobotomyMod.PE = config.getInt("PE");
             LobotomyMod.apostles = config.getInt("apostles");
             LobotomyMod.usedFixer = config.getInt("usedFixer");
+            LobotomyMod.deadTime = config.getInt("deadTime");
+            LobotomyMod.meltdownCode = config.getInt("meltdownCode");
             LobotomyMod.enableOrdeal = config.getBool("enableOrdeal");
             LobotomyMod.hasYin = config.getBool("hasYin");
             LobotomyMod.hasBackward = config.getBool("hasBackward");
@@ -99,6 +118,10 @@ public class LobotomyMod implements StartGameSubscriber, PostInitializeSubscribe
             LobotomyMod.defeatFixer = config.getBool("defeatFixer");
             LobotomyMod.activeRabbit = config.getBool("activeRabbit");
             LobotomyMod.activeAngela = config.getBool("activeAngela");
+            LobotomyMod.activeChampagne = config.getBool("activeChampagne");
+            LobotomyMod.activeBlackAngela = config.getBool("activeBlackAngela");
+            LobotomyMod.useBlackAngela = config.getBool("useBlackAngela");
+            LobotomyMod.challengeEvent = config.getBool("challengeEvent");
             for(int i = 0; i < levelSave.length; i ++) {
                 LobotomyMod.levelSave[i] = config.getInt("levelSave" + i);
             }
@@ -111,6 +134,8 @@ public class LobotomyMod implements StartGameSubscriber, PostInitializeSubscribe
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        LobotomyHandler.addRecallAbnormality();
 
         logger.info("=========================== 初始化Lobotomy Mod成功 ===========================");
         logger.info("========================正在注入新卡片相关信息========================");
@@ -131,38 +156,17 @@ public class LobotomyMod implements StartGameSubscriber, PostInitializeSubscribe
         if (!CardCrawlGame.loadingSave) {
             logger.info("==========================第一次载入初始化==========================");
 
-            LobotomyMod.usedFixer = 0;
-            LobotomyMod.hasYin = false;
-            LobotomyMod.hasBackward = false;
-            LobotomyMod.activeFixer = false;
-            System.arraycopy(LobotomyMod.levelSave, 0, CogitoBucket.level, 0, LobotomyMod.levelSave.length);
-            LobotomyCardPool.reload = false;
-            LobotomyCardPool.addCardPool();
-            CogitoBucket.level[0] = 1;
-            for(int i = 0; i < Angela.departments.length; i ++) {
-                departments[i] = 0;
-                Angela.departments[i] = 0;
-            }
+            LobotomyHandler.firstStart();
 
             logger.info("==========================第一次载入初始化o了==========================");
         }
         else {
-            LobotomyCardPool.reload = true;
-            LobotomyCardPool.reloadCardPool();
+            logger.info("=========================数据载入=========================");
 
-//            if(AbstractDungeon.player instanceof Angela){
-//                ((Angela) AbstractDungeon.player).bless = true;
-//            }
+            LobotomyHandler.loadStart();
 
-            if(DungeonMap.boss == null){
-                DungeonMap.boss = ImageMaster.loadImage("lobotomyMod/images/ui/map/boss/claw.png");
-                DungeonMap.bossOutline = ImageMaster.loadImage("lobotomyMod/images/ui/map/bossOutline/claw.png");
-            }
+            logger.info("=========================数据载入也o了=========================");
         }
-        logger.info("=========================数据载入=========================");
-
-        logger.info("=========================数据载入也o了=========================");
-
     }
 
     public void receivePostInitialize() {
@@ -180,6 +184,8 @@ public class LobotomyMod implements StartGameSubscriber, PostInitializeSubscribe
         } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException | NoSuchFieldException e) {
             e.printStackTrace();
         }
+
+        //BaseMod.addEvent(BossRushEvent.ID, BossRushEvent.class, Exordium.ID);
 
         logger.info("========================= receivePostInitializeDone =========================");
     }
@@ -232,8 +238,8 @@ public class LobotomyMod implements StartGameSubscriber, PostInitializeSubscribe
         if(LobotomyMod.activeAngela) {
             logger.info("add " + CharacterEnum.Angela.toString());
 
-            BaseMod.addCharacter(
-                    new Angela("Angela"), "lobotomyMod/images/ui/charSelect/angela/AngelaButton.png", "lobotomyMod/images/ui/charSelect/angela/AngelaPortrait.jpg",
+            BaseMod.addCharacter(new Angela("Angela"), "lobotomyMod/images/ui/charSelect/angela/AngelaButton.png",
+                    (LobotomyMod.useBlackAngela?"lobotomyMod/images/ui/charSelect/angela/angelaCG3.jpg": "lobotomyMod/images/ui/charSelect/angela/AngelaPortrait.jpg"),
                     CharacterEnum.Angela);
         }
 
@@ -257,9 +263,66 @@ public class LobotomyMod implements StartGameSubscriber, PostInitializeSubscribe
             catch (IOException e) {
                 e.printStackTrace();
             }
-            return;
         });
         settingsPanel.addUIElement(SoundOpen);
+
+        if(LobotomyMod.activeBlackAngela) {
+            final ModLabeledToggleButton BlackAngelaOpen = new ModLabeledToggleButton(TEXT[1], 500.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, LobotomyMod.useBlackAngela, settingsPanel, label -> {
+            }, button -> {
+                spireConfig.setBool("useBlackAngela", LobotomyMod.useBlackAngela = button.enabled);
+                CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
+                CardCrawlGame.mainMenuScreen.optionPanel.effects.add(new RestartForChangesEffect());
+
+                try {
+                    spireConfig.save();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+            settingsPanel.addUIElement(BlackAngelaOpen);
+        }
+
+        final ModLabeledToggleButton tutorialOpen = new ModLabeledToggleButton(TEXT[2], 500.0f, 550.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, LobotomyMod.activeTutorials[0], settingsPanel, label -> {
+        }, button -> {
+            for(int i = 0; i < LobotomyMod.activeTutorials.length; i ++) {
+                spireConfig.setBool("activeTutorials", LobotomyMod.activeTutorials[i] = button.enabled);
+            }
+            CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
+
+            try {
+                spireConfig.save();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        settingsPanel.addUIElement(tutorialOpen);
+
+        final ModLabeledToggleButton deleteSaveOpen = new ModLabeledToggleButton(TEXT[3], 500.0f, 450.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, LobotomyMod.deleteSave, settingsPanel, label -> {
+        }, button -> {
+            spireConfig.setBool("deleteSave", LobotomyMod.deleteSave = button.enabled);
+            CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
+            CardCrawlGame.mainMenuScreen.optionPanel.effects.add(new RestartForChangesEffect());
+
+            try {
+                spireConfig.save();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        settingsPanel.addUIElement(deleteSaveOpen);
+
+        final ModLabeledToggleButton challengeEvent = new ModLabeledToggleButton("show Core Suppression", 500.0f, 350.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, LobotomyMod.challengeEvent, settingsPanel, label -> {
+        }, button -> {
+            spireConfig.setBool("challengeEvent", LobotomyMod.challengeEvent = button.enabled);
+            CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
+
+            try {
+                spireConfig.save();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        settingsPanel.addUIElement(challengeEvent);
 
         Texture badgeTexture = new Texture(Gdx.files.internal("lobotomyMod/images/Lobotomy.png"));
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
@@ -270,6 +333,8 @@ public class LobotomyMod implements StartGameSubscriber, PostInitializeSubscribe
         config.setInt("PE", LobotomyMod.PE);
         config.setInt("apostles", LobotomyMod.apostles);
         config.setInt("usedFixer", LobotomyMod.usedFixer);
+        config.setInt("deadTime", LobotomyMod.deadTime);
+        config.setInt("meltdownCode", LobotomyMod.meltdownCode);
         config.setBool("enableOrdeal", LobotomyMod.enableOrdeal);
         config.setBool("hasYin", LobotomyMod.hasYin);
         config.setBool("hasBackward", LobotomyMod.hasBackward);
@@ -277,6 +342,10 @@ public class LobotomyMod implements StartGameSubscriber, PostInitializeSubscribe
         config.setBool("defeatFixer", LobotomyMod.defeatFixer);
         config.setBool("activeRabbit", LobotomyMod.activeRabbit);
         config.setBool("activeAngela", LobotomyMod.activeAngela);
+        config.setBool("activeChampagne", LobotomyMod.activeChampagne);
+        config.setBool("activeBlackAngela", LobotomyMod.activeBlackAngela);
+        config.setBool("useBlackAngela", LobotomyMod.useBlackAngela);
+        config.setBool("challengeEvent", LobotomyMod.challengeEvent);
         for(int i = 0; i < levelSave.length; i ++) {
             config.setInt("levelSave" +  i, LobotomyMod.levelSave[i]);
         }

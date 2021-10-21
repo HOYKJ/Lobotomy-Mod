@@ -21,7 +21,7 @@ public class Galaxy extends AbstractEgoCard {
     public static final String[] EXTENDED_DESCRIPTION;
 
     public Galaxy() {
-        super("Galaxy", Galaxy.NAME, 2, Galaxy.DESCRIPTION, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF_AND_ENEMY);
+        super("Galaxy", Galaxy.NAME, 2, Galaxy.DESCRIPTION, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseBlock = 28;
     }
 

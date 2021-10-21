@@ -30,6 +30,7 @@ public class LastHelixLaserEffect extends AbstractGameEffect {
     private static TextureAtlas.AtlasRegion img;
     private Bone bone;
     private AbstractMonster monster;
+    private boolean started;
 
     public LastHelixLaserEffect(Skeleton skeleton, Bone bone, AbstractMonster monster)
     {
@@ -44,18 +45,28 @@ public class LastHelixLaserEffect extends AbstractGameEffect {
 
         this.color = new Color(107 / 255.0F, 1, 173 / 255.0F, 0.9F);
 
-        this.duration = Settings.FAST_MODE? 0.06F: 0.1F;
+        this.duration = Settings.FAST_MODE? 0.09F: 0.15F;
+        this.started = false;
     }
 
     public void update()
     {
         this.rotation = this.bone.getRotation();
 
+        while(this.rotation < -360){
+            this.rotation += 360;
+        }
+
         if(this.rotation <= -358){
-            AbstractDungeon.effectsQueue.add(new LatterEffect(()->{
-                this.monster.changeState("RESTART");
-            }, Settings.FAST_MODE? 4: 6));
-            this.isDone = true;
+            if(this.started) {
+                AbstractDungeon.effectsQueue.add(new LatterEffect(() -> {
+                    this.monster.changeState("RESTART");
+                }, Settings.FAST_MODE ? 4 : 6));
+                this.isDone = true;
+            }
+        }
+        else {
+            this.started = true;
         }
 
         float r1 = MathUtils.atan2(this.sX - AbstractDungeon.player.hb.x - AbstractDungeon.player.hb.width, this.sY - AbstractDungeon.player.hb.y) * 57.295776F + 180;
@@ -64,11 +75,11 @@ public class LastHelixLaserEffect extends AbstractGameEffect {
         if(-this.rotation > r1 && -this.rotation < r2){
             this.duration -= Gdx.graphics.getDeltaTime();
             if(this.duration <= 0){
-                this.duration = Settings.FAST_MODE? 0.06F: 0.1F;
+                this.duration = Settings.FAST_MODE? 0.3F: 0.5F;
 //                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(this.monster, 10, DamageInfo.DamageType.THORNS),
 //                        AbstractGameAction.AttackEffect.NONE));
                 AbstractDungeon.actionManager.addToTop(new LatterAction(()->{
-                    AbstractDungeon.player.damage(new DamageInfo(this.monster, 10, DamageInfo.DamageType.THORNS));
+                    AbstractDungeon.player.damage(new DamageInfo(this.monster, 8, DamageInfo.DamageType.THORNS));
                 }));
             }
         }
@@ -81,7 +92,7 @@ public class LastHelixLaserEffect extends AbstractGameEffect {
         sb.draw(img, this.sX + 10 * Settings.scale * (float)Math.cos(Math.toRadians(Math.abs(this.rotation))),
                 this.sY - img.packedHeight / 2.0F - 10 * Settings.scale * (float)Math.sin(Math.toRadians(Math.abs(this.rotation))), 0.0F,
                 img.packedHeight / 2.0F, Settings.WIDTH * 1.2F, 120.0F, this.scale + MathUtils.random(-0.01F, 0.01F), this.scale, this.rotation + 90);
-        //LobotomyMod.logger.info("----------rotation: " + this.rotation);
+        LobotomyMod.logger.info("----------rotation: " + this.rotation);
         sb.setBlendFunction(770, 771);
     }
 

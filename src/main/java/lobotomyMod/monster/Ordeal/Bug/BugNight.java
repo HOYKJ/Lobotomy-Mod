@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ShiftingPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import lobotomyMod.action.common.LatterAction;
 import lobotomyMod.monster.Ordeal.AbstractOrdealMonster;
 import lobotomyMod.monster.Ordeal.Machine.MachineNoon;
@@ -145,8 +146,13 @@ public class BugNight extends AbstractOrdealMonster {
                 onFinalBossVictoryLogic();
                 return;
             }
-            AbstractDungeon.getCurrRoom().addRelicToRewards(new AtMidnight());
             AbstractDungeon.topLevelEffects.add(new OrdealTitleBack(2, 3, true));
+            for(RewardItem ri : AbstractDungeon.getCurrRoom().rewards){
+                if (ri.relic instanceof AtMidnight){
+                    return;
+                }
+            }
+            AbstractDungeon.getCurrRoom().addRelicToRewards(new AtMidnight());
         }
     }
 

@@ -64,7 +64,7 @@ public class YinYangAction extends AbstractGameAction {
                 target.currentHealth = (int) (target.maxHealth * (1 - tmp));
                 target.healthBarUpdatedEvent();
                 if(target.currentHealth < 1){
-                    AbstractDungeon.getCurrRoom().cannotLose = true;
+                    AbstractDungeon.getCurrRoom().cannotLose = false;
                     target.die();
                 }
             }

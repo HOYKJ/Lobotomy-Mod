@@ -34,7 +34,7 @@ public class BigBadWolf extends AbstractLobotomyCard implements CustomSavable<in
     public ArrayList<AbstractCard> sheep = new ArrayList<>();
 
     public BigBadWolf() {
-        super("BigBadWolf", BigBadWolf.NAME, BigBadWolf.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 58, 4, 0);
+        super("BigBadWolf", BigBadWolf.NAME, BigBadWolf.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 58, 4, 1, CardTarget.NONE);
         initInfo();
     }
 

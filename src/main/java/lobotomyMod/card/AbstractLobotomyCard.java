@@ -35,6 +35,8 @@ public abstract class AbstractLobotomyCard extends CustomCard{
     public int infoStage = 1;
     public int maxInfo;
     public CardRarity realRarity;
+    public boolean canActivated;
+    public CardTarget realTarget;
 
     public AbstractLobotomyCard(final String id, final String name, final String description, final CardRarity rarity, final CardTarget target, final int AbnormalityID, final int maxInfo, final int realCost) {
         super(id, name, LobotomyHandler.lobotomyLockCardImage(), -1, description, CardType.SKILL, AbstractCardEnum.Lobotomy, CardRarity.SPECIAL, target);
@@ -42,6 +44,18 @@ public abstract class AbstractLobotomyCard extends CustomCard{
         this.maxInfo = maxInfo;
         this.realCost = realCost;
         this.realRarity = rarity;
+        this.canActivated = false;
+        this.realTarget = target;
+    }
+
+    public AbstractLobotomyCard(final String id, final String name, final String description, final CardRarity rarity, final CardTarget target, final int AbnormalityID, final int maxInfo, final int realCost, final CardTarget realTarget) {
+        super(id, name, LobotomyHandler.lobotomyLockCardImage(), -1, description, CardType.SKILL, AbstractCardEnum.Lobotomy, CardRarity.SPECIAL, target);
+        this.AbnormalityID = AbnormalityID;
+        this.maxInfo = maxInfo;
+        this.realCost = realCost;
+        this.realRarity = rarity;
+        this.canActivated = false;
+        this.realTarget = realTarget;
     }
 
     public void obtain(){
@@ -89,6 +103,7 @@ public abstract class AbstractLobotomyCard extends CustomCard{
         this.cost = this.realCost;
         this.costForTurn = this.realCost;
         this.rarity = this.realRarity;
+        this.target = this.realTarget;
     }
 
     public void changeCost(int cost){
@@ -106,6 +121,12 @@ public abstract class AbstractLobotomyCard extends CustomCard{
     }
 
     public boolean canUnlockInfo(){
+        if (AbstractDungeon.player == null){
+            return false;
+        }
+        if(!(AbstractDungeon.player.hasRelic(CogitoBucket.ID))){
+            return false;
+        }
         int unlockCost = 0;
         switch (this.realRarity){
             case COMMON:

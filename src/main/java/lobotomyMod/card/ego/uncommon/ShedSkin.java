@@ -39,7 +39,7 @@ public class ShedSkin extends AbstractEgoCard {
             p.getRelic("Chemical X").flash();
         }
         int tmp = Math.min(e, p.hand.size() - 1);
-        if(tmp <= 1){
+        if(tmp < 1){
             return;
         }
         AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, tmp, false));

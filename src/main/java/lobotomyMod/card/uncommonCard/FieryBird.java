@@ -33,7 +33,7 @@ public class FieryBird extends AbstractLobotomyCard implements CustomSavable<int
     private boolean used;
 
     public FieryBird() {
-        super("FieryBird", FieryBird.NAME, FieryBird.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 101, 6, 0);
+        super("FieryBird", FieryBird.NAME, FieryBird.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 101, 6, 0, CardTarget.ALL);
         this.baseDamage = 4;
         this.isMultiDamage = true;
         initInfo();

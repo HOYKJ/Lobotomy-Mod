@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import lobotomyMod.card.AbstractLobotomyCard;
+import lobotomyMod.card.deriveCard.NestCard;
 import lobotomyMod.character.LobotomyHandler;
 import lobotomyMod.relic.CogitoBucket;
 
@@ -31,7 +32,7 @@ public class RedShoes extends AbstractLobotomyCard implements CustomSavable<int[
     private AbstractCard targetCard;
 
     public RedShoes() {
-        super("RedShoes", RedShoes.NAME, RedShoes.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 8, 3, 0);
+        super("RedShoes", RedShoes.NAME, RedShoes.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 8, 3, 0, CardTarget.SELF);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
         this.active = false;
@@ -55,6 +56,9 @@ public class RedShoes extends AbstractLobotomyCard implements CustomSavable<int[
             AbstractDungeon.actionManager.addToBottom(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 1));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.magicNumber), this.magicNumber));
         }
+        if(card == this.targetCard){
+            this.targetCard.exhaust = true;
+        }
     }
 
     @Override
@@ -71,7 +75,7 @@ public class RedShoes extends AbstractLobotomyCard implements CustomSavable<int[
             return;
         }
         this.targetCard.exhaust = true;
-        this.targetCard.rawDescription += " 消耗 .";
+        this.targetCard.rawDescription += NestCard.DESCRIPTION;
     }
 
     @Override
@@ -87,6 +91,7 @@ public class RedShoes extends AbstractLobotomyCard implements CustomSavable<int[
         super.endOfTurn(hand);
         this.active = false;
         if(this.targetCard != null){
+            this.targetCard.exhaust = true;
             AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player,
                     this.targetCard.baseDamage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
         }

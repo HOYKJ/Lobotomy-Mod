@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import lobotomyMod.relic.toolAbnormality.ResearcherNote;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -33,7 +34,7 @@ public class RecordCodeAction extends AbstractGameAction {
     public void update() {
         AbstractCard derp;
         if (this.duration == Settings.ACTION_DUR_FAST) {
-            if (AbstractDungeon.player.hand.size() == 10) {
+            if (AbstractDungeon.player.hand.size() == 10 && !AbstractDungeon.player.hasRelic(ResearcherNote.ID)) {
                 AbstractDungeon.player.createHandIsFullDialog();
                 this.isDone = true;
             } else if (this.p.exhaustPile.isEmpty()) {

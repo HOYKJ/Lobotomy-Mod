@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import lobotomyMod.LobotomyMod;
 import lobotomyMod.character.Angela;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class SpecialBullet extends AbstractBulletCard {
     public static final String DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION;
     private Angela.AimType aimType;
-    private AbstractBulletCard tb;
+    public AbstractBulletCard tb;
     private ArrayList<AbstractBulletCard> bulletList = new ArrayList<>();
 
     public SpecialBullet() {
@@ -61,11 +62,15 @@ public class SpecialBullet extends AbstractBulletCard {
                 }
             }
         }
+        LobotomyMod.logger.info("is free to play: " + this.freeToPlayOnce);
     }
 
     @Override
     public void update() {
         super.update();
+        if(AbstractDungeon.player != null && AbstractDungeon.player.masterDeck.contains(this)){
+            return;
+        }
         if(AbstractDungeon.player instanceof Angela && this.aimType != ((Angela) AbstractDungeon.player).aimType){
             this.changeAim(((Angela) AbstractDungeon.player).aimType);
         }
@@ -136,17 +141,23 @@ public class SpecialBullet extends AbstractBulletCard {
     }
 
     @Override
+    public void setCostForTurn(int amt) {
+        super.setCostForTurn(amt);
+        this.feedBack();
+    }
+
+    @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if(this.tb == null) {
             return super.canUse(p, m);
         }
+        this.tb.freeToPlayOnce = this.freeToPlayOnce;
         return this.tb.canUse(p, m);
     }
 
     @Override
     public void modifyCostForCombat(int amt) {
         super.modifyCostForCombat(amt);
-
     }
 
     private void initAim(){
@@ -158,25 +169,30 @@ public class SpecialBullet extends AbstractBulletCard {
         this.magicNumber = this.baseMagicNumber;
         this.isCostModified = this.tb.isCostModified;
         this.isCostModifiedForTurn = this.tb.isCostModifiedForTurn;
-        this.freeToPlayOnce = this.tb.freeToPlayOnce;
+        //this.freeToPlayOnce = this.tb.freeToPlayOnce;
         this.exhaust = this.tb.exhaust;
         this.isEthereal = this.tb.isEthereal;
         this.purgeOnUse = this.tb.purgeOnUse;
+        this.type = this.tb.type;
         this.initializeDescription();
     }
 
     private void initAim2(){
-        this.cost = this.tb.cost;
-        this.costForTurn = this.tb.costForTurn;
+        //this.cost = this.tb.cost;
+        //this.costForTurn = this.tb.costForTurn;
         this.damage = this.tb.damage;
         this.block = this.tb.block;
         this.magicNumber = this.tb.magicNumber;
+        this.isDamageModified = this.tb.isDamageModified;
+        this.isBlockModified = this.tb.isBlockModified;
+        this.isMagicNumberModified = this.tb.isMagicNumberModified;
         this.isCostModified = this.tb.isCostModified;
         this.isCostModifiedForTurn = this.tb.isCostModifiedForTurn;
-        this.freeToPlayOnce = this.tb.freeToPlayOnce;
+        //this.freeToPlayOnce = this.tb.freeToPlayOnce;
         this.exhaust = this.tb.exhaust;
         this.isEthereal = this.tb.isEthereal;
         this.purgeOnUse = this.tb.purgeOnUse;
+        this.type = this.tb.type;
         this.initializeDescription();
     }
 
@@ -189,7 +205,7 @@ public class SpecialBullet extends AbstractBulletCard {
         this.tb.magicNumber = this.tb.baseMagicNumber;
         this.tb.isCostModified = this.isCostModified;
         this.tb.isCostModifiedForTurn = this.isCostModifiedForTurn;
-        this.tb.freeToPlayOnce = this.freeToPlayOnce;
+        //this.tb.freeToPlayOnce = this.freeToPlayOnce;
         this.tb.exhaust = this.exhaust;
         this.tb.isEthereal = this.isEthereal;
         this.tb.purgeOnUse = this.purgeOnUse;
@@ -197,6 +213,15 @@ public class SpecialBullet extends AbstractBulletCard {
 
     public AbstractCard makeCopy() {
         return new SpecialBullet();
+    }
+
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        SpecialBullet card = (SpecialBullet) super.makeStatEquivalentCopy();
+        if(this.aimType != null) {
+            card.changeAim(this.aimType);
+        }
+        return card;
     }
 
     static {

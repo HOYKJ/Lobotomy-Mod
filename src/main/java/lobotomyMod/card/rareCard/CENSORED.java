@@ -30,7 +30,7 @@ public class CENSORED extends AbstractLobotomyCard implements CustomSavable<int[
     public static final String[] EXTENDED_DESCRIPTION;
 
     public CENSORED() {
-        super("CENSORED", CENSORED.NAME, CENSORED.DESCRIPTION, CardRarity.RARE, CardTarget.ENEMY, 89, 4, 1);
+        super("CENSORED", CENSORED.NAME, CENSORED.DESCRIPTION, CardRarity.RARE, CardTarget.ENEMY, 89, 4, 1, CardTarget.NONE);
         this.baseMagicNumber = 12;
         this.magicNumber = this.baseMagicNumber;
         initInfo();

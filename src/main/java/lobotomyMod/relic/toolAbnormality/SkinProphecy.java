@@ -21,6 +21,9 @@ public class SkinProphecy extends AbstractLobotomyAbnRelic {
         super.atBattleStart();
         AbstractDungeon.player.maxHealth += 2;
         AbstractDungeon.player.currentHealth -= 4;
+        if(AbstractDungeon.player.currentHealth < 1){
+            AbstractDungeon.player.currentHealth = 1;
+        }
         AbstractDungeon.player.healthBarUpdatedEvent();
     }
 

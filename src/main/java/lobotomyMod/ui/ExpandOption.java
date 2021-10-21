@@ -41,8 +41,10 @@ public class ExpandOption extends AbstractCampfireOption {
 
     public void useOption()
     {
+        Angela.tmpD = Angela.departments.clone();
         final ChooseEffect choice = new ChooseEffect(null, null, Angela.TEXT[3], false, 1);
-        if (Angela.departments[Malkuth.departmentCode[0]] < 4) {
+        int max = LobotomyMod.useBlackAngela? 5: 4;
+        if (Angela.departments[Malkuth.departmentCode[0]] < max) {
             AbstractDepartmentCard tmp = new Malkuth(true);
             choice.add(tmp, ()->{
                 tmp.tackAction();
@@ -50,8 +52,7 @@ public class ExpandOption extends AbstractCampfireOption {
             });
         }
 
-        if (Angela.departments[Yesod.departmentCode[0]] < 4) {
-            LobotomyMod.logger.info("----------test: " + Angela.departments[Yesod.departmentCode[0]] + Yesod.departmentCode[0]);
+        if (Angela.departments[Yesod.departmentCode[0]] < max) {
             AbstractDepartmentCard tmp = new Yesod(true);
             choice.add(tmp, ()->{
                 tmp.tackAction();
@@ -59,7 +60,7 @@ public class ExpandOption extends AbstractCampfireOption {
             });
         }
 
-        if (Angela.departments[Netzach.departmentCode[0]] < 4) {
+        if (Angela.departments[Netzach.departmentCode[0]] < max) {
             AbstractDepartmentCard tmp = new Netzach(true);
             choice.add(tmp, ()->{
                 tmp.tackAction();
@@ -67,7 +68,7 @@ public class ExpandOption extends AbstractCampfireOption {
             });
         }
 
-        if (Angela.departments[Hod.departmentCode[0]] < 4) {
+        if (Angela.departments[Hod.departmentCode[0]] < max) {
             AbstractDepartmentCard tmp = new Hod(true);
             choice.add(tmp, ()->{
                 tmp.tackAction();
@@ -75,7 +76,7 @@ public class ExpandOption extends AbstractCampfireOption {
             });
         }
 
-        if (Angela.departments[Tiphereth.departmentCode[0]] < 4) {
+        if (Angela.departments[Tiphereth.departmentCode[0]] < max) {
             AbstractDepartmentCard tmp = new Tiphereth(true);
             choice.add(tmp, ()->{
                 tmp.tackAction();
@@ -83,7 +84,7 @@ public class ExpandOption extends AbstractCampfireOption {
             });
         }
 
-        if (Angela.departments[Chesed.departmentCode[0]] < 4) {
+        if (Angela.departments[Chesed.departmentCode[0]] < max) {
             AbstractDepartmentCard tmp = new Chesed(true);
             choice.add(tmp, ()->{
                 tmp.tackAction();
@@ -91,7 +92,7 @@ public class ExpandOption extends AbstractCampfireOption {
             });
         }
 
-        if (Angela.departments[Geburah.departmentCode[0]] < 4) {
+        if (Angela.departments[Geburah.departmentCode[0]] < max) {
             AbstractDepartmentCard tmp = new Geburah(true);
             choice.add(tmp, ()->{
                 tmp.tackAction();
@@ -99,7 +100,7 @@ public class ExpandOption extends AbstractCampfireOption {
             });
         }
 
-        if (Angela.departments[Hokma.departmentCode[0]] < 4) {
+        if (Angela.departments[Hokma.departmentCode[0]] < max) {
             AbstractDepartmentCard tmp = new Hokma(true);
             choice.add(tmp, ()->{
                 tmp.tackAction();
@@ -107,7 +108,7 @@ public class ExpandOption extends AbstractCampfireOption {
             });
         }
 
-        if (Angela.departments[Binah.departmentCode[0]] < 4) {
+        if (Angela.departments[Binah.departmentCode[0]] < max) {
             AbstractDepartmentCard tmp = new Binah(true);
             choice.add(tmp, ()->{
                 tmp.tackAction();

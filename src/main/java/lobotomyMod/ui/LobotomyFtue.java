@@ -70,8 +70,8 @@ public class LobotomyFtue extends FtueTip
                 this.img3 = ImageMaster.loadImage("lobotomyMod/images/ui/tip/t1.png");
                 msg1 = MSG[0];
                 msg2 = MSG[1];
-                msg3 = MSG[2];
-                this.closeScreen = -2;
+                msg3 = "";
+                this.closeScreen = -1;
                 break;
             case 1:
                 this.img1 = ImageMaster.loadImage("lobotomyMod/images/ui/tip/t2.png");
@@ -103,6 +103,13 @@ public class LobotomyFtue extends FtueTip
                 this.img2 = ImageMaster.loadImage("lobotomyMod/images/ui/tip/t8.png");
                 this.img3 = ImageMaster.loadImage("lobotomyMod/images/ui/tip/t8.png");
                 msg1 = MSG[9];
+                this.closeScreen = 0;
+                break;
+            case 5:
+                this.img1 = ImageMaster.loadImage("lobotomyMod/images/ui/tip/t1.png");
+                this.img2 = ImageMaster.loadImage("lobotomyMod/images/ui/tip/t1.png");
+                this.img3 = ImageMaster.loadImage("lobotomyMod/images/ui/tip/t1.png");
+                msg1 = MSG[2];
                 this.closeScreen = 0;
                 break;
         }
@@ -206,7 +213,7 @@ public class LobotomyFtue extends FtueTip
 
         FontHelper.renderFontCenteredWidth(sb, FontHelper.panelNameFont, LABEL[2], Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F - 360.0F * Settings.scale, Settings.GOLD_COLOR);
 
-        FontHelper.renderFontCenteredWidth(sb, FontHelper.panelNameTitleFont, LABEL[3] + Integer.toString(Math.abs(this.currentSlot - 1)) + "/" +
+        FontHelper.renderFontCenteredWidth(sb, FontHelper.tipBodyFont, LABEL[3] + Integer.toString(Math.abs(this.currentSlot - 1)) + "/" +
                 Integer.toString(Math.abs(this.closeScreen - 1)) + LABEL[4], Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F - 400.0F * Settings.scale, Settings.CREAM_COLOR);
 
         AbstractDungeon.overlayMenu.proceedButton.render(sb);

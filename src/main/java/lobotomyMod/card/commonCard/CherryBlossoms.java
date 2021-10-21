@@ -31,7 +31,7 @@ public class CherryBlossoms extends AbstractLobotomyCard implements CustomSavabl
     private int counter;
 
     public CherryBlossoms() {
-        super("CherryBlossoms", CherryBlossoms.NAME, CherryBlossoms.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 100, 2, 0);
+        super("CherryBlossoms", CherryBlossoms.NAME, CherryBlossoms.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 100, 2, 0, CardTarget.SELF);
         this.baseMagicNumber = 30;
         this.magicNumber = this.baseMagicNumber;
         initInfo();

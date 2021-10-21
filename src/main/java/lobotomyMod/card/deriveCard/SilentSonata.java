@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import lobotomyMod.action.animation.silentMovementAction;
+import lobotomyMod.action.animation.SilentMovementAction;
 
 /**
  * @author hoykj
@@ -31,7 +31,7 @@ public class SilentSonata extends AbstractDeriveCard{
     @Override
     public void triggerWhenDrawn() {
         super.triggerWhenDrawn();
-        AbstractDungeon.actionManager.addToTop(new silentMovementAction(1));
+        AbstractDungeon.actionManager.addToTop(new SilentMovementAction(1));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new WeakPower(AbstractDungeon.player, this.magicNumber, false), this.magicNumber));
         for (int i = (AbstractDungeon.getCurrRoom().monsters.monsters.size() - 1); i >= 0; i--) {
             AbstractMonster target = AbstractDungeon.getCurrRoom().monsters.monsters.get(i);

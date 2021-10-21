@@ -95,6 +95,21 @@ public class ChooseAction extends AbstractGameAction
         this.actions.add(action);
     }
 
+    public void add(final AbstractCard card, final String name, final String description, final Runnable action) {
+        final AbstractCard choice = card.makeStatEquivalentCopy();
+        choice.name = name;
+        choice.rawDescription = description;
+        choice.initializeDescription();
+        if (this.target != null) {
+            choice.calculateCardDamage(this.target);
+        }
+        else {
+            choice.applyPowers();
+        }
+        this.choices.addToTop(choice);
+        this.actions.add(action);
+    }
+
     public void update() {
         if (this.choices.isEmpty()) {
             this.tickDuration();

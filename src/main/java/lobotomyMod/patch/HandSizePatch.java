@@ -38,7 +38,7 @@ public class HandSizePatch {
     @SpirePatch(cls="com.megacrit.cardcrawl.actions.common.DrawCardAction", method="update")
     public static class DrawCardActionFix
     {
-        @SpireInsertPatch(rloc=19)
+        @SpireInsertPatch(rloc=29)
         public static SpireReturn Insert(DrawCardAction _inst)
                 throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException
         {

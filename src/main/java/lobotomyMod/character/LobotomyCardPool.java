@@ -8,6 +8,7 @@ import lobotomyMod.card.AbstractLobotomyCard;
 import lobotomyMod.card.rareCard.PlagueDoctor;
 import lobotomyMod.card.rareCard.WhiteNight;
 import lobotomyMod.card.uncommonCard.Yin;
+import lobotomyMod.relic.CogitoBucket;
 import lobotomyMod.relic.toolAbnormality.AbstractLobotomyAbnRelic;
 import lobotomyMod.relic.toolAbnormality.BackwardClock;
 
@@ -54,7 +55,7 @@ public class LobotomyCardPool {
         abnormalityPoolRare.clear();
         abnormalityPoolRelic.clear();
         for (AbstractCard card : abnormalityListCommon) {
-            if(AbstractDungeon.player.masterDeck.findCardById(card.cardID) != null){
+            if(AbstractDungeon.player.masterDeck.findCardById(card.cardID) != null || CogitoBucket.hasNPC(card.cardID)){
                 continue;
             }
             abnormalityPoolCommon.addToBottom(card.makeCopy());
@@ -63,7 +64,7 @@ public class LobotomyCardPool {
             if((card instanceof Yin) && (LobotomyMod.hasYin)){
                 continue;
             }
-            if(AbstractDungeon.player.masterDeck.findCardById(card.cardID) != null){
+            if(AbstractDungeon.player.masterDeck.findCardById(card.cardID) != null || CogitoBucket.hasNPC(card.cardID)){
                 continue;
             }
             abnormalityPoolUncommon.addToBottom(card.makeCopy());
@@ -75,7 +76,7 @@ public class LobotomyCardPool {
             else if((card instanceof WhiteNight) && (LobotomyMod.apostles < 11)){
                 continue;
             }
-            if(AbstractDungeon.player.masterDeck.findCardById(card.cardID) != null){
+            if(AbstractDungeon.player.masterDeck.findCardById(card.cardID) != null || CogitoBucket.hasNPC(card.cardID)){
                 continue;
             }
             abnormalityPoolRare.addToBottom(card.makeCopy());

@@ -11,8 +11,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import lobotomyMod.action.common.LatterAction;
 import lobotomyMod.monster.Ordeal.AbstractOrdealMonster;
+import lobotomyMod.relic.AtMidnight;
 import lobotomyMod.vfx.ordeal.OrdealTitleBack;
 
 /**
@@ -30,9 +32,9 @@ public class MachineDawn extends AbstractOrdealMonster {
         loadAnimation("lobotomyMod/images/monsters/Ordeal/Machine/Dawn/Machine_Dawn.atlas", "lobotomyMod/images/monsters/Ordeal/Machine/Dawn/Machine_Dawn.json", 2.2F);
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Standing", true);
         e.setTime(e.getEndTime() * MathUtils.random());
-        this.stateData.setMix("Standing", "Attack_01", 0.9F);
-        this.stateData.setMix("Standing", "Attack_02", 0.9F);
-        this.stateData.setMix("Standing", "Dead", 0.9F);
+        this.stateData.setMix("Standing", "Attack_01", 0.1F);
+        this.stateData.setMix("Standing", "Attack_02", 0.1F);
+        this.stateData.setMix("Standing", "Dead", 0.1F);
         this.damage.add(new DamageInfo(this, 5));
         this.setHp(30, 36);
     }
@@ -63,6 +65,12 @@ public class MachineDawn extends AbstractOrdealMonster {
         if(AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
             if(AbstractDungeon.getCurrRoom().monsters.monsters.get(0) instanceof MachineNight){
                 AbstractDungeon.topLevelEffects.add(new OrdealTitleBack(1, 3, true));
+                for(RewardItem ri : AbstractDungeon.getCurrRoom().rewards){
+                    if (ri.relic instanceof AtMidnight){
+                        return;
+                    }
+                }
+                AbstractDungeon.getCurrRoom().addRelicToRewards(new AtMidnight());
                 return;
             }
             AbstractDungeon.topLevelEffects.add(new OrdealTitleBack(1, 1, true));

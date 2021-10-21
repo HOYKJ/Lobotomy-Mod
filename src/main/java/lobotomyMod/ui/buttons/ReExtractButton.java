@@ -138,7 +138,7 @@ public class ReExtractButton {
     static {
         uiStrings = CardCrawlGame.languagePack.getUIString("ReExtractButton");
         TEXT = uiStrings.TEXT;
-        TAKE_Y = 220.0F * Settings.scale;
+        TAKE_Y = (float)Settings.HEIGHT / 2.0F - 340.0F * Settings.scale;
         SHOW_X = (float)Settings.WIDTH / 2.0F + 165.0F * Settings.scale;
         HIDE_X = (float)Settings.WIDTH / 2.0F;
         HITBOX_W = 260.0F * Settings.scale;

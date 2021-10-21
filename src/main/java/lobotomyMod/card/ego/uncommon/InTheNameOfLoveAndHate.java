@@ -24,6 +24,7 @@ public class InTheNameOfLoveAndHate extends AbstractEgoCard {
     public InTheNameOfLoveAndHate() {
         super("InTheNameOfLoveAndHate", InTheNameOfLoveAndHate.NAME, 2, InTheNameOfLoveAndHate.DESCRIPTION, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF_AND_ENEMY);
         this.baseBlock = 32;
+        this.isEthereal = true;
     }
 
     public void use(final AbstractPlayer p, final AbstractMonster m) {

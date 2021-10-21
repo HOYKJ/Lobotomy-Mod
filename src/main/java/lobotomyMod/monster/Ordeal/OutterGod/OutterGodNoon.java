@@ -103,6 +103,9 @@ public class OutterGodNoon extends AbstractOrdealMonster {
             if(this.currentHealth <= 0){
                 return;
             }
+            if (!(this.state.getTracks().get(0).getAnimation().getName().equals("Default"))){
+                return;
+            }
             this.timer -= Gdx.graphics.getDeltaTime();
             if(this.timer <= 0){
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(this, 2, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));

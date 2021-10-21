@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import lobotomyMod.LobotomyMod;
 import lobotomyMod.card.angelaCard.code.ControlCode;
 import lobotomyMod.card.angelaCard.code.DisciplinaryCode;
 import lobotomyMod.card.angelaCard.code.ExtractionCode;
@@ -111,6 +112,10 @@ public class Geburah extends AbstractDepartmentCard {
                 this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[2], EXTENDED_DESCRIPTION[3]));
             case 2:
                 this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[4], EXTENDED_DESCRIPTION[5]));
+            case 3:
+                if(LobotomyMod.useBlackAngela) {
+                    this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[6], EXTENDED_DESCRIPTION[7]));
+                }
         }
     }
 

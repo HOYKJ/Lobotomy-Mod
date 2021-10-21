@@ -41,6 +41,7 @@ public class WhiteNightMonster extends AbstractMonster {
         e.setTime(e.getEndTime() * MathUtils.random());
         this.state.setTimeScale(1.0F);
         this.flipHorizontal = true;
+        this.type = EnemyType.BOSS;
     }
 
     public void usePreBattleAction() {

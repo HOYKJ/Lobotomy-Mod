@@ -2,7 +2,6 @@ package lobotomyMod.card.deriveCard;
 
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,7 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import lobotomyMod.action.animation.silentMovementAction;
+import lobotomyMod.action.animation.SilentMovementAction;
 
 /**
  * @author hoykj
@@ -32,7 +31,7 @@ public class SilentFinal extends AbstractDeriveCard{
     @Override
     public void triggerWhenDrawn() {
         super.triggerWhenDrawn();
-        AbstractDungeon.actionManager.addToTop(new silentMovementAction(5));
+        AbstractDungeon.actionManager.addToTop(new SilentMovementAction(5));
         for (int i = (AbstractDungeon.getCurrRoom().monsters.monsters.size() - 1); i >= 0; i--) {
             AbstractMonster target = AbstractDungeon.getCurrRoom().monsters.monsters.get(i);
             if ((!(target.isDying)) && (target.currentHealth > 0) && (!(target.isEscaping))) {

@@ -35,6 +35,9 @@ public class ReExtractPatch {
     public static class update {
         @SpireInsertPatch(rloc=0)
         public static void Insert(CardRewardScreen _inst){
+            if(!(_inst.rewardGroup.get(0) instanceof AbstractLobotomyCard)){
+                ReExtractField.reExtractButton.get(_inst).hide();
+            }
             ReExtractField.reExtractButton.get(_inst).update();
         }
     }

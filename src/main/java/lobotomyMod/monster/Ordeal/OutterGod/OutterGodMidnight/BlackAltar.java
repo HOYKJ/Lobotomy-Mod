@@ -25,10 +25,11 @@ public class BlackAltar extends AbstractOrdealMonster {
     private BlackAttacker tentacles[] = new BlackAttacker[2];
 
     public BlackAltar(float x, float y, BlackAttacker tentacle, BlackAttacker tentacle2) {
-        super(NAME, "BlackAltar", 600, 0.0F, 90.0F, 540.0F, 360.0F, "lobotomyMod/images/monsters/Ordeal/OutterGod/Midnight/Black.png", x - Settings.WIDTH * 0.75F / Settings.scale + 270, y - 90);
+        super(NAME, "BlackAltar", 400, 0.0F, 90.0F, 540.0F, 360.0F, "lobotomyMod/images/monsters/Ordeal/OutterGod/Midnight/Black.png", x - Settings.WIDTH * 0.75F / Settings.scale + 270, y - 90);
         this.flipHorizontal = true;
         this.tentacles[0] = tentacle;
         this.tentacles[1] = tentacle2;
+        this.type = EnemyType.BOSS;
     }
 
     protected void getMove(int num) {
@@ -58,14 +59,18 @@ public class BlackAltar extends AbstractOrdealMonster {
                 r.onMonsterDeath(this);
             }
             this.powers.clear();
+            for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+                if(m instanceof BlackAttacker){
+                    m.die();
+                }
+            }
             boolean allDead = true;
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                if ((!m.halfDead) && !(m instanceof BlackAttacker)) {
-                    allDead = false;
-                    break;
-                }
-                else if(m instanceof BlackAttacker){
-                    m.die();
+                if (m instanceof PaleAltar || m instanceof RedAltar || m instanceof WhiteAltar){
+                    if (!m.halfDead) {
+                        allDead = false;
+                        break;
+                    }
                 }
             }
             if (allDead) {

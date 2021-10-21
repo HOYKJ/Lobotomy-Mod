@@ -34,7 +34,7 @@ public class GalaxyChild extends AbstractLobotomyCard implements CustomSavable<i
     private ArrayList<AbstractCard> friends = new ArrayList<>();
 
     public GalaxyChild() {
-        super("GalaxyChild", GalaxyChild.NAME, GalaxyChild.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 55, 3, 3);
+        super("GalaxyChild", GalaxyChild.NAME, GalaxyChild.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 55, 3, 3, CardTarget.NONE);
         initInfo();
     }
 

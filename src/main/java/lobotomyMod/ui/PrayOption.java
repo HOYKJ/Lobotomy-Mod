@@ -13,6 +13,7 @@ import lobotomyMod.vfx.action.CampfirePrayEffect;
 public class PrayOption extends AbstractCampfireOption {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("PrayOption");
     public static final String[] TEXT = uiStrings.TEXT;
+
     public static Texture GetUpgradeOptionTexture()
     {
         return new Texture("lobotomyMod/images/ui/campfire/pray.png");

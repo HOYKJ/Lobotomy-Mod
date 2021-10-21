@@ -45,7 +45,7 @@ public class ChangeAnything extends AbstractLobotomyAbnRelic {
         super.onPlayerEndTurn();
         this.canUse = false;
         if(this.active){
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, this.counter)));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, this.counter, DamageInfo.DamageType.HP_LOSS)));
             if(this.turn > 2){
                 this.turn = 0;
                 this.counter ++;
@@ -53,6 +53,7 @@ public class ChangeAnything extends AbstractLobotomyAbnRelic {
             else {
                 this.turn ++;
             }
+            AbstractDungeon.player.gainGold(10);
         }
     }
 

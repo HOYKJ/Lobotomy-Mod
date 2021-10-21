@@ -24,7 +24,7 @@ public class FourthMatchFlame extends AbstractEgoCard {
 
     public FourthMatchFlame() {
         super("FourthMatchFlame", FourthMatchFlame.NAME, -2, FourthMatchFlame.DESCRIPTION, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
-        this.baseDamage = 12;
+        this.baseDamage = 14;
     }
 
     public void use(final AbstractPlayer p, final AbstractMonster m) {

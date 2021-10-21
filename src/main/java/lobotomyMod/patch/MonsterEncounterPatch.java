@@ -24,6 +24,8 @@ import lobotomyMod.monster.Ordeal.Machine.MachineNoon;
 import lobotomyMod.monster.Ordeal.OutterGod.OutterGodDawn;
 import lobotomyMod.monster.Ordeal.OutterGod.OutterGodMidnight.*;
 import lobotomyMod.monster.Ordeal.OutterGod.OutterGodNoon;
+import lobotomyMod.monster.sephirah.*;
+import lobotomyMod.monster.sephirah.Binah.Binah;
 
 /**
  * @author hoykj
@@ -65,11 +67,11 @@ public class MonsterEncounterPatch {
                 BlackAttacker a5 = new BlackAttacker(0, 0, 1);
                 BlackAttacker a6 = new BlackAttacker(0, 0, 2);
                 PaleAttacker a8 = new PaleAttacker(0, 0);
-                PaleAltar a7 = new PaleAltar(Settings.WIDTH - 500, 0, a8);
+                PaleAltar a7 = new PaleAltar(Settings.WIDTH / Settings.scale - 840, 0, a8);
                 a8.addParent(a7);
                 return new MonsterGroup(new AbstractMonster[]{new WhiteAltar(300.0F, 0.0F, a3, a4), new WhiteAttacker(0, 0, 0),
-                        new RedAltar(-20.0F, -20.0F, a1, a2), new RedAttacker(0, 0, 0),
-                        new BlackAltar(Settings.WIDTH - 220, -20.0F, a5, a6), new BlackAttacker(0, 0, 0), a1, a2, a3, a4, a5, a6, a7, a8
+                        new RedAltar(-20.0F, -20.0F, a1, a2), new RedAttacker(0, 0, 0), a7,
+                        new BlackAltar(Settings.WIDTH / Settings.scale - 520, -20.0F, a5, a6), new BlackAttacker(0, 0, 0), a1, a2, a3, a4, a5, a6, a8
                 });
             case "CircusDawn":
                 return new MonsterGroup(new AbstractMonster[]{new CircusDawn(-300.0F, -20.0F), new CircusDawn(-50.0F, 0.0F), new CircusDawn(200.0F, -20.0F)});
@@ -83,6 +85,26 @@ public class MonsterEncounterPatch {
                 return new MonsterGroup(new AbstractMonster[]{new Claw(-50.0F, 0.0F)});
             case "Cleaner":
                 return new MonsterGroup(new AbstractMonster[]{new Cleaner(-550.0F, -20.0F), new Cleaner(-300.0F, 0.0F), new Cleaner(-50.0F, -20.0F), new Cleaner(200.0F, 0.0F)});
+            case "Binah":
+                return new MonsterGroup(new AbstractMonster[]{new Binah(-50.0F, 0.0F)});
+            case "Chesed":
+                return new MonsterGroup(new AbstractMonster[]{new Chesed(-50.0F, 0.0F)});
+            case "Hokma":
+                return new MonsterGroup(new AbstractMonster[]{new Hokma(-50.0F, 0.0F)});
+            case "Geburah":
+                return new MonsterGroup(new AbstractMonster[]{new Geburah(-50.0F, 0.0F)});
+            case "Hod":
+                return new MonsterGroup(new AbstractMonster[]{new Hod(-50.0F, 0.0F)});
+            case "Malkuth":
+                return new MonsterGroup(new AbstractMonster[]{new Malkuth(-50.0F, 0.0F)});
+            case "Netzach":
+                return new MonsterGroup(new AbstractMonster[]{new Netzach(-50.0F, 0.0F)});
+            case "Tiphereth":
+                return new MonsterGroup(new AbstractMonster[]{new Tiphereth(-50.0F, 0.0F)});
+            case "Yesod":
+                return new MonsterGroup(new AbstractMonster[]{new Yesod(-50.0F, 0.0F)});
+            case "Angela":
+                return new MonsterGroup(new AbstractMonster[]{new Angela(-50.0F, 0.0F)});
         }
         return __result;
     }

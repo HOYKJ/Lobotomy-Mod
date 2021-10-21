@@ -178,5 +178,147 @@
     "NAME": "Rabbit",
     "DIALOG": [
     ]
+  },
+
+  "Binah": {
+    "MOVES": [
+      "Key",
+      "Fairies",
+      "Resonate",
+      "Meltdown of Pillars"
+    ],
+    "NAME": "Binah",
+    "DIALOG": [
+      "Call back Garion",
+
+      "Can you stop me with your own power now?",
+      "Go ahead and stop me without her power.",
+      "This brings me back my senses.",
+      "This body can do this. Interesting, yet tenuous.",
+
+      "This body has too much limits.",
+      "If we knew what power this place holds, we could have used it.",
+      "You are being reckless again. You deceived the head.",
+
+      "If you can’t defeat me, you will be crushed by the head.",
+      "The cycle may be cut off, but it will return.",
+      "You can’t escape us.",
+      "What do you think you can do after escaping this prison?",
+
+      "You missed the chance.",
+
+      "You cannot stop the tide with hands.",
+      "Try to stop me, with your own power."
+    ]
+  },
+  "Chesed": {
+    "MOVES": [
+    ],
+    "NAME": "Chesed",
+    "DIALOG": [
+    ]
+  },
+  "Hokma": {
+    "MOVES": [
+    ],
+    "NAME": "Hokma",
+    "DIALOG": [
+      "A price follows a silence.",
+      "I am always paying my price."
+    ]
+  },
+  "Geburah": {
+    "MOVES": [
+      "Red Eyes",
+      "Penitence",
+      "Break Down",
+      "There will be Nothing",
+      "The Movement of Calm",
+      "Bloody Fog only",
+      "Black Smile",
+      "Justitia"
+    ],
+    "NAME": "Geburah",
+    "DIALOG": [
+      "Call back red mist.",
+
+      "I have returned, red mist that has walked out from pain.",
+      "I'm not weak like I used to be. I can now replace any body part and recover from any damage.",
+
+      "There were things that cannot be forgotten.",
+      "Toxic hatred destroys me, and makes me open my eyes again.",
+
+      "Some things can stay warm even through the cold.",
+      "Monsters kill people. There is no end to this sin, and I have descended to bring upon the reckoning.",
+
+      "The path is too far, I have too far to go. My heart is pulsing with anger, but I have to keep going.",
+
+      "Open the Road of Gold.",
+      "The Burrowing Heaven.",
+
+      "Get out.",
+      "Do not stop me.",
+      "It's weak.",
+
+      "Let's Start Hunt.",
+      "Open the Road of King.",
+
+      "After all, with this power, I can not do anything.",
+      "I can feel myself breaking... I will never lay down my sword even if I were to turn to dust..."
+    ]
+  },
+  "Hod": {
+    "MOVES": [
+    ],
+    "NAME": "Hod",
+    "DIALOG": [
+    ]
+  },
+  "Malkuth": {
+    "MOVES": [
+    ],
+    "NAME": "Malkuth",
+    "DIALOG": [
+    ]
+  },
+  "Netzach": {
+    "MOVES": [
+    ],
+    "NAME": "Netzach",
+    "DIALOG": [
+    ]
+  },
+  "Tiphereth": {
+    "MOVES": [
+    ],
+    "NAME": "Tiphereth",
+    "DIALOG": [
+    ]
+  },
+  "Yesod": {
+    "MOVES": [
+    ],
+    "NAME": "Yesod",
+    "DIALOG": [
+    ]
+  },
+  "Angela": {
+    "MOVES": [
+    ],
+    "NAME": "Angela",
+    "DIALOG": [
+    ]
+  },
+  
+  
+  
+  "AbstractFriendlyMonster": {
+    "MOVES": [
+    ],
+    "NAME": "",
+    "DIALOG": [
+	  "Drag",
+	  "Hold down right mouse button to drag"
+    ]
   }
 }

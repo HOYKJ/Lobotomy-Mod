@@ -40,6 +40,9 @@ public class LuminousBracelet extends AbstractLobotomyAbnRelic {
         if(this.counter > 5){
             this.counter = 0;
             AbstractDungeon.player.maxHealth -= 10;
+            if(AbstractDungeon.player.maxHealth < 1){
+                AbstractDungeon.player.maxHealth = 1;
+            }
             if(AbstractDungeon.player.currentHealth > AbstractDungeon.player.maxHealth){
                 AbstractDungeon.player.currentHealth = AbstractDungeon.player.maxHealth;
             }

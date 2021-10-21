@@ -1,11 +1,13 @@
 package lobotomyMod.card.relicCard;
 
 import basemod.abstracts.CustomSavable;
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import lobotomyMod.character.LobotomyHandler;
 import lobotomyMod.relic.CogitoBucket;
 import lobotomyMod.relic.toolAbnormality.AbstractLobotomyAbnRelic;
@@ -43,7 +45,6 @@ public class AdjustmentMirrorRelic extends AbstractLobotomyRelicCard implements 
     public AbstractCard makeCopy() {
         return new AdjustmentMirrorRelic();
     }
-
 
     public void initInfo(){
         if(CogitoBucket.level[this.AbnormalityID] < 1) {

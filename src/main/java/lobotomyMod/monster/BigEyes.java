@@ -93,7 +93,7 @@ public class BigEyes extends AbstractMonster {
             this.powers.clear();
             boolean allDead = true;
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                if ((!m.halfDead) && !(m instanceof ApocalypseBirdMonster)) {
+                if ((!m.halfDead) && (m instanceof LongArm || m instanceof SmallBeak || m instanceof BigEyes)) {
                     allDead = false;
                     break;
                 }
@@ -104,7 +104,9 @@ public class BigEyes extends AbstractMonster {
                     AbstractDungeon.getCurrRoom().cannotLose = false;
                     this.halfDead = false;
                     for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                        m.die();
+                        if(m instanceof LongArm || m instanceof SmallBeak || m instanceof BigEyes || m instanceof ApocalypseBirdMonster) {
+                            m.die();
+                        }
                     }
                 }, 12.0F));
                 AbstractDungeon.effectList.add(new LatterEffect(()->{

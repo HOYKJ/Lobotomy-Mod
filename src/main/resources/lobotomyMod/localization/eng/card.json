@@ -31,8 +31,8 @@
     "I am coming to you. You, who will be reduced to ashes like me.",
     "EXTENDED_DESCRIPTION":[
       "Scorched Girl",
-      "Ethereal. Deal !D! damage to ALL enemies. Increase the damage by 1 for each card in your hand.",
-      "Receive 30 damage when this card be exhausted."
+      "Deal !D! damage to all enemies. Increase the damage dealt by this card by 1 for each card in your hand. Ethereal.",
+      "When this card is Exhausted, deal 30 damage to yourself."
     ]
   },
   "OSAHOGD": {
@@ -41,7 +41,7 @@
     "It feeds on the \"evil\" that surfaces during conversations.",
     "EXTENDED_DESCRIPTION":[
       "One Sin and Hundreds of Good Deeds",
-      "Uncontrollable: Remove a random debuff of yours."
+      "Uncontrollable: Remove a random debuff from yourself."
     ]
   },
   "QueenOfHatred": {
@@ -52,8 +52,8 @@
       "Magical Girl",
       "The Queen of Hatred",
       "Deal !D! damage to ALL enemies. Heal !M! HP.",
-      "If you played cards less than 3 in a turn, increase this card's cost by [E]. Reset when this card is played.",
-      "Reduce this card's effect by half if cost more than 1. If this card's cost more than 2 when drawn, discard your hand except this."
+      "If you play less than 3 cards in a single turn, increase the cost of this card by [E]. Restore the cost after playing it.",
+      "The effectiveness of this card is halved when the cost is above 1. If the cost is above 2 when drawing the card, discard all other cards."
     ]
   },
   "HappyTeddy": {
@@ -63,8 +63,8 @@
     "EXTENDED_DESCRIPTION":[
       "Teddy Bear",
       "Happy Teddy Bear",
-      "Deal !D! damage. Then draw 1 card.",
-      "If you play same type card in succession, Exhaust it."
+      "Deal !D! damage. Draw 1 card.",
+      "If you play 2 cards of the same type in a row, Exhaust the latter card."
     ]
   },
   "RedShoes": {
@@ -74,8 +74,8 @@
     "EXTENDED_DESCRIPTION":[
       "Red Shoes",
       "In this turn whenever you play a Attack, lose 1 HP and gain !M! Strength.",
-      "If this card is in your hand at the end of your turn, give a random Attack card Exhaust.",
-      "Until that card is exhausted, deal damage to you equals to its base damage at the end of your turn and this card can't be play."
+      "If this card is in your hand at the end of your turn, a random Attack card gains Exhaust.",
+      "Before an Attack card that gains Exhaust this way Exhausts, deal its damage to yourself at the end of each turn. This card cannot be played as well."
     ]
   },
   "OldLady": {
@@ -85,7 +85,7 @@
     "EXTENDED_DESCRIPTION":[
       "Old Lady",
       "Deal !D! damage.",
-      "When this card in your hand, whenever you play another card, increase this card's cost by [E]. Reduce this card's cost by [E] when played."
+      "When this card is in your hand, increase its cost by [E] for every other card you play. Playing this card reduces its cost by [E]."
     ]
   },
   "WallGazer": {
@@ -104,9 +104,9 @@
     "And many skins yelled only one word. \"**\".",
     "EXTENDED_DESCRIPTION":[
       "Nothing There",
-      "Whenever you deal damage, heal HP equals to 20% of damage.",
-      "When battle starts or shuffle your draw pile, remove a random card and shape this card into it.",
-      "If you play this card, receive 30 damage. Then remove a random card and shape this card into it.."
+      "20% of damage you deal is converted to lifesteal.",
+      "At the start of combat, randomly remove a card from combat. This card takes up the apperance of the removed card. Repeat this effect each time the deck is shuffled.",
+      "If you play this card, deal 30 damage to yourself, and trigger the same effect above."
     ]
   },
   "MHz": {
@@ -116,8 +116,8 @@
     "EXTENDED_DESCRIPTION":[
       "1.76 MHz",
       "Put a card from your exhaust pile into your hand.",
-      "Increase this card's cost by [E] [E] when play. Reduce this card's cost by [E] when drawn.",
-      "If this card's cost more then 2, will distort other cards."
+      "Increase the cost of this card by [E] [E] after playing it. Reduce the cost by [E] when drawing it.",
+      "If the cost is higher than 2, produce interference."
     ]
   },
   "SingingMachine": {
@@ -126,9 +126,9 @@
     "But nothing was like a music it makes when it eats a human.",
     "EXTENDED_DESCRIPTION":[
       "Singing Machine",
-      "Deal !D! damage. If your HP more then 20%, lose 4 HP and deal more 50% damage.",
-      "When this card in your hand, whenever you exhaust a card, give a random card Exhaust.",
-      "Until those cards are exhausted, exhaust a random card at the end of your turn for each card."
+      "Deal !D! damage. If your current health is higher than 20% of your max HP, lose 4 HP and deal an additional 50% damage.",
+      "When this card is in your hand, a random card gains Exhaust whenever you Exhaust a card.",
+      "Before a card that gains Exhaust this way Exhausts, a random card Exhausts at the end of each turn."
     ]
   },
   "SilentOrchestra": {
@@ -138,7 +138,7 @@
     "EXTENDED_DESCRIPTION":[
       "The Silent Orchestra",
       "Uncontrollable: Draw a card.",
-      "At the end of your turn, remove all your debuffs, exhaust all your Curse and Status.",
+      "At the end of your turn, remove all your debuffs, and Exhaust all Status and Curse cards.",
       "Shuffle a first movement into your draw pile at the start of battle. When you draw a movement, exhaust it and shuffle next movement into your discard pile.",
       "When all movements are exhausted, remove all debuffs and heal all HP for all enemies. Then shuffle a first movement into your draw pile."
     ]
@@ -150,8 +150,8 @@
     "EXTENDED_DESCRIPTION":[
       "Warm-Hearted Woodsman",
       "Whenever an enemy dies, heal !M! HP.",
-      "When this card in your hand, the second and subsequent Skill you played this turn will be exhausted.",
-      "Whenever a Skill is exhausted by this card, receive !D! damage."
+      "When this card is in your hand, Exhaust the second and onwards Skill cards played this turn.",
+      "When a Skill card exhausts from this card's effect, deal !D! damage to yourself."
     ]
   },
   "SnowQueen": {
@@ -161,9 +161,9 @@
     "EXTENDED_DESCRIPTION":[
       "The Snow Queen",
       "Apply 1 Slow. Exhaust.",
-      "Freeze a random card in your hand when this card is exhausted(Increase its cost by 9). Then put a Duel into your hand.",
-      "Duel need to choose another Attack to start, with high damage Attack have a higher chances of winning.",
-      "If you success, unfreeze the card and heal 3 HP for you. Or exhaust that card and chosen Attack."
+      "When this card Exhausts, freeze a random card (increase its cost by 9), and add a Duel into your hand.",
+      "Duel requires a non-frozen Attack card to activate. The higher the damage value, the more likely to succeed.",
+      "After succeeding a Duel, reduce the cost of the frozen card by 9, and gain 3 HP. If the Duel fails, Exhaust the selected card and the frozen card."
     ]
   },
   "BigBird": {
@@ -172,10 +172,10 @@
     "A month later we concluded, there was no such thing as the beast.",
     "EXTENDED_DESCRIPTION":[
       "Big Bird",
-      "Every 3 Attack you play will apply 1 Vulnerable.",
-      "Whenever you play !M! cards, mark a random card which in the same pile with this card. Play the marked card can cancel the mark.",
-      "Marked card will be exhausted at the end of second turn.",
-      "(There will be a hole above marked card)"
+      "Every 3rd Attack card you play applies 1 Vulnerable.",
+      "Every !M! cards you play applies a mark to a random card (only chooses from the same pile). Playing the marked card removes its mark.",
+      "Marked cards Exhaust at the end of the second turn.",
+      "(Marked cards are displayed with a glowing circle at the corner)"
     ]
   },
   "LittleHelper": {
@@ -184,9 +184,9 @@
     "Blood covered the floors, people were running away.",
     "EXTENDED_DESCRIPTION":[
       "Little Helper",
-      "Uncontrollable: 对所有敌人造成 !D! 点伤害.",
-      "在打出1次后激活.",
-      "若回合结束此卡在你手中, 对你造成25%伤害. 在激活状态下打出也会触发此效果."
+      "Uncontrollable: Deal !D! damage to all enemies.",
+      "Becomes active after playing it once.",
+      "If this card is in your hand at the end of the turn, deal 25% of its damage to yourself. Playing this card while it is active also triggers the same effect."
     ]
   },
   "WhitesApple": {
@@ -195,8 +195,8 @@
     "When the day a ripe apple fell off the tree in the garden where the princess and the king stood, the witch's heart was shattered.",
     "EXTENDED_DESCRIPTION":[
       "Snow White's Apple",
-      "Uncontrollable: 你的所有卡获得1次 保留 机会. 虚无 .",
-      "此卡被消耗时给予你 !M! 点力量, 将1张寄生永久加入你的牌组."
+      "Uncontrollable: All cards gain 1 Retain. Ethereal.",
+      "When this card Exhausts, gain !M! Strength. Become Cursed - Parasite."
     ]
   },
   "SpiderBud": {
@@ -205,9 +205,9 @@
     "Unsurprisingly, not a single employee volunteered to retrieve the corpse of their cocooned colleague.",
     "EXTENDED_DESCRIPTION":[
       "Spider Bud",
-      "Uncontrollable: 抽 !M! 张卡.",
-      "打出时将消耗牌堆顶的1张卡.",
-      "每因上一效果消耗1张卡, 此卡抽卡量提升1.(最多提升5)"
+      "Uncontrollable: Draw !M! card(s).",
+      "When this card is played, Exhaust the top card of the deck.",
+      "Increase the cards drawn by this card by 1 for every card that is Exhausted from this card's effect (max 5)."
     ]
   },
   "BeautyBeast": {
@@ -216,9 +216,9 @@
     "But the curse continues, never removed.",
     "EXTENDED_DESCRIPTION":[
       "Beauty and the Beast",
-      "获得 !B! 点 格挡 .",
-      "此卡打出后将获得 消耗 .",
-      "此卡被消耗时,将1张随机卡变为此卡的复制."
+      "Gain !B! Block.",
+      "This card gains Exhaust after playing it.",
+      "When this card Exhausts, a random card becomes a copy of this card."
     ]
   },
   "PlagueDoctor": {
@@ -227,8 +227,8 @@
     "I shall cure you, depriving of every disease and injury you possess.",
     "EXTENDED_DESCRIPTION":[
       "Plague Doctor",
-      "每当你 消耗 1张卡, 恢复 !M! 点生命.",
-      "当你累计 消耗 11张卡后..."
+      "Heal !M! HP whenever you Exhaust a card.",
+      "After Exhausting 11 cards..."
     ]
   },
   "WhiteNight": {
@@ -237,11 +237,11 @@
     "Rise, my servants. Rise and serve me.",
     "EXTENDED_DESCRIPTION":[
       "WhiteNight",
-      "每当你 消耗 1张非\"Sacred\"卡, 恢复 !M! 点生命.(可以被\"Bucket\"激活)",
-      "免疫你受到的低于6点的伤害.(不包括生命流失)",
-      "你无法因此卡外的任何方式回血, 每次造成伤害恢复1点生命.",
-      "若此卡回合结束在你手中, 你失去4点生命, 将所有被 消耗 的使徒加入你的抽牌堆.",
-      "战斗开始时, 将3张使徒加入你的抽牌堆. 若你的卡组中没有\"The Heretic\", 将1张随机卡永久变为\"The Heretic\"."
+      "Each time you Exhaust a non-Sacred card, heal !M! HP (can be activated by \"Bucket\").",
+      "Gain immunity to damage taken that is less than 6 (not excluding HP loss effects).",
+      "You can no longer heal apart from this card's effects. Each time you deal unblocked damage, heal 1 HP.",
+      "If this card is in your hand at the end of the turn, lose 4 HP, and shuffle all Exhausted Apostle cards into your draw pile.",
+      "At the start of combat, add 3 Apostle into your draw pile. If you do not have The Heretic in your deck, a random card permanently transforms into The Heretic."
     ]
   },
   "Rudolta": {
@@ -250,8 +250,8 @@
     "With my infinite hatred, I give you this gift.",
     "EXTENDED_DESCRIPTION":[
       "Rudolta",
-      "将1张随机卡加入你的手牌.",
-      "若回合结束时此卡在你手中, 你失去1点生命."
+      "Add a random card into your hand.",
+      "If this card is in your hand at the end of your turn, lose 1 HP."
     ]
   },
   "QueenBee": {
@@ -260,10 +260,10 @@
     "If you feel a sharp pain in the stomach or a tickling sensation in the neck, the only available action will be to look up at the blue sky one last time.",
     "EXTENDED_DESCRIPTION":[
       "Queen Bee",
-      "对所有敌人造成 !D! 点伤害, 抽 !M! 张卡.",
-      "此卡被打出后, 将随机感染3张卡. 被感染的卡在下回合结束时被消耗, 并将1张工蜂加入抽牌堆.",
-      "被感染的卡打出后可以解除感染. 因工蜂而消耗卡牌时, 将新的工蜂加入抽牌堆.",
-      "(被感染的卡在手中时泛光为黄色)"
+      "Deal !D! damage to all enemies. Draw !M! cards.",
+      "After playing this card, randomly Infect 2 cards. Infected cards Exhaust at the end of the next turn, and add a Worker Bee into your draw pile.",
+      "Infected cards can be disinfected by playing them. If a card Exhausts under the effects of Worker Bee, add a Worker Bee into your draw pile.",
+      "(infected cards in hand are displayed with a yellow border)"
     ]
   },
   "Bloodbath": {
@@ -272,9 +272,9 @@
     "Many hands float in the bath. These are the hands of people I once loved.",
     "EXTENDED_DESCRIPTION":[
       "Bloodbath",
-      "恢复 !M! 生命.",
-      "回合结束时若此卡在你手中, 随机消耗1张其它手牌, 并使恢复量+1(最多3).",
-      "若因此卡消耗的卡达到3张, 打出时随机消耗1张卡并将计数清零."
+      "Heal !M! HP.",
+      "If this card is in your hand at the end of the turn, Exhaust another random card in your hand, and increase the healing value of this card by 1 (to a maximum of 3).",
+      "If 3 cards are Exhausted under the effects of this card, playing this card randomly Exhausts another card and resets the healing value of this card."
     ]
   },
   "Wellcheers": {
@@ -294,9 +294,9 @@
     "With her hope to return to dust, It will return to grave with everything that desire to live.",
     "EXTENDED_DESCRIPTION":[
       "Alriune",
-      "Uncontrollable: 弃置此卡.",
-      "若在弃置后3回合内抽到此卡, 对所有敌人造成 !D! 点伤害.",
-      "否则将消耗同一牌堆中的所有卡."
+      "Uncontrollable: Discard this card.",
+      "If this card is drawn within 3 turns of discarding it, deal !D! damage to all enemies.",
+      "Otherwise, Exhaust all cards in the same pile it is."
     ]
   },
   "Murderer": {
@@ -305,8 +305,8 @@
     "But what's really pitiful is those like you dying in the hands of the likes of me.",
     "EXTENDED_DESCRIPTION":[
       "Forsaken Murderer",
-      "将 !M! 张随机卡从弃牌堆加入手牌.",
-      "若此卡回合结束在你手中, 给予你5点伤害."
+      "Randomly add !M! card(s) from your discard pile into your hand.",
+      "If this card is in your hand at the end of your turn, deal 5 damage to yourself."
     ]
   },
   "GalaxyChild": {
@@ -315,9 +315,9 @@
     "The child's tear dropped, as a star came down from the sky. The world fell into a sleep, as it was trapped in ecstatic lullaby.",
     "EXTENDED_DESCRIPTION":[
       "The Child of Galaxy",
-      "所有手牌费用减少 [E] .",
-      "若此卡本回合未被打出, 回合结束时费用+1.(最高为5)",
-      "若此卡在回合结束时费用高于4, 将本场战斗中因此卡降低过费用的所有卡 消耗 ."
+      "All cards in your hand cost [E] less.",
+      "If this card is not played this turn, increase its cost by 1 at the end of the turn (to a maximum of 5).",
+      "If the cost of this card is higher than 4 at the end of the turn, Exhaust all cards that have their costs reduced by this card."
     ]
   },
   "PunishingBird": {
@@ -327,9 +327,9 @@
     "EXTENDED_DESCRIPTION":[
       "Little Bird",
       "Punishing Bird",
-      "每个回合结束时对你造成1点伤害.",
-      "若你回合结束时你身上有负面状态, 改为为你恢复2点生命.",
-      "打出此卡时对你造成100点伤害."
+      "Deal 1 damage to yourself at the end of every turn.",
+      "If you have any debuffs at the end of your turn, Heal 2 HP instead.",
+      "Deal 100 damage to yourself when this card is played."
     ]
   },
   "Mercenary": {
@@ -338,9 +338,9 @@
     "I will hang his head over my bed. Only then I can fall asleep without having a nightmare.",
     "EXTENDED_DESCRIPTION":[
       "Little Red Riding Hooded Mercenary",
-      "战斗开始时额外抽1张卡. 若你生命不足一半, 你造成的伤害提升40%.",
-      "你每消耗3张卡, 使你获得3层流血.(每回合结束失去2点生命)",
-      "抽到此卡时若你手中有F-02-58, 将其 消耗 ."
+      "At the start of each combat, draw an additional card. When below 50% of your max HP, you deal 40% more damage.",
+      "Every 3 cards you Exhaust, gain 3 Bleeding (Lose 2 HP at the end of the turn).",
+      "If you have F-02-58 in your hand, Exhaust this card when you draw it."
     ]
   },
   "BigBadWolf": {
@@ -349,10 +349,10 @@
     "Actually I didn't really care. I must be called Big Bad Wolf.",
     "EXTENDED_DESCRIPTION":[
       "Big and Might be Bad Wolf",
-      "若你生命不足一半, 你造成的伤害提升40%.",
-      "若回合结束此卡在你手中, 随机吞下1张抽牌堆中的卡. 将此卡打出可以返还1张卡.",
-      "若抽到此卡时你处于F-01-57的流血效果, 立刻触发上1效果.",
-      "或许可以通过F-01-57来取回被吞的卡.(战斗结束时未取回的卡将从卡组移除)"
+      "When below 50% of your max HP, you deal 40% more damage.",
+      "If this card is in your hand at the end of the turn, randomly Devour a card from your draw pile. Playing this card returns the Devoured card.",
+      "If you draw this card while under the Bleeding effects of F-01-57, trigger the same effect above.",
+      "Perhaps F-01-57 can be used to return the Devoured cards (cards that aren't returned at the end of combat are removed from your deck)."
     ]
   },
   "UniverseFragment": {
@@ -361,9 +361,9 @@
     "You see a singing in front of your eyes. It is very splendid, and it approaches you...",
     "EXTENDED_DESCRIPTION":[
       "Fragment of the Universe",
-      "获得 !B! 点 格挡 .",
-      "战斗开始时给予你1层 人工制品 .",
-      "当此卡被消耗时给予你 混乱 ."
+      "Gain !B! Block.",
+      "At the start of combat, gain 1 Artifact.",
+      "When this card Exhausts, become Confused."
     ]
   },
   "CrumblingArmor": {
@@ -372,10 +372,10 @@
     "Life is only given to those who do not fear death.",
     "EXTENDED_DESCRIPTION":[
       "Crumbling Armor",
-      "获得 !B! 点 格挡 . 虚无 .",
-      "此卡消耗时, 给予你 !M! 点 力量 , 并将1张复制加入你的抽牌堆.",
-      "若你曾 消耗 过此卡, 打出技能卡时你会受到伤害.",
-      "每当你 消耗 此卡, 伤害将会提高, 同时将提高此卡的 格挡 ."
+      "Gain !B! Block. Ethereal.",
+      "When this card Exhausts, gain !M! Strength, and add a copy of this card into your draw pile.",
+      "If you have Exhausted this card, you will take damage whenever you play a Skill card.",
+      "Each time you Exhaust this card, increase the damage taken from playing a Skill card, and increase the Block value of this card."
     ]
   },
   "LongBird": {
@@ -385,9 +385,9 @@
     "EXTENDED_DESCRIPTION":[
       "Long Bird",
       "Bird of Judgement",
-      "使目标失去其最大生命 !M! %的生命, 最低为6.(失去 !D! 生命)",
-      "Uncontrollable: 消耗 手中所有的 状态 和 诅咒 .",
-      "因此卡效果而 消耗 卡时, 每张使你失去5点生命."
+      "Enemy loses !M!% of its max HP, to a minimum of 9 (enemy loses !M! HP).",
+      "Uncontrollable: Exhaust all Status and Curse cards in your hand.",
+      "Lose 5 HP each time a card is Exhausted from this card's effect."
     ]
   },
   "ApocalypseBird": {
@@ -396,7 +396,7 @@
     "A bird that is known to come when the world is filled with sins.",
     "EXTENDED_DESCRIPTION":[
       "Apocalypse Bird",
-      "每当你打出5张卡, 对所有敌人造成 !M! 点伤害."
+      "Every 5 cards you play, deal !M! damage to all enemies."
     ]
   },
   "GreedKing": {
@@ -406,8 +406,8 @@
     "EXTENDED_DESCRIPTION":[
       "Magical Girl",
       "The King of Greed",
-      "每当你打出8张攻击卡, 获得 !M! 点 力量 .",
-      "回合结束时若此卡在你手中, 消耗 此卡左侧的所有手牌."
+      "Gain !M! Strength for every 8 Attack cards you play.",
+      "If this card is in your hand at the end of your turn, Exhaust all cards to the left of this card."
     ]
   },
   "LittlePrince": {
@@ -417,10 +417,10 @@
     "EXTENDED_DESCRIPTION":[
       "Giant Mushroom",
       "The Little Prince",
-      "战斗开始时给予你 混乱 .",
-      "不可控: 所有手牌费用-1.",
-      "战斗开始时随机标记4张卡, 将其打出后可以消除标记.(被标记的卡在手中时泛光为深蓝色)",
-      "在第3回合结束时, 随机1张被标记的卡变为\"小王子-1\", 其余被标记的卡将被 消耗 ."
+      "At the start of combat, become Confused.",
+      "Uncontrollable: Your hand cost [E] less.",
+      "At the start of combat, Mark 4 random cards. Play a Marked card to remove the Mark (Marked cards have a dark blue glow while in hand).",
+      "At the end of Turn 3, transform a random Marked card into Little Prince-1. Exhaust all other Marked cards."
     ]
   },
   "Laetitia": {
@@ -429,9 +429,9 @@
     "So she came up with this brilliant idea!",
     "EXTENDED_DESCRIPTION":[
       "Laetitia",
-      "此卡在你手中时, 你打出的卡都将获得一份小小的礼物.",
-      "带有礼物的卡费用-1.",
-      "若此卡不在你手中, 打出带有礼物的卡将会将其 消耗 并给予你6点伤害."
+      "When this card is in your hand, every card you play gains a gift.",
+      "The cost of the cards with gifts is reduced by [E].",
+      "If this card is not in your hand, playing a card with a gift will Exhaust it, and deal 6 damage to yourself."
     ]
   },
   "Funeral": {
@@ -440,9 +440,9 @@
     "What happens when people die?",
     "EXTENDED_DESCRIPTION":[
       "Funeral of the Dead Butterflies",
-      "Uncontrollable: 抽1张卡, 恢复 !M! 点生命, 获得 !B! 点格挡, 给予所有敌人 !D! 点伤害.",
-      "当此卡在你手中时, 你所 消耗 的卡将从卡组移除.",
-      "当此卡在你手中时, 你所 消耗 的卡同时将从卡池移除."
+      "Uncontrollable: Draw a card. Heal !M! HP. Gain !B! Block. Deal !D! damage to all enemies.",
+      "When this card is in your hand, any card you Exhaust is removed from your deck.",
+      "When this card is in your hand, any card you Exhaust is also removed from the drop pool."
     ]
   },
   "Freischutz": {
@@ -451,9 +451,9 @@
     "This magical bullet truly can hit anyone you say!",
     "EXTENDED_DESCRIPTION":[
       "Der Freischütz",
-      "右键此卡可以花费金钱的10%(至少10)来打出1发子弹.(计数 !M! )",
-      "子弹可以对1个目标造成18点伤害(不能被提升). 随后计数+1.",
-      "第7发子弹将对你造成同等的伤害."
+      "Right click to spend 10% of your max Gold (at least 10) to fire a bullet (Current count: !M!).",
+      "A bullet deals 18 damage (cannot be increased) to an enemy. Increase the count by 1 after firing a bullet.",
+      "The 7th bullet deals the same amount of damage to yourself."
     ]
   },
   "BlackSwan": {
@@ -462,11 +462,11 @@
     "What happens when the black swan wakes up from the dream of being a white swan?",
     "EXTENDED_DESCRIPTION":[
       "Dream of a Black Swan",
-      "Uncontrollable: 获得3点 荆棘 .(计数 !M! )",
-      "此卡计数为0时, 将1张\"伊利亚\"加入你的抽牌堆.",
-      "当达成一定条件时此卡计数-1. 每种条件只会减少1次计数. 以下几条内容皆为条件.",
-      "此卡被手动弃置; 回合结束时此卡在你手中; 消耗5张卡;",
-      "回合结束时带有负面状态; 失去3次生命."
+      "Uncontrollable: Gain 3 Thorns (counter !M!).",
+      "When the counter reaches 0, add 1 Elijah into your draw pile.",
+      "Fulfilling certain conditions reduces the counter by 1. Each condition can only reduce the counter once. The following shows the conditions.",
+      "This card is discarded manually; This card is in your hand at the end of the turn. Exhaust 5 cards.",
+      "If you have any debuffs at the end of the turn, lose 3 HP."
     ]
   },
   "DreamingCurrent": {
@@ -475,9 +475,9 @@
     "Tell the kid today's is going to be grape flavored candy. It's his favorite.",
     "EXTENDED_DESCRIPTION":[
       "The Dreaming Current",
-      "为你恢复 !M! 点生命.",
-      "回合开始时将此卡置入你的手中.",
-      "若回合结束此卡在你的手中, 给予你15点伤害."
+      "Heal !M! HP.",
+      "Add this card to your hand at the start of your turn.",
+      "If this card is in your hand at the end of your turn, deal 15 damage to yourself."
     ]
   },
   "DespairKnight": {
@@ -487,9 +487,9 @@
     "EXTENDED_DESCRIPTION":[
       "Magical Girl",
       "The Knight of Despair",
-      "使用后使你获得祝福: 本场战斗中获得的 格挡 提升50%.(此效果不叠加)",
-      "在祝福状态受到未被 格挡 的伤害将使你额外失去5点生命.",
-      "此卡被 消耗 时取消祝福."
+      "When this card is played, gain a Blessing: Gain 50% more Block this combat (this effect cannot be stacked).",
+      "While under the effects of the Blessing, lose 5 HP whenever you do not Block an enemy's attack.",
+      "When this card is Exhausted, the Blessing is removed."
     ]
   },
   "NakedNest": {
@@ -498,10 +498,10 @@
     "It can enter any hole of your body.",
     "EXTENDED_DESCRIPTION":[
       "The Naked Nest",
-      "每回合结束给予你1层 多层护甲 .",
-      "回合结束时若此卡在你手中, 随机感染1张其它手牌.",
-      "被感染的牌将在下回合结束时失去原本的效果, 获得 消耗 , 并在抽到时对你造成4点伤害.",
-      "(被感染的卡在手中时泛光为绿色)"
+      "At the end of the turn, gain 1 Plated Armor.",
+      "If this card is in your hand at the end of the turn, Infect 1 random card.",
+      "Infected cards lose their effects at the end of the next turn and gain Exhaust. Deal 4 damage to yourself whenever you draw an Infected card.",
+      "(Infected cards have a green glow while in hand.)"
     ]
   },
   "BodiesMountain": {
@@ -510,10 +510,10 @@
     "The smiling faces are eerie and full of sorrow.",
     "EXTENDED_DESCRIPTION":[
       "The Mountain of Smiling Bodies",
-      "你每 消耗 1张卡, 获得1力量并恢复1生命.",
-      "你每 消耗 3张卡, 此卡费用+1.(最高4)",
-      "若此卡费用高于1, 在打出时费用-1.",
-      "Uncontrollable: 若此卡费用高于1, 根据费用对你造成伤害.(2费4点, 3费10点, 4费50点)"
+      "Each time you Exhaust a card, gain 1 Strength and heal 1 HP.",
+      "Every 3 cards you Exhaust, increase the cost of this card by 1 (to a maximum of 4).",
+      "If the cost of this card is higher than 1, reduce its cost by 1 when playing it.",
+      "Uncontrollable: If the cost of this card is higher than 1, deal damage to yourself based on the its cost (4 damage at cost 2, 10 damage at cost 3, 50 damage at cost 4)."
     ]
   },
   "FairyFestival": {
@@ -522,9 +522,9 @@
     "Everything will be peaceful while you are under the fairies' care.",
     "EXTENDED_DESCRIPTION":[
       "Fairy Festival",
-      "为你恢复1点生命.",
-      "此卡打出后, 每回合结束时为你恢复1点生命.",
-      "激活上1效果后若打出其它异常, 结束效果并对你造成20点伤害."
+      "Heal 1 HP.",
+      "After playing this card, heal 1 HP at the end of every turn.",
+      "If you play another Abnormality while this effect is active, remove the effect and deal 20 damage to yourself."
     ]
   },
   "MeatLantern": {
@@ -533,8 +533,8 @@
     "That’s not a flower, order all the employees to get away immediately.",
     "EXTENDED_DESCRIPTION":[
       "Meat Lantern",
-      "每回合结束给予你 !B! 点 格挡 .",
-      "战斗开始时此卡将附着在另一张卡上, 如果打出被附着的卡, 给予你50点伤害.(附着的表现为上方有一朵小花)"
+      "Grants !B! Block at the end of every turn.",
+      "At the start of combat, this card attaches itself to a random card. If the attached card is played, deal 50 damage to yourself (attached cards are displayed with a little flower)."
     ]
   },
   "Scarecrow": {
@@ -543,8 +543,8 @@
     "The city still remained beautiful and the emerald roads sparkled brighter than ever.",
     "EXTENDED_DESCRIPTION":[
       "Scarecrow Searching for Wisdom",
-      "当你使用能力卡时为你恢复4点生命.",
-      "Uncontrollable: 随机消耗1张能力卡, 给予你6点 格挡 ."
+      "Whenever you play a Power card, heal 4 HP and draw 1 card.",
+      "Uncontrollable: Randomly Exhaust a Power card and gain !B! Block."
     ]
   },
   "Variant": {
@@ -553,8 +553,8 @@
     "The only advise that can be given is to be cautious and be aware of your surroundings.",
     "EXTENDED_DESCRIPTION":[
       "Dimensional Refraction Variant",
-      "此卡被 消耗 时给予你2层 无实体 .",
-      "此卡被打出时对你造成14点伤害."
+      "When this card Exhausts, gain 2 Intangible.",
+      "When this card is played, deal 14 damage to yourself."
     ]
   },
   "CENSORED": {
@@ -563,10 +563,10 @@
     "If any system issue deletes the blur from the Abnormality, we will have to sincerely think of how to deal with the **.",
     "EXTENDED_DESCRIPTION":[
       "[#EC1507]「CENSORED」",
-      "当你受到伤害时, 恢复伤害值40%的生命.",
-      "打出此卡将随机消耗1张卡并为你恢复 !M! 点生命.",
-      "Uncontrollable: 随机给予你3层 虚弱 或 易伤 .",
-      "Uncontrollable: 若你身上的负面状态高于6层, 消耗此卡外所有手牌."
+      "Whenever you receive damage, heal for 40% of the damage received.",
+      "When this card is played, randomly Exhaust a card and heal !M! HP.",
+      "Uncontrollable: Gain 3 Weak or Vulnerable at random.",
+      "Uncontrollable: If your culmulative debuffs is higher than 6, Exhaust all other cards in your hand."
     ]
   },
   "ShyLook": {
@@ -575,9 +575,9 @@
     "Good day today! Are you still shy today?",
     "EXTENDED_DESCRIPTION":[
       "Shy Look Today",
-      "获得 !B! 点 格挡 .",
-      "此卡上方的表情会随时间不断变化. 获得的 格挡 将根据上方的表情变化.",
-      "变化的数值为: +12, +6, +1, -6, -12.(负数的格挡将改为伤害)"
+      "Gain !B! Block.",
+      "The face on this card changes with time. The Block value of this card changes according to the face displayed.",
+      "The values are: +12, +6, +1, -6, -12 (negative values deal damage to yourself instead)."
     ]
   },
   "BlueStar": {
@@ -586,10 +586,10 @@
     "We will meet again as stars",
     "EXTENDED_DESCRIPTION":[
       "Blue Star",
-      "每回合开始时额外获得 [E] .",
-      "打出此卡对随机目标造成等同当前能量次的 !D! 点固定伤害.(第1次伤害为指定目标)",
-      "若回合结束时你没有剩余能量, 随机消耗2张卡.",
-      "若回合结束时你没有剩余手牌, 受到12点伤害."
+      "Gain [E] at the start of every turn.",
+      "Playing this card deals multiple attacks of !D! fixed damage to random enemies equal to your current [E] remaining (the first attack will hit your selected target).",
+      "If you have no remaining energy at the end of the turn, Exhaust 2 random cards.",
+      "If you have no cards in your hand at the end of the turn, deal 12 damage to yourself."
     ]
   },
   "Porccubus": {
@@ -598,9 +598,9 @@
     "Now it's time for my head to burst. Good day.",
     "EXTENDED_DESCRIPTION":[
       "Porccubus",
-      "Uncontrollable: 抽 !M! 张卡.",
-      "若抽卡后你的手牌高于6张, 获得1层 易伤 .",
-      "若回合结束此卡在你手中, 消耗 此卡外的所有手牌."
+      "Uncontrollable: Draw !M! cards.",
+      "If you have more than 6 cards in your hand after drawing cards, gain 1 Vulnerable.",
+      "If this card is in your hand at the end of the turn, Exhaust all other cards in your hand."
     ]
   },
   "VoidDream": {
@@ -609,10 +609,10 @@
     "Please, eat my dreams.",
     "EXTENDED_DESCRIPTION":[
       "Void Dream",
-      "获得1层 无实体 .",
-      "你的具有 虚无 的卡将在打出时被 消耗 .",
-      "打出此卡时使随机卡获得 虚无 .",
-      "虚无."
+      "Gain 1 Intangible.",
+      "When you play a card with Ethereal, Exhaust it.",
+      "When you play this card, a random card gains Ethereal.",
+      "Ethereal."
     ]
   },
   "CherryBlossoms": {
@@ -621,8 +621,8 @@
     "The more blood it has, the more beautiful it is.",
     "EXTENDED_DESCRIPTION":[
       "Grave of Cherry Blossoms",
-      "打出3次后将随机 消耗 5张卡.",
-      "第4次打出时将使你恢复 !M! 点生命并移除此卡."
+      "After playing this card 3 times, Exhaust 5 random cards.",
+      "The 4th time you play this card, heal !M! HP and remove this card from your deck."
     ]
   },
   "FieryBird": {
@@ -631,12 +631,12 @@
     "Those who succeeded in hunt are granted with the feather that countless hunters yearned.",
     "EXTENDED_DESCRIPTION":[
       "Fiery Bird",
-      "对所有单位造成 !D! 点伤害.",
-      "此卡打出时费用+1, 未打出的回合结束时费用-1.(最高为3)",
-      "此卡的伤害会根据费用而增加, 每点费用增加8点伤害.",
-      "若打出时此卡费用为2或你的生命低于25%, 给予你5层 再生 .",
-      "若此卡费用为3, 回合结束时将1张灼烧加入你的抽牌堆.",
-      "若此卡在费用为3的情况被打出, 立刻变为0费, 使你失去20点最大生命并获得Feather of Honor."
+      "Deal !D! damage to all fighters.",
+      "When this card is played, increase its cost by 1 (to a maximum of 3). When this card is not played, reduce its cost by 1.",
+      "The damage value of this card is increases with its cost. Each additional cost increases its damage value by 8.",
+      "When playing this card, if the cost of this card is 2, or when below 25% of your max HP, gain 5 Regen.",
+      "If the cost of this card is 3, add a Burn to your draw pile at the end of the turn.",
+      "If this card is played when its cost is 3, reduce its cost to 0, lose 20 max HP, and gain Feather of Honor."
     ]
   },
   "Yin": {
@@ -645,9 +645,9 @@
     "Now, you become the sky, and I become the land.",
     "EXTENDED_DESCRIPTION":[
       "Yin",
-      "获得1层 缓冲 .",
-      "当你激活\"Yang\"超过2个回合时, 此卡与\"Yang\"将分别变为1个敌对单位.",
-      "请不惜一切代价阻止\"Yin\"与\"Yang\"相接触."
+      "Gain 1 Buffer.",
+      "After activating \"Yang\" for no less than 2 turns, this card and \"Yang\" become enemy units at opposing sides of the screen.",
+      "Please do whatever it takes to stop \"Yin\" and \"Yang\" from coming into contact with each other."
     ]
   },
   "LaLuna": {
@@ -656,9 +656,9 @@
     "Tales say the moon bewitch man. But, in reality, man despairs at the moon.",
     "EXTENDED_DESCRIPTION":[
       "La Luna",
-      "Uncontrollable: 将现在的音乐暂时替换为\"月光奏鸣曲\", 如果已在\"月光奏鸣曲\"期间, 则不生效.",
-      "在\"月光奏鸣曲\"期间, 你获得1点 力量 和 敏捷 .",
-      "\"月光奏鸣曲\"的第三乐章将会持续更长时间并提供双倍加成, 但是期间每5秒将会使你受到2点伤害."
+      "Uncontrollable: Temporarily changes the current song to \"Luna Sonata\". Has no effect if \"Luna Sonata\" is already playing.",
+      "When \"Luna Sonata\" is playing, gain 1 Strength and Dexterity.",
+      "The 3rd movement during \"Luna Sonata\" lasts longer and doubles the Strength and Dexterity gained, but every 5 seconds while the song is still playing, deal 2 damage to yourself."
     ]
   },
   "BlackArmy": {
@@ -668,10 +668,10 @@
     "EXTENDED_DESCRIPTION":[
       "Army In Pink",
       "Army In Black",
-      "打出后使你获得20%伤害减免, 每回合恢复1点生命, 此卡费用+1.(不能叠加)",
-      "你造成的伤害提升15%, 每消耗5张卡此卡费用+1.",
-      "当此卡费用高于2时将变为4张\"Army in Black\"(derive card)并加入抽牌堆.",
-      "当所有的\"Army in Black\"(derive card)被 消耗 后, 将1张0费的此卡返还回你的手中."
+      "After playing this card, you take 20% less damage and heal 1 HP every turn (effects cannot be stacked). Increase the cost of this card by 1.",
+      "You deal 15% more damage. Every 5 cards you Exhaust, increase the cost of this card by 1.",
+      "If the cost of this card is higher than 2, it splits into 4 \"Army in Black\" cards into your draw pile.",
+      "After all \"Army in Black\" cards are Exhausted, return a 0-cost copy of this card into your hand."
     ]
   },
   "MeltingLove": {
@@ -680,11 +680,11 @@
     "… and my dear employees, I hope you all put on the gas masks that we distributed to you before we come in here.",
     "EXTENDED_DESCRIPTION":[
       "Melting Love",
-      "指定卡获得爱心, 使其费用为0.",
-      "如果你的生命低于50%, 受到10点以上伤害时减少该伤害10点.(不存在爱心时失效)",
-      "回合结束时持有爱心卡同一卡组的随机卡变为Slime(derive card), 打出此卡将使此效果失效2回合.",
-      "如果持有爱心的卡被 消耗 , 所有的史莱姆将被 消耗 , 你失去15点生命.",
-      "此卡被 消耗 时将 消耗 持有爱心的卡和所有史莱姆, 但不触发伤害."
+      "A card of your choice gains a heart symbol, reducing its cost to 0.",
+      "When below 50% of your max HP, any damage you receive that is 10 or higher is reduced by 10 (Effect is lost when the heart is missing).",
+      "At the end of the turn, a random card in the same pile with the card with the heart symbol is transformed into a Slime card. Playing this card cancels this effect for 2 turns.",
+      "If the card with the heart symbol is Exhausted, Exhaust all Slime cards and lose 15 HP.",
+      "When this card is Exhausted, Exhaust all Slime cards and the card with the heart symbol (damage from Exhausting a Slime card is not triggered this way)."
     ]
   },
   "HeroicMonk": {
@@ -693,9 +693,9 @@
     "However, if enough sarira to make everyone watch in awe come out from you, your name will be sung through generations.",
     "EXTENDED_DESCRIPTION":[
       "Heroic Monk",
-      "每当你 消耗 1张卡, 抽1张卡.",
-      "若此卡回合结束在你手中, 将对你造成伤害, 数值等同你本场战斗 消耗 的卡数的2倍.",
-      "此卡被消耗时对你造成25点伤害."
+      "Whenver you Exhaust a card, draw a card.",
+      "If this card is in your hand at the end of the turn, deal damage based on 2 times the number of Exhausted cards in this combat to yourself.",
+      "When this card is Exhausted, deal 25 damage to yourself."
     ]
   },
 
@@ -844,22 +844,22 @@
   "GuardApostle": {
     "NAME": "Guard Apostle",
     "DESCRIPTION":
-    "若与WhiteNight同时在手牌中, 消耗 打出的所有非\"Sacred\"卡. 消耗 ."
+    "While this card and WhiteNight are together in your hand, Exhaust all non-Sacred cards you play. Exhaust."
   },
   "ScytheApostle": {
     "NAME": "Scythe Apostle",
     "DESCRIPTION":
-    "回合结束时此卡若在你的手牌中, 消耗 手中的所有非\"Sacred\"卡. 消耗 ."
+    "If this card is in your hand at the end of the turn, Exhaust all non-Sacred cards. Exhaust."
   },
   "WandApostle": {
     "NAME": "Wand Apostle",
     "DESCRIPTION":
-    "当此卡在你手牌中时, 消耗你所打出的非\"Sacred\" 技能 卡. 消耗 ."
+    "While this card is in your hand, Exhaust all non-Sacred Skills you play. Exhaust."
   },
   "SpearApostle": {
     "NAME": "Spear Apostle",
     "DESCRIPTION":
-    "当此卡在你手牌中时, 消耗你所打出的非\"Sacred\" 攻击 卡. 消耗 ."
+    "While this card is in your hand, Exhaust all non-Sacred Attacks you play. Exhaust."
   },
   "HereticApostle": {
     "NAME": "The Heretic",
@@ -869,7 +869,7 @@
   "WorkerBee": {
     "NAME": "Worker Bee",
     "DESCRIPTION":
-    "回合结束时若在你手牌中, 随机 消耗 1张手牌. 消耗 ."
+    "If this card is in your hand at the end of the turn, Exhaust a random card in your hand. Exhaust."
   },
   "Sheep": {
     "NAME": "Sheepskin",
@@ -879,27 +879,27 @@
   "PrinceOne": {
     "NAME": "Little Prince-1",
     "DESCRIPTION":
-    "Uncontrollable: 给予你5点伤害. 消耗 ."
+    "Uncontrollable: Deal 5 damage to yourself. Exhaust."
   },
   "Elijah": {
     "NAME": "Elijah",
     "DESCRIPTION":
-    "Uncontrollable: 随机 消耗 1张卡. 此卡在你手中时, 每当你造成伤害, 你会受到相同的伤害. 消耗 ."
+    "Uncontrollable: Exhaust a random card. While this card is in your hand, each time you deal damage to an enemy, deal the same amount to yourself. Exhaust."
   },
   "NestCard": {
     "NAME": "Nest Card",
     "DESCRIPTION":
-    " 消耗 ."
+    " Exhaust."
   },
   "BlackArmyDerive": {
     "NAME": "Army in Black",
     "DESCRIPTION":
-    "Uncontrollable: 给予你10点伤害, 消耗 ."
+    "Uncontrollable: Deal 10 damage to yourself. Exhaust."
   },
   "MeltingSlime": {
     "NAME": "Slime",
     "DESCRIPTION":
-    "为所有敌人恢复 !M! 点生命, 消耗 . Uncontrollable: 给予你2点伤害."
+    "All enemies heal !M! HP. Exhaust. Uncontrollable: Deal 2 damage to yourself."
   },
 
 
@@ -908,32 +908,32 @@
   "Apo_Beam": {
     "NAME": "Dark Beam",
     "DESCRIPTION":
-    "清空目标的护甲, 使其失去 !D! 点生命, 给予 !M! 层 易伤 ."
+    "Remove all Block from an enemy. Enemy loses !D! HP and gains !M! Vulnerable."
   },
   "Apo_Charge": {
     "NAME": "Charge",
     "DESCRIPTION":
-    "对所有敌人造成 !D! 点伤害."
+    "Deal !D! damage to all enemies."
   },
   "Apo_Execute": {
     "NAME": "Execute",
     "DESCRIPTION":
-    "造成999伤害, 只能对100血以下的敌人使用."
+    "Deal 999 damage. Only usable against enemies with lower than 100 HP."
   },
   "Apo_Slash": {
     "NAME": "Slash",
     "DESCRIPTION":
-    "造成 !D! 伤害2次"
+    "Deal !D! damage 2 times."
   },
   "Apo_SoulSlash": {
     "NAME": "Soul Slash",
     "DESCRIPTION":
-    "使目标失去 !D! 生命, 并减少等额生命上限, 进行2次."
+    "Enemy loses !D! HP, and loses equal amount of max HP. Repeat this effect once."
   },
   "Apo_Pray": {
     "NAME": "Pray",
     "DESCRIPTION":
-    "在战斗结束时恢复你全部的生命, 此卡使用后将被移除."
+    "Heal to max HP. This card is removed from your deck after playing it."
   },
 
 
@@ -942,47 +942,47 @@
   "SpecialBullet": {
     "NAME": "Bullet",
     "DESCRIPTION":
-    "造成 !D! 点伤害."
+    "Deal !D! damage."
   },
   "HpAim": {
     "NAME": "HP Recovery Bullet",
     "DESCRIPTION":
-    "恢复 !M! 点生命. 消耗 ."
+    "Heal !M! HP. Exhaust."
   },
   "SpAim": {
     "NAME": "MP Recovery Bullet",
     "DESCRIPTION":
-    "随机移除1个负面状态."
+    "Remove a random debuff from yourself.."
   },
   "RedAim": {
     "NAME": "Physical Intervention Shield ",
     "DESCRIPTION":
-    "获得 !B! 点 格挡 ."
+    "Gain !B! Block."
   },
   "WhiteAim": {
     "NAME": "Trauma Shield",
     "DESCRIPTION":
-    "获得 !M! 层 人工制品 ."
+    "Gain !M! Artifact."
   },
   "BlackAim": {
     "NAME": "Erosion Shield",
     "DESCRIPTION":
-    "获得 !M! 层 多层护甲 . 消耗 ."
+    "Gain !M! Plated Armor. Exhaust."
   },
   "PaleAim": {
     "NAME": "Pale Shield",
     "DESCRIPTION":
-    "获得 !M! 层 无实体 . Erase."
+    "Gain !M! Intangible. Erase."
   },
   "SlowAim": {
     "NAME": "Movement Reduction Bullet",
     "DESCRIPTION":
-    "给予 !M! 层 虚弱 和 易伤 ."
+    "Enemy gains !M! Weak and Vulnerable."
   },
   "ExecuteAim": {
     "NAME": "Execution Bullet",
     "DESCRIPTION":
-    "造成999伤害, 只能对生命低于 !D! 的目标使用. Erase."
+    "Deal 999 damage. Only usable against enemies lower than !D! HP. Erase."
   },
 
 
@@ -990,118 +990,137 @@
   "Malkuth": {
     "NAME": "Control Team",
     "DESCRIPTION":
-    "将Control Team order加入你的卡组.",
+    "Add *Control *Team *order into your deck.",
     "EXTENDED_DESCRIPTION":[
       "TT2 Protocol",
-      "将TT2 Protocol加入你的卡组.",
+      "Add *TT2 *Protocol into your deck.",
       "Joint Command",
-      "Control Team order允许选择抽牌堆/弃牌堆中的卡.",
+      "Control Team order now allows the selection of cards in draw and discard piles.",
       "Summon Call",
-      "将Summon Call加入你的卡组."
+      "Add *Summon *Call into your deck.",
+      "Core Suppression",
+      "Gain [E] at the start of each turn.."
     ]
   },
   "Yesod": {
     "NAME": "Information Team",
     "DESCRIPTION":
-    "将Information Team order加入你的卡组.",
+    "Add *Information *Team *order into your deck.",
     "EXTENDED_DESCRIPTION":[
       "G.O Visualization",
-      "显示生命和状态.",
+      "Displays health and status.",
       "Normalization of Damage",
-      "显示敌方意图.",
+      "Displays enemy intents.",
       "Abnormality Countermeasure Manual",
-      "你每获得1张Abnormality card将为你提高4点最大生命."
+      "Whenever you add an Abnormality card into your deck, increase your max HP by 4.",
+      "Core Suppression",
+      "All enemies have 25% less HP."
     ]
   },
   "Netzach": {
     "NAME": "Security Team",
     "DESCRIPTION":
-    "将Security Team order加入你的卡组.",
+    "Add *Security *Team *order into your deck.",
     "EXTENDED_DESCRIPTION":[
       "Regenerating Mk2",
-      "提高Security Team order的生命恢复.",
+      "Increase the healing power of Security Team order.",
       "Mental Corruption Neutralizing Gas",
-      "Security Team order生效时将随机移除卡组中的诅咒.",
+      "When Security Team order triggers, remove a random Curse from your deck.",
       "Regenerator Distinguisher Modification",
-      "Security Team order将在每回合结束为你恢复少量生命."
+      "Security Team order now heals a small amount of HP at the end of each turn.",
+      "Core Suppression",
+      "If you have Security Team order in your deck, whenever you climb a floor, heal a small amount of HP."
     ]
   },
   "Hod": {
     "NAME": "Training Team",
     "DESCRIPTION":
-    "将Training Team order加入你的卡组.",
+    "Add *Training *Team *order into your deck.",
     "EXTENDED_DESCRIPTION":[
       "Supply Educational Manuals",
-      "战斗开始时给予你1点 力量 和 敏捷 .",
+      "At the start of combat, gain 1 Strength and Dexterity.",
       "Reinforce Work Education",
-      "Training Team order将允许选择抽牌堆/弃牌堆中的卡.",
+      "Training Team order now allows the selection of cards in draw and discard piles.",
       "Reinforce Hiring Procedure",
-      "战斗开始时额外给予你2点 力量 和 敏捷 ."
+      "At the start of combat, gain an additional 2 Strength and Dexterity.",
+      "Core Suppression",
+      "Your damage and block values are increased by 25% for all combats."
     ]
   },
   "Tiphereth": {
     "NAME": "Central Command Team",
     "DESCRIPTION":
-    "将Central Command Team order加入你的卡组.",
+    "Add *Central *Command *Team order into your deck.",
     "EXTENDED_DESCRIPTION":[
       "Physical Intervention Shield",
       "Unlock Physical Intervention Shield.",
       "Trauma Shield",
       "Unlock Trauma Shield.",
       "Erosion Shield",
-      "Unlock Erosion Shield."
+      "Unlock Erosion Shield.",
+      "Core Suppression",
+      "Unlock Pale Shield."
     ]
   },
   "Chesed": {
     "NAME": "Welfare Team",
     "DESCRIPTION":
-    "将Welfare Team order加入你的卡组.",
+    "Add *Welfare *Team *order into your deck.",
     "EXTENDED_DESCRIPTION":[
       "HP-N Bullet",
       "Unlock HP-N Bullet.",
       "SP-E Bullet",
       "Unlock SP-E Bullet.",
       "Refine HP, SP Bullet",
-      "提升HP-N Bullet的效果2点, SP-E Bullet现在可以选择1张卡消耗."
+      "Increase the healing power of HP-N Bullet by 2. SP-E Bullet now allows you to Exhaust a card.",
+      "Core Suppression",
+      "At the start of each turn, you may add a card from your Exhaust pile into your hand."
     ]
   },
   "Geburah": {
     "NAME": "Disciplinary Team",
     "DESCRIPTION":
-    "将Disciplinary Team order加入你的卡组.",
+    "Add *Disciplinary *Team *order into your deck.",
     "EXTENDED_DESCRIPTION":[
       "Qliphoth Intervention Field",
       "Unlock Qliphoth Intervention Field.",
       "Execution Bullet",
       "Unlock Execution Bullet.",
       "Rabbit Team",
-      "允许你额外部署2次Rabbit Team."
+      "Unlock 2 extra deployments of Rabbit Team.",
+      "Core Suppression",
+      "At the start of each turn, you may choose to cause your first Attack/Skill/Power to be played twice this turn.",
+      "This turn, your next Power is played twice."
     ]
   },
   "Hokma": {
     "NAME": "Record Team",
     "DESCRIPTION":
-    "将Record Team order加入你的卡组.",
+    "Add *Record *Team *order into your deck.",
     "EXTENDED_DESCRIPTION":[
       "Virtue of Protection",
-      "给予你额外的1个药水栏位.",
+      "Gain an additional potion slot.",
       "Virtue of Governance",
-      "战斗结束获得的金钱提高50%.",
+      "Gold gained upon winning combats is increased by 50%.",
       "Virtue of Creation",
-      "获得奖励时额外获得1个卡牌奖励."
+      "Gain an additional card reward in rewards screens.",
+      "Core Suppression",
+      "Single use: Double you max HP, and heal all of your HP."
     ]
   },
   "Binah": {
     "NAME": "Extraction Team",
     "DESCRIPTION":
-    "将Extraction Team order加入你的卡组.",
+    "Add *Extraction *Team *order into your deck.",
     "EXTENDED_DESCRIPTION":[
       "E.G.O. Restoration",
-      "选择卡牌奖励时可选卡牌增加1个.",
+      "You have 1 additional card to select from in Card Reward screens.",
       "Re-extraction",
-      "开放再提取功能.",
+      "Unlocks the re-extraction ability.",
       "GIFT Division",
-      "卡牌奖励中出现的卡全部升级."
+      "If you have \"Bucket\", all cards in Card Reward screens are upgraded.",
+      "Core Suppression",
+      "If you have \"Bucket\", whenever you add or remove a card from your deck, gain 25 Gold."
     ]
   },
 
@@ -1109,59 +1128,59 @@
   "ControlCode": {
     "NAME": "Control Team order",
     "DESCRIPTION":
-    "选择 !M! 张手牌, 将它们的费用在本回合內减少 [E] .",
+    "Choose !M! cards in your hand and reduce their costs by [E] this turn.",
     "EXTENDED_DESCRIPTION":[
-      "选择 !M! 张卡, 将它们的费用在本回合內减少 [E] ."
+      "Choose !M! cards and reduce their costs by [E] this turn."
     ]
   },
   "InformationCode": {
     "NAME": "Information Team",
     "DESCRIPTION":
-    "检视牌堆顶的 !M! 张牌, 选择任意张丢弃."
+    "Scry !M!. You may discard any of them."
   },
   "SecurityCode": {
     "NAME": "Security Team order",
     "DESCRIPTION":
-    "战斗结束时若此卡仍存在, 为你恢复 !M! 点生命.",
+    "If this card is still in your deck at the end of combat, heal !M! HP.",
     "EXTENDED_DESCRIPTION":[
-      "战斗结束时若此卡仍存在, 为你恢复 !M! 点生命并随机移除1张 诅咒 .",
-      "战斗结束时若此卡仍存在, 为你恢复 !M! 点生命并随机移除1张 诅咒 . 回合结束时若此卡仍存在, 为你恢复完整恢复量25%的生命."
+      "If this card is still in your deck at the end of combat, heal !M! HP and removes a random Curse from your deck.",
+      "If this card is still in your deck at the end of combat, heal !M! HP and removes a random Curse from your deck. If this card is still in your deck at the end of the turn, heal for 25% of its healing power."
     ]
   },
   "TrainingCode": {
     "NAME": "Training Team order",
     "DESCRIPTION":
-    "选择 !M! 张手牌升级.",
+    "Select up to !M! cards in your hand and upgrade them.",
     "EXTENDED_DESCRIPTION":[
-      "选择 !M! 张卡升级."
+      "Select up to !M! cards and upgrade them."
     ]
   },
   "CentralCode": {
     "NAME": "Central Command Team order",
     "DESCRIPTION":
-    "弃置手中的所有子弹, 每张给予你 !B! 点 格挡 ."
+    "Discard all Bullets. Gain !B! Block for each Bullet discarded this way."
   },
   "WelfareCode": {
     "NAME": "Welfare Team order",
     "DESCRIPTION":
-    "抽 !M! 张卡."
+    "Draw !M! cards."
   },
   "DisciplinaryCode": {
     "NAME": "Disciplinary Team order",
     "DESCRIPTION":
-    "选择至多 !M! 张卡 消耗 . 消耗 .(不限手牌)"
+    "Select up to !M! cards (not limited to hand) and Exhaust them. Exhaust."
   },
   "RecordCode": {
     "NAME": "Record Team order",
     "DESCRIPTION":
-    "选择至多 !M! 张消耗堆的卡加入手牌."
+    "Select up to !M! cards in your Exhaust pile and add them to your hand."
   },
   "ExtractionCode": {
     "NAME": "Extraction Team order",
     "DESCRIPTION":
-    "胜利后获得额外的卡牌奖励. 消耗 .",
+    "Gain an additional card reward upon winning the combat. Remove this card from combat after playing it.",
     "EXTENDED_DESCRIPTION":[
-      "胜利后获得指定异想体的E.G.O."
+      ""
     ]
   },
 
@@ -1169,24 +1188,24 @@
   "TT2Protocol": {
     "NAME": "TT2 Protocol",
     "DESCRIPTION":
-    "从左至右打出你的所有手牌, 目标随机."
+    "Play your entire hand from left to right at random targets."
   },
   "SummonCall": {
     "NAME": "Summon Call",
     "DESCRIPTION":
-    "升级所有Team order. 消耗 ."
+    "Upgrade all Team orders. Exhaust ."
   },
   "ExpandDepartment": {
-    "NAME": "开放部门",
+    "NAME": "Expand Department",
     "DESCRIPTION":
-    "消耗5点LP, 选择开放一个部门进度."
+    "Consumes 5 LP. Select a department to expand."
   },
 
 
   "FourthMatchFlame": {
     "NAME": "Fourth Match Flame",
     "DESCRIPTION":
-    "此卡被消耗时, 对所有敌人造成 !D! 点伤害.",
+    "If this card is Exhausted, deal !D! damage to all enemies.",
     "EXTENDED_DESCRIPTION":[
       "The fire will not go out until it has burned away the happiness, warmth, and other good things of the world."
     ]
@@ -1194,7 +1213,7 @@
   "Penitence": {
     "NAME": "Penitence",
     "DESCRIPTION":
-    "获得 !B! 格挡 , 等同你已失去的生命的一半.",
+    "Gain Block equal to half of your missing HP (gains !B! block).",
     "EXTENDED_DESCRIPTION":[
       "The thorns hurt as they anchor your soul in reality."
     ]
@@ -1202,7 +1221,7 @@
   "InTheNameOfLoveAndHate": {
     "NAME": "In the Name of Love and Hate",
     "DESCRIPTION":
-    "如果目标的意图是攻击并且你没有 格挡 ,获得 !B! 格挡 . 虚无 .",
+    "If the enemy intends to attack and you have no Block, gain !B! Block. Ethereal.",
     "EXTENDED_DESCRIPTION":[
       "I made my mind to love everything in the world, but what’s left is a broken hear."
     ]
@@ -1210,7 +1229,7 @@
   "BearPaw": {
     "NAME": "Bear Paw",
     "DESCRIPTION":
-    "获得 !B! 格挡 . 当此卡被弃置时, 你获得 !M! 力量 .",
+    "Gain !B! Block. If this card is discarded, gain !M! Strength.",
     "EXTENDED_DESCRIPTION":[
       "Its warm memory of hugs was forgotten when it was thrown away."
     ]
@@ -1218,7 +1237,7 @@
   "BloodyDesire": {
     "NAME": "Bloody Desire",
     "DESCRIPTION":
-    "获得 !B! 格挡 与 !M! 力量 , 如果你下个回合开始前没有失去生命, 失去6点生命.",
+    "Gain !B! Block and !M! Strength. If you do not lose HP before the start of your next turn, lose 6 HP.",
     "EXTENDED_DESCRIPTION":[
       "However, obsession doesn't stop when blinded by avarice."
     ]
@@ -1226,7 +1245,7 @@
   "Loneliness": {
     "NAME": "Loneliness",
     "DESCRIPTION":
-    "获得 !B! 格挡 , 只有当此卡是你最后1张手牌时才可打出.",
+    "Gain !B! Block. Can only be played if it's the only card in your hand.",
     "EXTENDED_DESCRIPTION":[
       "To hide soft inside, arm yourself with loneliness."
     ]
@@ -1234,7 +1253,7 @@
   "ScreamingWedge": {
     "NAME": "Screaming Wedge",
     "DESCRIPTION":
-    "获得 !B! 格挡 , 所有敌人失去 !M! 点 力量 .",
+    "Gain !B! Block. All enemies lose !M! Strength.",
     "EXTENDED_DESCRIPTION":[
       "Only iron-willed employees can use this without side effects."
     ]
@@ -1242,9 +1261,9 @@
   "Mimicry": {
     "NAME": "Mimicry",
     "DESCRIPTION":
-    "你不会再受到荆棘伤害或者生命流失.",
+    "You will no longer take damage from Thorns or HP loss.",
     "UPGRADE_DESCRIPTION":
-    " 固有 .你不会再受到荆棘伤害或者生命流失.",
+    "Innate. You will no longer take damage from Thorns or HP loss.",
     "EXTENDED_DESCRIPTION":[
       "Even though it is not the skin of a human, the skin that is akin to it protects us."
     ]
@@ -1252,7 +1271,7 @@
   "Noise": {
     "NAME": "Noise",
     "DESCRIPTION":
-    "抽 !M! 张卡, 使它们的费用随机变为0-3.",
+    "Draw !M! cards and randomize their costs between 0 to 3.",
     "EXTENDED_DESCRIPTION":[
       "As if taking you to the very moment of the day that everyone forgot."
     ]
@@ -1260,7 +1279,7 @@
   "Harmony": {
     "NAME": "Harmony",
     "DESCRIPTION":
-    "造成 !D! 伤害. 本回合每 消耗 1张卡, 费用减少 [E] .",
+    "Deal !D! damage. Reduce the cost of this card by [E] for each card Exhausted this turn.",
     "EXTENDED_DESCRIPTION":[
       "Art is the gift of the devil from despair and suffering."
     ]
@@ -1268,7 +1287,7 @@
   "DaCapo": {
     "NAME": "Da Capo",
     "DESCRIPTION":
-    "打出本回合打出过的所有卡, 目标随机. 消耗 .",
+    "Replay all cards played this turn at random targets. Exhaust.",
     "EXTENDED_DESCRIPTION":[
       "It would be wise to leave some audience alive until the finale to hear them applaud."
     ]
@@ -1276,470 +1295,473 @@
   "Logging": {
     "NAME": "Logging",
     "DESCRIPTION":
-    "造成 !D! 点伤害 !M! 次.",
+    "Deal !D! damage !M! times.",
     "EXTENDED_DESCRIPTION":[
-      "布满猩红痕迹的斧刃总是锋利无比."
+      "As if honing the blade was done religiously, the blade is always shiny."
     ]
   },
   "FrostShard": {
     "NAME": "Frost Shard",
     "DESCRIPTION":
-    "抽1张卡, 若抽到的卡是技能卡, 获得 !B! 格挡 并重复此卡效果.",
+    "Draw 1 card. If you draw a Skill, gain !B! Block and repeat this effect.",
     "EXTENDED_DESCRIPTION":[
-      "当冰雪消融的那天, 她冰封的内心也将一并融化.",
-      "不容","如果此卡效果抽到荣耀之羽, 将其消耗"
+      "Perhaps a day will come when her heart will be warmed by the weather, if you can believe it.",
+      "Intolerable","If Feather Of Honor is drawn this way, Exhaust it."
     ]
   },
   "Lamp": {
     "NAME": "Lamp",
     "DESCRIPTION":
-    "造成 !D!  点伤害, 若此卡杀死了敌人, 将此卡永久升级. 可被多次升级.",
+    "Deal !D! damage. If this kills an enemy, permanently upgrade it. Can be upgraded any number of times.",
     "EXTENDED_DESCRIPTION":[
-      "那些明亮而炙热的眼睛总是同时注视着一处."
+      "Dozens of those burning eyes are always looking toward one place."
     ]
   },
   "GrinderMk4": {
     "NAME": "Grinder Mk4",
     "DESCRIPTION":
-    "造成 !D! 伤害 !M! 次.",
+    "Deal !D! damage !M! times.",
     "EXTENDED_DESCRIPTION":[
-      "然而机械的叛乱早已不是现代社会的威胁."
+      "Machine rebellion is no longer a threat in modern society."
     ]
   },
   "GreenStem": {
     "NAME": "Green Stem",
     "DESCRIPTION":
-    "你的 格挡 不再会在回合开始时消失.",
+    "Block is not removed at the start of your turn.",
     "EXTENDED_DESCRIPTION":[
-      "当它意识到无人将会归来时, 就像变魔法一样, 它伸展出了自己的枝干和茎叶."
+      "It sprouted stems and leaves after realizing nobody will come."
     ]
   },
   "RedEyes": {
     "NAME": "Red Eyes",
     "DESCRIPTION":
-    "如果目标的意图是攻击, 获得 !M! 点 力量 .",
+    "If the enemy intends to attack, gain !M! Strength.",
     "EXTENDED_DESCRIPTION":[
-      "即使在黑暗中, 它的眼睛也能死死咬住目标."
+      "Its eyes gaze on targets even in the darkness."
     ]
   },
   "Horn": {
     "NAME": "Horn",
     "DESCRIPTION":
-    "造成 !D! 伤害, 等同你失去的生命的一半.",
+    "Deal damage equal to half of your missing HP (deals !D! damage).",
     "EXTENDED_DESCRIPTION":[
-      "绽放的花朵因为仇恨而将永远绽放."
+      "A flower blossomed through hate that would not wither."
     ]
   },
   "ParadiseLost": {
     "NAME": "Paradise Lost",
     "DESCRIPTION":
-    "造成 !D! 伤害. 打出后选择获得一项特殊强化. 可被多次 升级 .",
+    "Deal !D! damage. After playing this card, choose a special Enhancement. Can be upgraded many times.",
     "UPGRADE_DESCRIPTION":
-    "造成 !D! 伤害, 获得 !B! 格挡 . 打出后在本场战斗中获得一项特殊强化. 可被多次 升级 .",
+    "Deal !D! damage. Gain !B! Block. After playing this card, choose a special Enhancement. Can be upgraded many times.",
     "EXTENDED_DESCRIPTION":[
-      "我乃死, 我乃生. 我为暗, 我亦为光.",
-      "祷告", "如果你的卡组中存在白夜, 你可以在篝火处选择进行此卡的特殊强化.",
-      "护体", "给予你10 格挡 .",
-      "真言", "给予的伤害改为生命流失.",
-      "冥思", "随机移除你的1个负面状态.",
-      "净化", "消耗所有的 状态 和 诅咒 .",
-      "振奋", "抽2张卡.",
-      "鼓舞", "升级其余手牌.",
-      "神迹", "使随机手牌费用减少 [E] .",
-      "朴实", "此卡费用不会高于2.",
-      "眩目", "给予目标2层 易伤 .",
-      "隐秘", "获得 保留 .",
-      "劝戒", "给予目标2层 虚弱 .",
-      "福音", "恢复4点生命.",
-      "幸运", "战斗奖励增加15金币.",
-      "甘霖", "战斗奖励增加随机药水.",
-      "庇佑", "获得1层 人工制品 .",
-      "退化", "目标失去2点 力量 .",
-
-      "允诺", "获得 固有 .",
-      "信仰", "将此卡 升级 ."
+      "I am death and life. Darkness and light.",
+      "Prayer", "If you have WhiteNight in your deck, you can Enhance this card in rest sites.",
+      "Protection", "Gain 10 Block.",
+      "Truth", "Damage taken is converted to HP loss instead.",
+      "Meditation", "Remove a random debuff from yourself.",
+      "Purify", "Exhaust all Status and Curse cards.",
+      "Inspire", "Draw 2 cards.",
+      "Encourage", "Upgrade all other cards in your hand.",
+      "Miracle", "A random card in your hand costs [E] less.",
+      "Simplicity", "The cost of this card can never go above 2.",
+      "Dazzling", "Target enemy gains 2 Vulnerable.",
+      "Secretive", "Gain Retain.",
+      "Admonish", "Target enemy gains 2 Weak.",
+      "Gospel", "Heal 4 HP.",
+      "Lucky", "15 additional gold drops at the end of this combat",
+      "Sweetrain", "A random potion drops at the end of this combat.",
+      "Blessing", "Gain 1 Artifact.",
+      "Deterioration", "Target enemy loses 2 Strength.",
+      "Promise", "Gain Innate.",
+      "Faith", "Upgrade this card."
     ]
   },
   "Christmas": {
     "NAME": "Christmas",
     "DESCRIPTION":
-    "每当你消耗1张卡, 将1张随机卡加入你的手牌.",
+    "Each time you Exhaust a card, add a random card into your hand.",
     "EXTENDED_DESCRIPTION":[
-      "曾经想成为一个好孩子的小小梦想...现在还仍在你心中吗?"
+      "It may still dream of becoming a good child?"
     ]
   },
   "Hornet": {
     "NAME": "Hornet",
     "DESCRIPTION":
-    "造成 !D! 点伤害. 若你身上没有负面状态, 伤害翻倍.",
+    "Deal !D! damage. If you have no debuffs, deal twice the damage instead.",
     "EXTENDED_DESCRIPTION":[
-      "旧日的荣耀仍在继续绽放光辉."
+      "The glory of the past still lingers."
     ]
   },
   "WristCuter": {
     "NAME": "Wrist Cuter",
     "DESCRIPTION":
-    "造成 !D! 点伤害, 目标每次受到攻击时失去 !M! 点生命.",
+    "Deal !D! damage. Enemy loses !M! HP each time it is attacked.",
     "EXTENDED_DESCRIPTION":[
-      "刀刃会将追求幸福的意志一并撕裂, 而这将永不停止."
+      "It will also permanently cut off the will to pursue happiness from the victim."
     ]
   },
   "Soda": {
     "NAME": "Soda",
     "DESCRIPTION":
-    "每当你打出3张卡, 恢复1点生命.",
+    "Every 3 cards you play, heal 1 HP.",
     "EXTENDED_DESCRIPTION":[
-      "当使用它时, 葡萄汽水的香甜似乎也会一并喷发出来."
+      "It smells like grapes."
     ]
   },
   "Reverberation": {
     "NAME": "Reverberation",
     "DESCRIPTION":
-    "造成 !D! 点伤害. 若此卡被弃置, 获得 !B! 点 格挡 .",
+    "Deal !D! damage. If this card is discarded, gain !B! Block.",
     "EXTENDED_DESCRIPTION":[
-      "任何裂隙都能够被花簇填满."
+      "Any cracks will be filled with a pile of flowers."
     ]
   },
   "Regret_ego": {
     "NAME": "Regret",
     "DESCRIPTION":
-    "每当你消耗1张卡, 获得1层 金属化 .",
+    "Each time you Exhaust a card, gain 1 Metallicize.",
     "EXTENDED_DESCRIPTION":[
-      "对一个连葬礼都没有的人而言, 唯有深深的悔恨才是最好的悼唁."
+      "Regret shall be wielded in remembrance of all who died but could not find eternal rest."
     ]
   },
   "Galaxy": {
     "NAME": "Galaxy",
     "DESCRIPTION":
-    "如果你手中没有其它技能, 获得 !B! 点 格挡 .",
+    "If you have no other Skills, gain !B! Block.",
     "EXTENDED_DESCRIPTION":[
-      "你手中的鹅卵石闪耀着, 摇曳着, 抖动着. 在那之后, 它便成为了整个银河."
+      "The pebble in your hand sparkles, sways, tickles, And it becomes the universe."
     ]
   },
   "Beak": {
     "NAME": "Beak",
     "DESCRIPTION":
-    "造成 !D! 伤害. 如果你本回合失去过生命, 伤害变为4倍.",
+    "Deal !D! damage. If you have lost HP this turn, deal an additional 4 times of damage.",
     "EXTENDED_DESCRIPTION":[
-      "它不会宽恕那些阻碍自己前进的蠢货."
+      "Show no mercy to whomever stands on your way."
     ]
   },
   "CrimsonScar": {
     "NAME": "Crimson Scar",
     "DESCRIPTION":
-    "造成 !D! 伤害. 如果你的手牌中有郁蓝创痕, 将其 消耗 并使本次伤害翻倍.",
+    "Deal !D! damage. If Blue Scar is in your hand, Exhaust it, and deal twice the damage instead.",
     "EXTENDED_DESCRIPTION":[
-      "因为狂怒而盲目, 失去理智, 对杀戮果断而坚决, 那也总比因为懦弱而恐惧要好太多!"
+      "Attacking in blind rage and without hesitation is more important than insecure courage."
     ]
   },
   "BlueScar": {
     "NAME": "Blue Scar",
     "DESCRIPTION":
-    "获得 !B! 格挡 . 如果你的手牌中有猩红创痕, 将其 消耗 并使本次 格挡 翻倍.",
+    "Gain !B! Block. If Crimson Scar is in your hand, Exhaust it, and gain twice the Block instead.",
     "EXTENDED_DESCRIPTION":[
-      "它们只会让你的痛觉变得迟钝, 但是无法保护你的身体."
+      "The wounds will make you feel dull from damages although it won’t protect you completely from them."
     ]
   },
   "Tough": {
     "NAME": "Tough",
     "DESCRIPTION":
-    "造成 !D! 伤害. 如果你的抽牌堆中没有卡, 额外造成2次伤害.",
+    "Deal !D! damage. If your draw pile is empty, deal the same amount of damage 2 more times.",
     "EXTENDED_DESCRIPTION":[
-      "它只能被发型简单, 清爽的人士使用...那就是秃子! 光头! 大吴克!"
+      "Only those people with bald or round hair loss can use this."
     ]
   },
   "SomewhereSpear": {
     "NAME": "Somewhere Spear",
     "DESCRIPTION":
-    "抽到此卡时, 此卡获得随机手牌的基础效果.",
+    "When this card is drawn, it gains the effects of a random card in your hand.",
     "EXTENDED_DESCRIPTION":[
-      "不要想着去理解它, 只是这样使用它就可以了."
+      "Do not try to understand it, just use it."
     ]
   },
   "LifeForTheDareDevil": {
     "NAME": "Life For The Dare Devil",
     "DESCRIPTION":
-    " 固有 . 消耗 所有技能卡. 如果此卡消耗了技能卡, 获得 !M! 点 金属化 和 力量 .",
+    " Innate. Exhaust all Skills. If this effect Exhausts a Skill, gain !M! Metallicize and Strength.",
     "EXTENDED_DESCRIPTION":[
-      "如果让有赴死之心的人使用, 它便会无往不利."
+      "If a person who accepts their death uses this, any enemy can be defeated."
     ]
   },
   "Justitia": {
     "NAME": "Justitia",
     "DESCRIPTION":
-    "对所有敌人造成 !D! 伤害. 场上每个负面状态将使此卡伤害增加 !M! .",
+    "Deal !D! damage to all enemies. Increase the damage value of this card by !M! for each debuff on the battlefield.",
     "EXTENDED_DESCRIPTION":[
-      "不要试着移去上面的绷带, 它掩盖着那些属于过去的, 不应被人锁了解的悲哀记忆."
+      "Do not try to take off the bandage. It wants to hide the sad memories of the past."
     ]
   },
   "Twilight": {
     "NAME": "Twilight",
     "DESCRIPTION":
-    "造成 !D! 伤害, 获得 !B! 格挡 , 抽 !M! 张卡, 获得 !M! 点 力量 和 敏捷 . 打出后从卡堆中移除.",
+    "Deal !D! damage. Gain !B! Block. Draw !M! cards. Gain !M! Strength and Dexterity. Remove this card from this combat after playing it.",
     "EXTENDED_DESCRIPTION":[
-      "在那片昏暗的森林里, 鸟儿的叽喳鸣唱依旧响彻着吗?"
+      "In the forest, did the birds twitter stop?"
     ]
   },
   "GoldRush": {
     "NAME": "Gold Rush",
     "DESCRIPTION":
-    "造成6点伤害. 在每回合开始时加入你的手牌.",
+    "Deal !D! damage. Add this card into your hand at the start of every turn.",
     "EXTENDED_DESCRIPTION":[
-      "宝石美丽的金色光泽令人着迷, 这样的反应可能来自人类潜意识的深处."
+      "Its beautiful gold patterns have mesmerized many a person. The delusion may have come from the deepest subconscious."
     ]
   },
   "Spore": {
     "NAME": "Spore",
     "DESCRIPTION":
-    "发现1张卡, 本回合其费用为0. 消耗 .",
+    "Discover 1 card. It costs 0 this turn. Exhaust.",
     "UPGRADE_DESCRIPTION":
-    "发现1张卡, 本回合其费用为0.",
+    "Discover 1 card. It costs 0 this turn.",
     "EXTENDED_DESCRIPTION":[
-      "对旧日的思恋远比肉体的痛苦更加悲惨, 因为它是无形之物, 无法阻挡."
+      "Nostalgia is more miserable because it is invisible."
     ]
   },
   "Laetitia_ego": {
     "NAME": "Laetitia",
     "DESCRIPTION":
-    "你的手牌本回合获得保留.",
+    "Cards in your hand gain Retain this turn.",
     "UPGRADE_DESCRIPTION":
-    "抽1张卡. 你的手牌本回合获得保留.",
+    "Draw 1 card. Cards in your hand gain Retain this turn..",
     "EXTENDED_DESCRIPTION":[
-      "精美的丝带和蝴蝶结寄托了少女对幸福的向往, 那个小孩不愿撇下她的朋友."
+      "The ribbon on the coat represents a child's yearn for happiness. The kid could not leave her friend behind."
     ]
   },
   "SolemnVow": {
     "NAME": "Solemn Vow",
     "DESCRIPTION":
-    "消耗堆中每有1张卡, 对所有敌人造成1次 !D! 伤害, 清空你的消耗堆. 消耗 .",
+    "Deal !D! damage to all enemies for each card in your Exhaust pile. Remove all cards from your Exhaust pile. Exhaust.",
     "EXTENDED_DESCRIPTION":[
-      "用蝴蝶为那些长眠于不毛之地的人们献上哀悼吧."
+      "When you see a shallow grave in the desert, mourn for the butterflies."
     ]
   },
   "MagicBullet": {
     "NAME": "Magic Bullet",
     "DESCRIPTION":
-    "对所有敌人造成 !D! 伤害, 消耗弃牌堆中所有的卡. 消耗 .",
+    "Deal !D! damage to all enemies. Exhaust all cards in your discard pile. Exhaust.",
     "EXTENDED_DESCRIPTION":[
-      "尽管无法完全提取异想体核心中那股深奥的力量, 但利用那神奇力量所研制出来的装备仍然无比强大."
+      "Though unable to fully extract the power of the prototype, the magical power it holds is still potent."
     ]
   },
   "BlackSwan_ego": {
     "NAME": "Black Swan",
     "DESCRIPTION":
-    "获得 !M! 荆棘 , 你每失去一次生命, 这张牌的耗能减少 [E] . 消耗 .",
+    "Gain !M! Thorns. Each time you lose HP, reduce the cost of this card by [E]. Exhaust.",
     "EXTENDED_DESCRIPTION":[
-      "梦想总是美好的, 可现实始终那样残酷..."
+      "It yearned for a never-waking dream, but reality was cruel."
     ]
   },
   "Ecstasy": {
     "NAME": "Ecstasy",
     "DESCRIPTION":
-    "获得 !M! 点 力量 与 敏捷 , 弃置1张卡.",
+    "Gain !M! Strength and Dexterity. Discard 1 card.",
     "EXTENDED_DESCRIPTION":[
-      "色彩斑斓的花纹使你想起某个活泼可爱的孩子."
+      "The colorful pattern makes it look like a fancy kid's vividness."
     ]
   },
   "Heaven": {
     "NAME": "Heaven",
     "DESCRIPTION":
-    "不能被打出. 回合结束时对所有敌人造成 !D! 伤害.",
+    "Unplayable. Deal !D! damage to all enemies at the end of the turn.",
     "EXTENDED_DESCRIPTION":[
-      "它就活在你的视线之中."
+      "It lives inside your eyes."
     ]
   },
   "SwordSharpenedByTears": {
     "NAME": "Sword Sharpened By Tears",
     "DESCRIPTION":
-    "你手中每有1张 技能 , 对所有敌人造成 !D! 伤害1次.",
+    "Deal !D! damage to all enemies for each Skill in your hand.",
     "EXTENDED_DESCRIPTION":[
-      "泪如灰落, 绣如星宿."
+      "Tears fall like ashes, embroidered like constellations."
     ]
   },
   "ShedSkin": {
     "NAME": "Shed Skin",
     "DESCRIPTION":
-    "弃置X张卡, 每张获得 !M! 层 多层护甲 .",
+    "Discard X cards. Gain !M! Plated Armor for each card discarded this way.",
     "EXTENDED_DESCRIPTION":[
-      "它的湿滑表面可能会使人感到恶心, 但这种多层次的鳞片结构正适合用来保护人们的身体."
+      "Its slippery surface may disturb some people, but its scales are multi-layered, suitable for protection."
     ]
   },
   "TheSmile": {
     "NAME": "The Smile",
     "DESCRIPTION":
-    "消耗堆中每有1张卡, 获得 !B! 点 格挡 .",
+    "Gain !B! Block for each card in your Exhaust pile.",
     "EXTENDED_DESCRIPTION":[
-      "我经常听到那些怪异的呻吟, 但我只能选择忽视, 因为我无能为力."
+      "Sometimes you can hear the moaning of pain, but nothing can be done, so it’s better just to ignore it."
     ]
   },
   "Gaze": {
     "NAME": "Gaze",
     "DESCRIPTION":
-    "不能被打出. 回合结束时获得 !B! 点 格挡 .",
+    "Unplayable. Gain !B! Block at the end of the turn.",
     "EXTENDED_DESCRIPTION":[
-      "门后的眼睛死死凝视着它的目标, 没人知道它到底想看到什么."
+      "The eyes behind the door keeps gazing on its target. No one knows what it wants to see."
     ]
   },
   "Wingbeat": {
     "NAME": "Wingbeat",
     "DESCRIPTION":
-    "获得 !B! 点 格挡 , 升级1张手牌.",
+    "Gain !B! Block. Upgrade a card in your hand for the rest of the combat.",
     "EXTENDED_DESCRIPTION":[
-      "这件装备并不像精灵的羽翼那样轻薄, 而要沉重许多."
+      "Unlike the wing's adorable form, the E.G.O itself is heavy."
     ]
   },
   "Lantern": {
     "NAME": "Lantern",
     "DESCRIPTION":
-    "获得1层易伤, 本回合受到攻击时对攻击者造成 !D! 伤害.",
+    "Gain 1 Vulnerable. Whenever you are attacked this turn, deal !D! damage back.",
     "EXTENDED_DESCRIPTION":[
-      "与黑暗中的温暖荧光相对的, 是那些令人恐惧的利齿."
+      "However, the teeth that extend from the armor are terrifying."
     ]
   },
   "Harvest": {
     "NAME": "Harvest",
     "DESCRIPTION":
-    "造成 !D! 伤害.",
+    "Deal !D! damage.",
     "EXTENDED_DESCRIPTION":[
-      "我们到现在也无法确认到底有多少人因为这支长耙而丧生."
+      "How many wise people lost their lives to this rake?"
     ]
   },
   "Diffraction": {
     "NAME": "Diffraction",
     "DESCRIPTION":
-    "失去 !M! 点生命, 获得1层无实体, 消耗 .",
+    "Lose !M! HP. Gain 1 Intangible. Exhaust.",
     "EXTENDED_DESCRIPTION":[
-      "不要在乎那些荒谬的建议, 你应该用你的头脑去观察与感受它的样式."
+      "You can ignore the ridiculous advice that you should see it with your mind."
     ]
   },
   "CENSORED_ego": {
-    "NAME": "[CENSORED]",
+    "NAME": "(CENSORED)",
     "DESCRIPTION":
-    "所有敌人获得 !M! 层 虚弱 和 易伤 , 失去 !M! 点 力量 . 消耗 .",
+    "All enemies gain !M! Weak and Vulnerable, and lose !M! Strength. Exhaust.",
     "EXTENDED_DESCRIPTION":[
-      "这[数据删除]可以被用来[数据删除], 但是会令看着[数据删除]的人感到严重的[数据删除]."
+      "(CENSORED) can be (CENSORED) but gives the audience a horrendous feeling."
     ]
   },
   "TodaysExpression": {
     "NAME": "Todays Expression",
     "DESCRIPTION":
-    "清空你所有的负面状态, 每层给予你 !B! 点 格挡 . 消耗 .(给予 !M! 格挡 )",
+    "Remove all your debuffs, and gain !B! Block for each debuff removed (gains !B! Block).",
     "EXTENDED_DESCRIPTION":[
-      "当你觉得已经无法从面容上掩盖自己的情感时, 那就让我们来遮住你的脸吧."
+      "Let's hide your face when you feel like you cannot hide your feelings anymore."
     ]
   },
   "SoundOfStar": {
     "NAME": "Sound Of Star",
     "DESCRIPTION":
-    "消耗至多X张手牌, 获得等同它们费用的 [E] , 抽等量的卡. 消耗 .",
+    "Exhaust up to X cards in your hand. Gain [E] equal to the sum of their costs, and draw that many cards. Exhaust.",
     "UPGRADE_DESCRIPTION":
-    "消耗至多X + 1张手牌, 获得等同它们费用的 [E] , 抽等量的卡. 消耗 .",
+    "Exhaust up to X + 1 cards in your hand. Gain [E] equal to the sum of their costs, and draw that many cards. Exhaust.",
     "EXTENDED_DESCRIPTION":[
-      "如果你仔细凝视它, 那你必会醒悟——我们终有一天会回到那个地方."
+      "If you look carefully, you can see that we will have to return someday."
     ]
   },
   "Pleasure": {
     "NAME": "Pleasure",
     "DESCRIPTION":
-    "获得1层 虚弱 , 抽2张卡. 将1张此卡的复制加入手牌. 只有当手牌中没有其它因乐癫狂时才可打出.",
+    "Gain 1 Weak. Draw 2 cards. Add a copy of this card into your hand. Can only be played if there are no other copies of Pleasure in your hand.",
     "UPGRADE_DESCRIPTION":
-    "获得1层 虚弱 , 抽2张卡. 将1张此卡的复制加入手牌. 虚无 . 只有当手牌中没有其它因乐癫狂时才可打出.",
+    "Gain 1 Weak. Draw 2 cards. Add a copy of this card into your hand. Can only be played if there are no other copies of Pleasure in your hand. Ethereal.",
     "EXTENDED_DESCRIPTION":[
-      "寻求常人无法承受的快感通常会使人丧失自我."
+      "If you look for a pleasure that can not be tolerated, the end reaches the loss of self."
     ]
   },
   "RapturousDream": {
     "NAME": "Rapturous Dream",
     "DESCRIPTION":
-    "获得 !B! 点 格挡 , 获得 !M! 层 脆弱 .",
+    "Gain !B! Block. Gain !M! Frail.",
     "EXTENDED_DESCRIPTION":[
-      "拂晓既出, 干渴难足. 闭目静待, 奈何难求."
+      "The thirst is severe when the dawn breaks, I wait for you with my eyes closed. You, who will never come."
     ]
   },
   "CherryBlossom": {
     "NAME": "Cherry Blossom",
     "DESCRIPTION":
-    "每当你消耗1张卡, 对随机敌人造成 !M! 伤害.",
+    "Each time you Exhaust a card, deal !M! damage to a random enemy.",
     "EXTENDED_DESCRIPTION":[
-      "不要对我留有思念. 当名为死亡的冬日逝去之时, 我将化作含苞待放的蓓蕾回到你的身边."
+      "I shall return as buds when winter leaves."
     ]
   },
   "FeatherOfHonor": {
     "NAME": "Feather Of Honor",
     "DESCRIPTION":
-    "抽1张卡, 若抽到的是攻击, 对所有敌人造成 !D! 伤害并重复此卡效果.",
+    "Draw 1 card. If you draw an Attack, deal !D! damage to all enemies and repeat this effect.",
     "EXTENDED_DESCRIPTION":[
-      "能够穿透肉体的烈焰融化了寒冷的身躯与心灵.",
-      "不容","如果此卡效果抽到霜之碎片, 将其消耗."
+      "The flames that pierce the body melts the frozen body and heart.",
+      "Intolerable"," If Frost Shard is drawn this way, Exhaust it."
     ]
   },
   "Discord": {
     "NAME": "Discord",
     "DESCRIPTION":
-    "反转你所有卡的费用.",
+    "Reverse the costs of all your cards.",
     "UPGRADE_DESCRIPTION":
-    " 固有 . 反转你所有卡的费用.",
+    " Innate. Reverse the costs of all your cards.",
     "EXTENDED_DESCRIPTION":[
-      "生的力量, 死的力量, 二者并无优劣之分. 这两种力量不过是表现出了它们本应表现的形态罢了."
+      "The power of birth, and the power of death. There is no good or evil about those powers. They are just the way it was meant to be."
     ]
   },
   "Moonlight": {
     "NAME": "Moonlight",
     "DESCRIPTION":
-    "弃置所有手牌, 每张对所有敌人造成 !D! 伤害并获得 !B! 格挡 .",
+    "Discord your hand. Deal !D! damage to all enemies and gain !B! Block for each card discarded.",
     "EXTENDED_DESCRIPTION":[
-      "终焉之刻, 吾等皆化身为月, 是以不堪凡躯也."
+      "In the end, we all become moon. Because we can’t bear ourselves."
     ]
   },
   "Pinks": {
     "NAME": "Pinks",
     "DESCRIPTION":
-    "使你手中所有卡的伤害与 格挡 增加 !M! .",
+    "Increase the damage and block values of cards in your hand by !M!.",
     "EXTENDED_DESCRIPTION":[
-      "粉红色象征着温暖与爱."
+      "Pink is considered to be the color of warmth and love."
     ]
   },
   "CUTE": {
     "NAME": "CUTE",
     "DESCRIPTION":
-    "打出你牌堆顶的卡, 目标随机. 消耗 .",
+    "Play the top card of your draw pile at a random enemy. Exhaust.",
     "UPGRADE_DESCRIPTION":
-    "打出你牌堆顶的卡, 目标随机.",
+    "Play the top card of your draw pile at a random enemy.",
     "EXTENDED_DESCRIPTION":[
-      "这些果冻状的爪爪垫摸起来真是让人欲罢不能啊, 简直爽到~"
+      "But the jelly-like paw pad feels much gud to touch."
     ]
   },
   "Hypocrisy": {
     "NAME": "Hypocrisy",
     "DESCRIPTION":
-    "抽 !M! 张卡, 弃置其中费用为0的卡.",
+    "Draw !M! cards. Discard all cards drawn this way that cost 0.",
     "EXTENDED_DESCRIPTION":[
-      "但是他们浑然不知——大自然可不懂得祝福与诅咒的区别."
+      "But beware that the nature does not know the difference between the blessing and curse."
     ]
   },
   "Adoration": {
     "NAME": "Adoration",
     "DESCRIPTION":
-    "选择1张手牌, 将其的2张复制加入你的手牌. 消耗 .",
+    "Choose a card in your hand. Add 2 copies of it into your hand. Exhaust.",
     "UPGRADE_DESCRIPTION":
-    "选择1张卡, 将其的2张复制加入你的手牌. 消耗 .",
+    "Choose a card. Add 2 copies of it into your hand. Exhaust.",
     "EXTENDED_DESCRIPTION":[
-      "触碰黏液的人会抱怨皮肤上那股怪异的感觉, 然而它绝不会止步于此."
+      "People who touch this slime complain strange sensation on their skin. But it won’t stop there."
     ]
   },
   "Amita": {
     "NAME": "Amita",
     "DESCRIPTION":
-    "消耗你牌堆顶的卡, 获得3倍于其费用的能量. 消耗 .",
+    "Exhaust the top card of your draw pile. Gain [E] equal to 3 times its cost. Exhaust.",
     "UPGRADE_DESCRIPTION":
-    "消耗你牌堆顶的卡, 获得3倍于其费用的能量.",
+    "Exhaust the top card of your draw pile. Gain [E] equal to 3 times its cost.",
     "EXTENDED_DESCRIPTION":[
-      "我愿意相信, 在承受这诸多苦难之后, 我终将修成真果."
+      "You can become Buddha by washing away anguish and delusions in your heart. I wanted to believe."
     ]
   },
 
 
-
+  "AddBullet": {
+    "NAME": "Buy Bullet",
+    "DESCRIPTION":
+    "Consumes 2 LP. Add a Bullet into your deck."
+  },
   "TestCard": {
     "NAME": "TEST",
     "DESCRIPTION":

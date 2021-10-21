@@ -30,10 +30,10 @@ public class Freischutz extends AbstractLobotomyCard implements CustomSavable<in
     public static final String NAME;
     public static final String DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION;
-    public static int counter = 0;
+    public static int counter = 0, tmpC = 0;
 
     public Freischutz() {
-        super("Freischutz", Freischutz.NAME, Freischutz.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 69, 3, -2);
+        super("Freischutz", Freischutz.NAME, Freischutz.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 69, 3, -2, CardTarget.NONE);
         this.baseMagicNumber = counter;
         this.magicNumber = this.baseMagicNumber;
         initInfo();
@@ -53,6 +53,13 @@ public class Freischutz extends AbstractLobotomyCard implements CustomSavable<in
         this.baseMagicNumber = counter;
         this.magicNumber = this.baseMagicNumber;
         this.isMagicNumberModified = true;
+    }
+
+    @Override
+    public void onVictory() {
+        super.onVictory();
+        tmpC = counter;
+        //tmpC = 0;
     }
 
     public void use(final AbstractPlayer p, final AbstractMonster m) {
@@ -93,6 +100,10 @@ public class Freischutz extends AbstractLobotomyCard implements CustomSavable<in
                 AbstractDungeon.topLevelEffects.add(new FreischutzSnipEffect(false));
             }
         }
+    }
+
+    public static void reset(){
+        counter = tmpC;
     }
 
     @Override

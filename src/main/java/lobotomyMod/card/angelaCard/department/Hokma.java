@@ -7,6 +7,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -19,6 +20,8 @@ import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CombatRewardScreen;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import com.megacrit.cardcrawl.vfx.combat.HealEffect;
+import lobotomyMod.LobotomyMod;
 import lobotomyMod.card.angelaCard.code.ControlCode;
 import lobotomyMod.card.angelaCard.code.RecordCode;
 import lobotomyMod.card.angelaCard.code.other.SummonCall;
@@ -89,6 +92,10 @@ public class Hokma extends AbstractDepartmentCard {
                 case 4:
                     //AbstractDungeon.player.masterDeck.addToBottom(new SummonCall());
                     break;
+                case 5:
+                    AbstractDungeon.player.maxHealth *= 2;
+                    AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth);
+                    break;
             }
         }
         else {
@@ -124,6 +131,10 @@ public class Hokma extends AbstractDepartmentCard {
                 this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[2], EXTENDED_DESCRIPTION[3]));
             case 2:
                 this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[4], EXTENDED_DESCRIPTION[5]));
+            case 3:
+                if(LobotomyMod.useBlackAngela) {
+                    this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[6], EXTENDED_DESCRIPTION[7]));
+                }
         }
     }
 

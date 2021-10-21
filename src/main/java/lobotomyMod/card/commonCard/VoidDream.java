@@ -30,7 +30,7 @@ public class VoidDream extends AbstractLobotomyCard implements CustomSavable<int
     public static final String[] EXTENDED_DESCRIPTION;
 
     public VoidDream() {
-        super("VoidDream", VoidDream.NAME, VoidDream.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 99, 3, 1);
+        super("VoidDream", VoidDream.NAME, VoidDream.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 99, 3, 1, CardTarget.SELF);
         initInfo();
     }
 
@@ -44,7 +44,7 @@ public class VoidDream extends AbstractLobotomyCard implements CustomSavable<int
         AbstractCard card = LobotomyUtils.getRandomCard(p.discardPile, p.drawPile, p.hand, this);
         if((card != null) && (!card.isEthereal)){
             card.isEthereal = true;
-            card.rawDescription += EXTENDED_DESCRIPTION[this.maxInfo];
+            card.rawDescription += EXTENDED_DESCRIPTION[this.maxInfo + 1];
             card.initializeDescription();
         }
     }

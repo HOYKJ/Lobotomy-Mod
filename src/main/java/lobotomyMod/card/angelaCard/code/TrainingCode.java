@@ -1,6 +1,5 @@
 package lobotomyMod.card.angelaCard.code;
 
-import com.megacrit.cardcrawl.actions.unique.ReprogramAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,7 +9,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import lobotomyMod.action.common.ChooseAction;
 import lobotomyMod.card.AbstractLobotomyCard;
 import lobotomyMod.card.angelaCard.department.Hod;
-import lobotomyMod.card.angelaCard.department.Malkuth;
 import lobotomyMod.character.Angela;
 
 /**

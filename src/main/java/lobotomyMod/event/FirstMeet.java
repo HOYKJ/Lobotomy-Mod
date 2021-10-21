@@ -31,6 +31,7 @@ import lobotomyMod.relic.CogitoBucket;
 import lobotomyMod.vfx.AutoPlayStory;
 import lobotomyMod.vfx.action.LatterEffect;
 
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -63,6 +64,7 @@ public class FirstMeet extends AbstractEvent {
         CardCrawlGame.music.silenceBGMInstantly();
         AbstractDungeon.getCurrRoom().playBgmInstantly("op-theme-ogg.mp3");
         AbstractDungeon.player.drawY -= 20;
+        LobotomyMod.activeChampagne = true;
     }
 
     public FirstMeet(){
@@ -126,6 +128,7 @@ public class FirstMeet extends AbstractEvent {
                 else {
                     this.roomEventText.addDialogOption(OPTIONS[7], true);
                 }
+                //this.roomEventText.addDialogOption(OPTIONS[1]);
                 if(unlockEnough(0.3F)) {
                     this.roomEventText.addDialogOption(OPTIONS[2]);
                 }
@@ -140,6 +143,11 @@ public class FirstMeet extends AbstractEvent {
                 else if(buttonPressed == 1){
                     AbstractDungeon.player.loseRelic(CogitoBucket.ID);
                     LobotomyMod.activeAngela = true;
+                    try {
+                        LobotomyMod.saveData();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
                 this.screen = CurScreen.LEAVE;
                 this.roomEventText.updateBodyText(DESCRIPTIONS[5]);
@@ -147,6 +155,25 @@ public class FirstMeet extends AbstractEvent {
                 this.roomEventText.clearRemainingOptions();
                 break;
             case LEAVE:
+                if(LobotomyMod.deadTime >= 3) {
+                    AbstractDungeon.topLevelEffects.clear();
+                    AbstractDungeon.effectList.clear();
+                    AbstractDungeon.getCurrRoom().event = new Champagne();
+                    AbstractDungeon.getCurrRoom().event.onEnterRoom();
+                    if (AbstractDungeon.scene instanceof TheBottomScene) {
+                        try {
+                            Field torches = SuperclassFinder.getSuperclassField(AbstractDungeon.scene.getClass(), "torches");
+                            torches.setAccessible(true);
+                            ((ArrayList) torches.get(AbstractDungeon.scene)).clear();
+                        } catch (NoSuchFieldException | IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    CardCrawlGame.fadeIn(1.5F);
+                    AbstractDungeon.rs = AbstractDungeon.RenderScene.EVENT;
+                    AbstractDungeon.closeCurrentScreen();
+                    return;
+                }
                 openMap();
                 break;
         }
@@ -175,7 +202,7 @@ public class FirstMeet extends AbstractEvent {
         this.renderRoomEventPanel(sb);
     }
 
-    private static boolean unlockEnough(float percent){
+    public static boolean unlockEnough(float percent){
         int unlock = 0, sum = 0;
         for(AbstractLobotomyCard card : LobotomyHandler.abnormalityListCommon){
             sum ++;

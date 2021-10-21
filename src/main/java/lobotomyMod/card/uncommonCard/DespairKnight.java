@@ -26,7 +26,7 @@ public class DespairKnight extends AbstractLobotomyCard implements CustomSavable
     public static final String[] EXTENDED_DESCRIPTION;
 
     public DespairKnight() {
-        super("DespairKnight", DespairKnight.NAME, DespairKnight.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 73, 3, 1);
+        super("DespairKnight", DespairKnight.NAME, DespairKnight.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 73, 3, 1, CardTarget.SELF);
         initInfo();
     }
 

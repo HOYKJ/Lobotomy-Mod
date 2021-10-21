@@ -36,11 +36,10 @@ public abstract class AbstractDepartmentCard extends CustomCard {
     public static final String DESCRIPTION;
     public List<TooltipInfo> tips = new ArrayList<>();
     public int level, agents;
-    public AbstractCard cardsToPreview = null;
     protected boolean e;
 
     public AbstractDepartmentCard(final String id, final String name, final String description) {
-        super(id, name, LobotomyHandler.angelaCardImage(id), -2, description, CardType.SKILL, AbstractCardEnum.Angela, CardRarity.SPECIAL, CardTarget.SELF);
+        super(id, name, (LobotomyMod.useBlackAngela? LobotomyHandler.angelaBlackCardImage(id): LobotomyHandler.angelaCardImage(id)), -2, description, CardType.SKILL, AbstractCardEnum.Angela, CardRarity.SPECIAL, CardTarget.SELF);
     }
 
     @Override
@@ -62,38 +61,38 @@ public abstract class AbstractDepartmentCard extends CustomCard {
         return this.tips;
     }
 
-    @Override
-    public void renderCardTip(SpriteBatch sb) {
-        super.renderCardTip(sb);
-        if (this.cardsToPreview != null) {
-            renderCardPreview(sb);
-        }
-    }
+//    @Override
+//    public void renderCardTip(SpriteBatch sb) {
+//        super.renderCardTip(sb);
+//        if (this.cardsToPreview != null) {
+//            renderCardPreview(sb);
+//        }
+//    }
 
-    public void renderCardPreviewInSingleView(SpriteBatch sb)
-    {
-        this.cardsToPreview.current_x = (1435.0F * Settings.scale);
-        this.cardsToPreview.current_y = (795.0F * Settings.scale);
-        this.cardsToPreview.drawScale = 0.8F;
-        this.cardsToPreview.render(sb);
-    }
-
-    public void renderCardPreview(SpriteBatch sb)
-    {
-        if ((AbstractDungeon.player != null) && (AbstractDungeon.player.isDraggingCard)) {
-            return;
-        }
-        float tmpScale = this.drawScale * 0.8F;
-        if (this.current_x > Settings.WIDTH * 0.75F) {
-            this.cardsToPreview.current_x = (this.current_x + (IMG_WIDTH / 2.0F + IMG_WIDTH / 2.0F * 0.8F + 16.0F) * this.drawScale);
-        } else {
-            this.cardsToPreview.current_x = (this.current_x - (IMG_WIDTH / 2.0F + IMG_WIDTH / 2.0F * 0.8F + 16.0F) * this.drawScale);
-        }
-        this.cardsToPreview.current_y = (this.current_y + (IMG_HEIGHT / 2.0F - IMG_HEIGHT / 2.0F * 0.8F) * this.drawScale);
-
-        this.cardsToPreview.drawScale = tmpScale;
-        this.cardsToPreview.render(sb);
-    }
+//    public void renderCardPreviewInSingleView(SpriteBatch sb)
+//    {
+//        this.cardsToPreview.current_x = (1435.0F * Settings.scale);
+//        this.cardsToPreview.current_y = (795.0F * Settings.scale);
+//        this.cardsToPreview.drawScale = 0.8F;
+//        this.cardsToPreview.render(sb);
+//    }
+//
+//    public void renderCardPreview(SpriteBatch sb)
+//    {
+//        if ((AbstractDungeon.player != null) && (AbstractDungeon.player.isDraggingCard)) {
+//            return;
+//        }
+//        float tmpScale = this.drawScale * 0.8F;
+//        if (this.current_x > Settings.WIDTH * 0.75F) {
+//            this.cardsToPreview.current_x = (this.current_x + (IMG_WIDTH / 2.0F + IMG_WIDTH / 2.0F * 0.8F + 16.0F) * this.drawScale);
+//        } else {
+//            this.cardsToPreview.current_x = (this.current_x - (IMG_WIDTH / 2.0F + IMG_WIDTH / 2.0F * 0.8F + 16.0F) * this.drawScale);
+//        }
+//        this.cardsToPreview.current_y = (this.current_y + (IMG_HEIGHT / 2.0F - IMG_HEIGHT / 2.0F * 0.8F) * this.drawScale);
+//
+//        this.cardsToPreview.drawScale = tmpScale;
+//        this.cardsToPreview.render(sb);
+//    }
 
     public void tackAction(){
         for(AbstractCard card : AbstractDungeon.player.masterDeck.group){
@@ -114,21 +113,21 @@ public abstract class AbstractDepartmentCard extends CustomCard {
         DESCRIPTION = AbstractDepartmentCard.cardStrings.DESCRIPTION;
     }
 
-    @SpirePatch(
-            clz= SingleCardViewPopup.class,
-            method="renderTips"
-    )
-    public static class renderTips {
-        @SpirePostfixPatch
-        public static void postfix(SingleCardViewPopup _inst, SpriteBatch sb) throws NoSuchFieldException, IllegalAccessException {
-            Field card = _inst.getClass().getDeclaredField("card");
-            card.setAccessible(true);
-            if(!(card.get(_inst) instanceof AbstractDepartmentCard)){
-                return;
-            }
-            if (((AbstractDepartmentCard)card.get(_inst)).cardsToPreview != null) {
-                ((AbstractDepartmentCard)card.get(_inst)).renderCardPreviewInSingleView(sb);
-            }
-        }
-    }
+//    @SpirePatch(
+//            clz= SingleCardViewPopup.class,
+//            method="renderTips"
+//    )
+//    public static class renderTips {
+//        @SpirePostfixPatch
+//        public static void postfix(SingleCardViewPopup _inst, SpriteBatch sb) throws NoSuchFieldException, IllegalAccessException {
+//            Field card = _inst.getClass().getDeclaredField("card");
+//            card.setAccessible(true);
+//            if(!(card.get(_inst) instanceof AbstractDepartmentCard)){
+//                return;
+//            }
+//            if (((AbstractDepartmentCard)card.get(_inst)).cardsToPreview != null) {
+//                ((AbstractDepartmentCard)card.get(_inst)).renderCardPreviewInSingleView(sb);
+//            }
+//        }
+//    }
 }

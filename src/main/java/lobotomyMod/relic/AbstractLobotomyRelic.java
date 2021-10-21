@@ -43,10 +43,8 @@ public abstract class AbstractLobotomyRelic extends CustomRelic {
         }
         if((this.isObtained) && (this.hb != null) && ((this.hb.hovered) && (InputHelper.justClickedRight))) {
             this.RclickStart=true;
-            //logger.info("rcs");
         }
         if((this.Rclick)){
-            //logger.info("rc");
             this.Rclick=false;
             this.onRightClick();
         }

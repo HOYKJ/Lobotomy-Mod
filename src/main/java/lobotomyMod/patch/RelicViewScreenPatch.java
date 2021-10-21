@@ -25,6 +25,7 @@ public class RelicViewScreenPatch {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("RelicViewScreenPatch");
     public static final String[] TEXT = uiStrings.TEXT;
     public static ArrayList<AbstractRelic> abnormalityPool = new ArrayList<>();
+    public static ArrayList<AbstractRelic> egoPool = new ArrayList<>();
 
     @SpirePatch(
             clz= RelicViewScreen.class,
@@ -35,6 +36,7 @@ public class RelicViewScreenPatch {
         public static void Insert(RelicViewScreen _inst, SpriteBatch sb) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
             Method renderList = SuperclassFinder.getSuperClassMethod(_inst.getClass(), "renderList", SpriteBatch.class, String.class, String.class, ArrayList.class);
             renderList.setAccessible(true);
+            renderList.invoke(_inst, sb, TEXT[2], TEXT[3], egoPool);
             renderList.invoke(_inst, sb, TEXT[0], TEXT[1], abnormalityPool);
         }
     }
@@ -48,6 +50,7 @@ public class RelicViewScreenPatch {
         public static void Insert(RelicViewScreen _inst) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
             Method updateList = SuperclassFinder.getSuperClassMethod(_inst.getClass(), "updateList", ArrayList.class);
             updateList.setAccessible(true);
+            updateList.invoke(_inst, egoPool);
             updateList.invoke(_inst, abnormalityPool);
         }
     }

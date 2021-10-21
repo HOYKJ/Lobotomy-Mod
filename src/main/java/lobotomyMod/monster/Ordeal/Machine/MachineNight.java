@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import lobotomyMod.action.common.LatterAction;
 import lobotomyMod.action.unique.CreateMachineAction;
 import lobotomyMod.monster.Ordeal.AbstractOrdealMonster;
@@ -74,6 +75,11 @@ public class MachineNight extends AbstractOrdealMonster {
         }
         this.changeState("DIE");
         this.deathTimer += 1.5F;
+        for(RewardItem ri : AbstractDungeon.getCurrRoom().rewards){
+            if (ri.relic instanceof AtMidnight){
+                return;
+            }
+        }
         AbstractDungeon.getCurrRoom().addRelicToRewards(new AtMidnight());
     }
 

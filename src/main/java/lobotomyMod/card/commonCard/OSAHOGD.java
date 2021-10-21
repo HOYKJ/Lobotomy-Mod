@@ -23,7 +23,7 @@ public class OSAHOGD extends AbstractLobotomyCard implements CustomSavable<int[]
     public static final String[] EXTENDED_DESCRIPTION;
 
     public OSAHOGD() {
-        super("OSAHOGD", OSAHOGD.NAME, OSAHOGD.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 3, 1, -2);
+        super("OSAHOGD", OSAHOGD.NAME, OSAHOGD.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 3, 1, -2, CardTarget.NONE);
         initInfo();
     }
 

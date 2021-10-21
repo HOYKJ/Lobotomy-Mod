@@ -35,6 +35,9 @@ public class LobotomyFontHelper {
         param.setAccessible(true);
 
         Font_38 = (BitmapFont) prepFont.invoke(FontHelper.class, 38.0F, false);
+//        if(Settings.language == Settings.GameLanguage.ZHS || Settings.language == Settings.GameLanguage.ZHT)  {
+//            fontFile.set(FontHelper.class, Gdx.files.internal("font/zhs/NotoSansMonoCJKsc-Regular.otf"));
+//        }
         fontFile.set(FontHelper.class, Gdx.files.internal("font/zhs/NotoSansMonoCJKsc-Regular.otf"));
         ((FreeTypeFontGenerator.FreeTypeFontParameter)param.get(FontHelper.class)).borderWidth = 0.0F;
         ((FreeTypeFontGenerator.FreeTypeFontParameter)param.get(FontHelper.class)).shadowOffsetX = 1;
@@ -47,7 +50,7 @@ public class LobotomyFontHelper {
         Font_118 = (BitmapFont) prepFont.invoke(FontHelper.class, 118.0F, false);
         Font_30 = (BitmapFont) prepFont.invoke(FontHelper.class, 30.0F, false);
         Rabbit_Manual_58 = (BitmapFont) prepFont.invoke(FontHelper.class, 58.0F, false);
-        if(Settings.language == Settings.GameLanguage.ZHS || Settings.language == Settings.GameLanguage.ZHT)  {
+        if(Settings.language == Settings.GameLanguage.ZHS || Settings.language == Settings.GameLanguage.ZHT || Settings.language == Settings.GameLanguage.KOR || Settings.language == Settings.GameLanguage.JPN)  {
             fontFile.set(FontHelper.class, Gdx.files.internal("font/zhs/NotoSansMonoCJKsc-Regular.otf"));
         }
         Rabbit_Manual_30 = (BitmapFont) prepFont.invoke(FontHelper.class, 30.0F, false);

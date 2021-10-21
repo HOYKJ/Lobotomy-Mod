@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -46,6 +47,7 @@ public class RabbitTeam extends AbstractFriendlyMonster {
         this.damage.add(new DamageInfo(this, 9));
         this.damage.add(new DamageInfo(this, 3));
         this.flipHorizontal = this.targets.get(0).drawX > this.drawX;
+        this.friend = true;
     }
 
     @Override
@@ -149,6 +151,11 @@ public class RabbitTeam extends AbstractFriendlyMonster {
             }, 1.5F));
             return;
         }
+
+        if(this.target == null || this.target.isDeadOrEscaped() || this.target == this){
+            this.changeTarget(this.targets.get(0));
+        }
+
         this.flipHorizontal = this.targets.get(0).drawX > this.drawX;
     }
 

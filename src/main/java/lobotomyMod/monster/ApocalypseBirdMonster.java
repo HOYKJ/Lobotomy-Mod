@@ -166,11 +166,15 @@ public class ApocalypseBirdMonster extends AbstractMonster {
             this.changeState("DEAD");
             this.deathTimer += 1.5F;
             onBossVictoryLogic();
-            AbstractDungeon.player.masterDeck.addToBottom(new BigBird());
-            AbstractDungeon.player.masterDeck.addToBottom(new LongBird());
-            AbstractDungeon.player.masterDeck.addToBottom(new PunishingBird());
-            AbstractDungeon.player.masterDeck.addToBottom(new ApocalypseBird());
-            AbstractDungeon.getCurrRoom().addRelicToRewards(new Twilight());
+            if(AbstractDungeon.player.masterDeck.findCardById(LongBird.ID) == null) {
+                AbstractDungeon.player.masterDeck.addToBottom(new BigBird());
+                AbstractDungeon.player.masterDeck.addToBottom(new LongBird());
+                AbstractDungeon.player.masterDeck.addToBottom(new PunishingBird());
+                AbstractDungeon.player.masterDeck.addToBottom(new ApocalypseBird());
+            }
+            if(!AbstractDungeon.player.hasRelic(Twilight.ID)) {
+                AbstractDungeon.getCurrRoom().addRelicToRewards(new Twilight());
+            }
         }
     }
 

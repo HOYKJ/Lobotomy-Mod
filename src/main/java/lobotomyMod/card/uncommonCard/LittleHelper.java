@@ -28,7 +28,7 @@ public class LittleHelper extends AbstractLobotomyCard implements CustomSavable<
     private boolean active;
 
     public LittleHelper() {
-        super("LittleHelper", LittleHelper.NAME, LittleHelper.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 41, 3, 1);
+        super("LittleHelper", LittleHelper.NAME, LittleHelper.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 41, 3, 1, CardTarget.NONE);
         this.baseDamage = 16;
         this.isMultiDamage = true;
         initInfo();
@@ -66,7 +66,7 @@ public class LittleHelper extends AbstractLobotomyCard implements CustomSavable<
     public void endOfTurn(boolean hand) {
         super.endOfTurn(hand);
         if(hand){
-            AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, this.damage / 2, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+            AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, this.damage / 4, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         }
     }
 

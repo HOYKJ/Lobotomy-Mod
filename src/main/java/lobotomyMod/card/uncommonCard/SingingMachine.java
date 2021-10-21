@@ -2,6 +2,7 @@ package lobotomyMod.card.uncommonCard;
 
 import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
@@ -12,8 +13,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import lobotomyMod.card.AbstractLobotomyCard;
+import lobotomyMod.card.deriveCard.NestCard;
 import lobotomyMod.character.LobotomyHandler;
 import lobotomyMod.relic.CogitoBucket;
 
@@ -67,16 +70,25 @@ public class SingingMachine extends AbstractLobotomyCard implements CustomSavabl
                 return;
             }
             tmp.exhaust = true;
-            tmp.rawDescription += " 消耗 .";
+            tmp.rawDescription += NestCard.DESCRIPTION;
             this.targetCard.add(tmp);
         }
         else this.targetCard.remove(card);
     }
 
     @Override
+    public void onUsedCard(AbstractCard card, boolean hand) {
+        super.onUsedCard(card, hand);
+        if(this.targetCard.contains(card)){
+            card.exhaust = true;
+        }
+    }
+
+    @Override
     public void endOfTurn(boolean hand) {
         super.endOfTurn(hand);
         for(AbstractCard card : this.targetCard){
+            card.exhaust = true;
             AbstractCard tmp = null;
             if(AbstractDungeon.player.drawPile.contains(card)){
                 if(AbstractDungeon.player.drawPile.group.size() > 1) {

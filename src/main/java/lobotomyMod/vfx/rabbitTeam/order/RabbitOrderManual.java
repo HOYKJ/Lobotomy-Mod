@@ -123,14 +123,14 @@ public class RabbitOrderManual extends AbstractGameEffect {
             if (effect != DialogWord.WordEffect.NONE) {
                 word = word.substring(1, word.length() - 1);
             }
-            this.gl.setText(FontHelper.textOnlyEventBody, word);
+            this.gl.setText(FontHelper.charDescFont, word);
             if (this.curLineWidth + this.gl.width > DIALOG_MSG_W) {
                 this.curLine += 1;
                 this.curLineWidth = (this.gl.width + CHAR_SPACING);
             } else {
                 this.curLineWidth += this.gl.width + CHAR_SPACING;
             }
-            this.words.add(new DialogWord(FontHelper.textOnlyEventBody, word, DialogWord.AppearEffect.NONE, effect, color, DIALOG_MSG_X + this.curLineWidth - this.gl.width, DIALOG_MSG_Y - LINE_SPACING * this.curLine, this.curLine));
+            this.words.add(new DialogWord(FontHelper.charDescFont, word, DialogWord.AppearEffect.NONE, effect, color, DIALOG_MSG_X + this.curLineWidth - this.gl.width, DIALOG_MSG_Y - LINE_SPACING * this.curLine, this.curLine));
         } else {
             this.textDone = true;
             this.s.close();

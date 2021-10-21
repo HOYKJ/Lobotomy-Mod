@@ -53,7 +53,7 @@ public class RenderTypePatch {
             Field card = _inst.getClass().getDeclaredField("card");
             card.setAccessible(true);
             if(card.get(_inst) instanceof AbstractLobotomyCard){
-                FontHelper.renderFontCentered(sb, FontHelper.SCP_cardTypeFont, TEXT[0], Settings.WIDTH / 2.0F + 3.0F * Settings.scale,
+                FontHelper.renderFontCentered(sb, FontHelper.panelNameFont, TEXT[0], Settings.WIDTH / 2.0F + 3.0F * Settings.scale,
                         Settings.HEIGHT / 2.0F - 40.0F * Settings.scale, new Color(0.35F, 0.35F, 0.35F, 1.0F));
                 return SpireReturn.Return(null);
             }

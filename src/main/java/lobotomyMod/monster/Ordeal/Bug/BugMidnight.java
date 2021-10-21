@@ -43,7 +43,7 @@ public class BugMidnight extends AbstractOrdealMonster {
     private BugNight[] bugs = new BugNight[2];
 
     public BugMidnight(float x, float y, int left) {
-        super(NAME, "BugMidnight", 500, -36.0F, 0.0F, 450.0F, 600.0F, null, x, y);
+        super(NAME, "BugMidnight", 300, -36.0F, 0.0F, 450.0F, 600.0F, null, x, y);
         loadAnimation("lobotomyMod/images/monsters/Ordeal/Bug/Midnight/ThirdType.atlas", "lobotomyMod/images/monsters/Ordeal/Bug/Midnight/ThirdType.json", 1.0F);
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Default", true);
         if(this.left == 1){
@@ -79,6 +79,7 @@ public class BugMidnight extends AbstractOrdealMonster {
             this.POSX[i] -= Settings.WIDTH * 0.75F / Settings.scale;
             this.POSY[i] -= AbstractDungeon.floorY / Settings.scale;
         }
+        this.type = EnemyType.BOSS;
     }
 
     @Override

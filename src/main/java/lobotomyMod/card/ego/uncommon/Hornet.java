@@ -27,7 +27,7 @@ public class Hornet extends AbstractEgoCard {
 
     public Hornet() {
         super("Hornet", Hornet.NAME, 1, Hornet.DESCRIPTION, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.baseDamage = 6;
+        this.baseDamage = 8;
     }
 
     @Override
@@ -61,7 +61,7 @@ public class Hornet extends AbstractEgoCard {
     @Override
     public void upgrade() {
         this.upgradeName();
-        this.upgradeDamage(3);
+        this.upgradeDamage(4);
     }
 
     public AbstractCard makeCopy() {

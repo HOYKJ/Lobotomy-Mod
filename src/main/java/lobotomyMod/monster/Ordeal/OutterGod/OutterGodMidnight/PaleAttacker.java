@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import lobotomyMod.monster.Ordeal.AbstractOrdealMonster;
+import lobotomyMod.vfx.ordeal.OrdealTitleBack;
 
 /**
  * @author hoykj
@@ -35,6 +36,7 @@ public class PaleAttacker extends AbstractOrdealMonster {
         this.vY = MathUtils.random(-200, 200);
         this.drawX = MathUtils.random(120 * Settings.scale ,Settings.WIDTH - 120 * Settings.scale);
         this.drawY = MathUtils.random(80 * Settings.scale ,Settings.HEIGHT - 80 * Settings.scale);
+        this.hideHealthBar();
     }
 
     public void addParent(PaleAltar parent){
@@ -45,7 +47,10 @@ public class PaleAttacker extends AbstractOrdealMonster {
     public void usePreBattleAction() {
         super.usePreBattleAction();
         this.hideHealthBar();
-        this.halfDead = true;
+    }
+
+    @Override
+    public void showHealthBar() {
     }
 
     protected void getMove(int num) {
@@ -74,7 +79,7 @@ public class PaleAttacker extends AbstractOrdealMonster {
         else if(this.nextMove == 2) {
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                 if(!(m.isDeadOrEscaped()) && (m instanceof RedAltar || m instanceof WhiteAltar || m instanceof BlackAltar || m instanceof PaleAltar)){
-                    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(m, this, 50));
+                    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(m, this, 30));
                 }
             }
         }
@@ -96,7 +101,7 @@ public class PaleAttacker extends AbstractOrdealMonster {
         }
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             if(!(m.isDeadOrEscaped()) && (m instanceof RedAltar || m instanceof WhiteAltar || m instanceof BlackAltar || m instanceof PaleAltar)){
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(m, this, 50));
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(m, this, 30));
             }
         }
         this.back = true;

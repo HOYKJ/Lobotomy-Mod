@@ -12,11 +12,11 @@ import lobotomyMod.vfx.animation.MovementWord;
 /**
  * @author hoykj
  */
-public class silentMovementAction extends AbstractGameAction {
+public class SilentMovementAction extends AbstractGameAction {
     private int movement;
     private boolean did;
 
-    public silentMovementAction(int movement){
+    public SilentMovementAction(int movement){
         CardCrawlGame.music.silenceTempBgmInstantly();
         CardCrawlGame.music.silenceBGMInstantly();
         this.movement = movement;

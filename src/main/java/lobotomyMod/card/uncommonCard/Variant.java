@@ -31,7 +31,7 @@ public class Variant extends AbstractLobotomyCard implements CustomSavable<int[]
     public static final String[] EXTENDED_DESCRIPTION;
 
     public Variant() {
-        super("Variant", Variant.NAME, Variant.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.NONE, 88, 2, 1);
+        super("Variant", Variant.NAME, Variant.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.NONE, 88, 2, 1, CardTarget.NONE);
         initInfo();
     }
 

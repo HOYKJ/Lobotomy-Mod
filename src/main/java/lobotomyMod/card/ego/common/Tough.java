@@ -24,7 +24,7 @@ public class Tough extends AbstractEgoCard {
 
     public Tough() {
         super("Tough", Tough.NAME, 0, Tough.DESCRIPTION, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        this.baseDamage = 4;
+        this.baseDamage = 5;
     }
 
     public void use(final AbstractPlayer p, final AbstractMonster m) {

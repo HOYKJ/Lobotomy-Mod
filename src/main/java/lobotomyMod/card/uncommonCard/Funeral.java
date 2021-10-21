@@ -28,7 +28,7 @@ public class Funeral extends AbstractLobotomyCard implements CustomSavable<int[]
     public static final String[] EXTENDED_DESCRIPTION;
 
     public Funeral() {
-        super("Funeral", Funeral.NAME, Funeral.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 68, 3, -2);
+        super("Funeral", Funeral.NAME, Funeral.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 68, 3, -2, CardTarget.NONE);
         this.baseDamage = 1;
         this.isMultiDamage = true;
         this.baseBlock = 1;

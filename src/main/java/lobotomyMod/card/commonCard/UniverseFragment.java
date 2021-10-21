@@ -28,7 +28,7 @@ public class UniverseFragment extends AbstractLobotomyCard implements CustomSava
     public static final String[] EXTENDED_DESCRIPTION;
 
     public UniverseFragment() {
-        super("UniverseFragment", UniverseFragment.NAME, UniverseFragment.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 60, 3, 1);
+        super("UniverseFragment", UniverseFragment.NAME, UniverseFragment.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 60, 3, 1, CardTarget.SELF);
         this.baseBlock = 8;
         initInfo();
     }

@@ -67,14 +67,14 @@ public class OutterGodDawn extends AbstractOrdealMonster {
     public void takeTurn() {
         if(this.nextMove == 1){
             AbstractCard card = LobotomyUtils.getRandomCard();
-            if(AbstractDungeon.player.drawPile.contains(card)){
-                AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(card, AbstractDungeon.player.drawPile));
-            }
-            else if(AbstractDungeon.player.hand.contains(card)){
-                AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
-            }
-            else if(AbstractDungeon.player.discardPile.contains(card)){
-                AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(card, AbstractDungeon.player.discardPile));
+            if(card != null) {
+                if (AbstractDungeon.player.drawPile.contains(card)) {
+                    AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(card, AbstractDungeon.player.drawPile));
+                } else if (AbstractDungeon.player.hand.contains(card)) {
+                    AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
+                } else if (AbstractDungeon.player.discardPile.contains(card)) {
+                    AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(card, AbstractDungeon.player.discardPile));
+                }
             }
         }
         else {

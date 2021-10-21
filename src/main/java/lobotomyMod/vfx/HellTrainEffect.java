@@ -29,7 +29,7 @@ public class HellTrainEffect extends AbstractGameEffect {
 
         this.x = 0.0F + this.img.getWidth() * 4.0F;
         this.y = Settings.HEIGHT / 2.0F - this.img.getHeight();
-        this.vX = -MathUtils.random(2000.0F * Settings.scale, 2400.0F * Settings.scale);
+        this.vX = -MathUtils.random(3000.0F * Settings.scale, 3600.0F * Settings.scale);
         CardCrawlGame.sound.play("Train_Move1");
         AbstractDungeon.effectsQueue.add(new LatterEffect(()->{
             CardCrawlGame.sound.play("Train_End");

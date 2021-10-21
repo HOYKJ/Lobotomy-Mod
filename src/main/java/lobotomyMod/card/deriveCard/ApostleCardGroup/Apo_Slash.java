@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import lobotomyMod.card.deriveCard.AbstractDeriveCard;
 
 /**
@@ -35,6 +36,12 @@ public class Apo_Slash extends AbstractDeriveCard {
     @Override
     public AbstractCard makeCopy() {
         return new Apo_Slash();
+    }
+
+    @Override
+    public void obtain() {
+        super.obtain();
+        UnlockTracker.unlockCard(this.cardID);
     }
 
     static {

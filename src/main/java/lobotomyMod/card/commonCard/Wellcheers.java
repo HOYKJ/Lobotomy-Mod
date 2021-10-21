@@ -31,7 +31,7 @@ public class Wellcheers extends AbstractLobotomyCard implements CustomSavable<in
     public int flavor;
 
     public Wellcheers() {
-        super("Wellcheers", Wellcheers.NAME, Wellcheers.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 52, 3, 0);
+        super("Wellcheers", Wellcheers.NAME, Wellcheers.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 52, 3, 0, CardTarget.SELF);
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
         initInfo();

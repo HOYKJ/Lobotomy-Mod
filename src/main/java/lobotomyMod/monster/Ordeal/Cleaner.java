@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import lobotomyMod.LobotomyMod;
 import lobotomyMod.action.common.LatterAction;
 import lobotomyMod.monster.Ordeal.Machine.MachineNight;
@@ -158,12 +159,32 @@ public class Cleaner extends AbstractOrdealMonster {
         AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, (byte)3, AbstractMonster.Intent.UNKNOWN));
     }
 
+    @Override
+    public void update() {
+        super.update();
+        if(this.halfDead){
+            boolean allDead = true;
+            for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+                if ((m.id.equals("Cleaner")) && (!m.halfDead)) {
+                    allDead = false;
+                }
+            }
+            if(allDead){
+                this.clear = true;
+                this.die();
+                for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+                    if (m instanceof Cleaner) {
+                        ((Cleaner) m).clear = true;
+                        m.die();
+                    }
+                }
+            }
+        }
+    }
+
     public void die() {
         if(this.clear) {
             super.die();
-            if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
-                AbstractDungeon.topLevelEffects.add(new OrdealTitleBack(5, 2, true));
-            }
         }
         else{
             boolean allDead = true;
@@ -181,6 +202,7 @@ public class Cleaner extends AbstractOrdealMonster {
                         m.die();
                     }
                 }
+                AbstractDungeon.topLevelEffects.add(new OrdealTitleBack(5, 2, true));
             }
         }
     }

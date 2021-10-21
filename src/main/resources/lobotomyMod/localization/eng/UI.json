@@ -2,7 +2,7 @@
   "RewardItem_Lob": {
     "TEXT": [
       "Reward...?",
-      "[#bObtain #p\"Bucket\"]",
+      "[ #bObtain #p\"Bucket\"]",
       "Extract an Abnormality",
       "LOB POINT",
       "Gain 2 LP on victory. You can use LP to upgrade Departments or use 5 LP to expand Departments. LP will persist during a run."
@@ -137,13 +137,18 @@
   },
   "CreatePanelLobotomy": {
     "TEXT": [
-      "Active Ordeals(Ordeals will reward Tool Abnormality)"
+      "Active Ordeals(Ordeals will reward Tool Abnormality)",
+      "Active Black Angela(Replace Angela)",
+      "Active tutorials",
+      "Clear PE and Abnormality unlock info, active after get Bucket (Warn: It's irreversible)"
     ]
   },
   "RelicViewScreenPatch": {
     "TEXT": [
       "Abnormality",
-      "Tool Abnormality."
+      "Tool Abnormality.",
+	  "E.G.O",
+	  ""
     ]
   },
   "RabbitTeam": {
@@ -152,9 +157,9 @@
       "PROTOCOL",
       "TERMINATE",
       "·RABBIT TEAM USE MANUAL·",
-      " #y1.The Rabbit team can be called once per run. NL NL #y2.Maximum 4 targets can point. NL NL #y3.You will pay 250 PE per pointed target. NL NL #y4.The Rabbit team automatically withdraws when all targets die.",
-      "CALLABLE TARGET",
-      "",
+      " #y1.The #yRabbit #yteam #ycan #ybe #ycalled #yonce #yper #yrun. NL NL #y2.Maximum #y4 #ytargets #ycan #ypoint. NL NL #y3.You #ywill #ypay #y250 #yPE #yper #ypointed #ytarget. NL NL #y4.The #yRabbit #yteam #yautomatically #ywithdraws #ywhen #yall #ytargets #ydie.",
+      "CALLABLE",
+      "TARGET",
       "CALL COST",
       "CURRENT HP",
       "PURIFICATION",
@@ -201,6 +206,17 @@
     "TEXT": [
       "Choose a Paradise Lost",
       "Choose a special upgrade"
+    ]
+  },
+  "FearLevel": {
+    "TEXT": [
+      "Relaxed",
+      "Calm",
+      "Nervous",
+      "Terrified",
+      "Hopeless",
+      "Overwhelmed",
+	  "Reverence"
     ]
   }
 }

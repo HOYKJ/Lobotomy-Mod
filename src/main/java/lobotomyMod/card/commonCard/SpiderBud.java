@@ -29,7 +29,7 @@ public class SpiderBud extends AbstractLobotomyCard implements CustomSavable<int
     private int buds;
 
     public SpiderBud() {
-        super("SpiderBud", SpiderBud.NAME, SpiderBud.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 43, 3, 0);
+        super("SpiderBud", SpiderBud.NAME, SpiderBud.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 43, 3, 0, CardTarget.NONE);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
         initInfo();

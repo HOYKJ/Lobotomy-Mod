@@ -28,7 +28,7 @@ public class FairyFestival extends AbstractLobotomyCard implements CustomSavable
     private boolean active;
 
     public FairyFestival() {
-        super("FairyFestival", FairyFestival.NAME, FairyFestival.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 83, 3, 0);
+        super("FairyFestival", FairyFestival.NAME, FairyFestival.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 83, 3, 0, CardTarget.SELF);
         this.active = false;
         initInfo();
     }

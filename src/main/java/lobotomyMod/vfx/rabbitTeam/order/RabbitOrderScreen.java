@@ -74,6 +74,14 @@ public class RabbitOrderScreen extends AbstractGameEffect {
             this.x[0] = Settings.WIDTH * 0.73F;
             this.y[0] = Settings.HEIGHT * 0.8F + this.gl.height / 2.0F;
         }
+        else {
+            this.gl.setText(LobotomyFontHelper.Rabbit_Manual_34, this.word[0]);
+            this.x[0] = Settings.WIDTH * 0.73F;
+            this.y[0] = Settings.HEIGHT * 0.8F + this.gl.height + 4 * Settings.scale;
+            this.gl.setText(LobotomyFontHelper.Rabbit_Manual_34, this.word[1]);
+            this.x[1] = Settings.WIDTH * 0.73F;
+            this.y[1] = Settings.HEIGHT * 0.8F - 4 * Settings.scale;
+        }
         this.gl.setText(LobotomyFontHelper.Rabbit_Manual_58, this.word[2]);
         this.x[2] = Settings.WIDTH * 0.89F - this.gl.width;
         this.y[2] = Settings.HEIGHT * 0.8F + this.gl.height / 2.0F;
@@ -117,7 +125,7 @@ public class RabbitOrderScreen extends AbstractGameEffect {
         CardCrawlGame.cursor.changeType(CursorEnum.LOBOTOMY);
         if(this.close){
             if (this.up < Settings.HEIGHT) {
-                this.up += (this.up / Settings.WIDTH * 2000 + 400) * Gdx.graphics.getDeltaTime();
+                this.up += (this.up / Settings.HEIGHT * 2000 + 800) * Gdx.graphics.getDeltaTime();
                 this.color.a = (1 - this.up / Settings.WIDTH) * 0.5F;
             } else {
                 this.up = Settings.HEIGHT;
@@ -141,7 +149,7 @@ public class RabbitOrderScreen extends AbstractGameEffect {
         }
         else {
             if (this.up > 0) {
-                this.up -= (this.up / Settings.WIDTH * 2000 + 400) * Gdx.graphics.getDeltaTime();
+                this.up -= (this.up / Settings.HEIGHT * 2000 + 600) * Gdx.graphics.getDeltaTime();
                 this.color.a = (1 - this.up / Settings.WIDTH) * 0.5F;
             } else {
                 this.up = 0;

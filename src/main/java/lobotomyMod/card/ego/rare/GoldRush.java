@@ -37,16 +37,18 @@ public class GoldRush extends AbstractEgoCard {
     public void atTurnStart() {
         super.atTurnStart();
         AbstractDungeon.actionManager.addToBottom(new LatterAction(()->{
-            this.unhover();
-            this.lighten(true);
-            this.setAngle(0.0F);
-            this.drawScale = 0.12F;
-            this.targetDrawScale = 0.75F;
-            AbstractDungeon.player.drawPile.removeCard(this);
-            AbstractDungeon.player.discardPile.removeCard(this);
-            AbstractDungeon.player.hand.addToTop(this);
-            AbstractDungeon.player.hand.refreshHandLayout();
-            AbstractDungeon.player.hand.applyPowers();
+            if(!AbstractDungeon.player.hand.contains(this)) {
+                this.unhover();
+                this.lighten(true);
+                this.setAngle(0.0F);
+                this.drawScale = 0.12F;
+                this.targetDrawScale = 0.75F;
+                AbstractDungeon.player.drawPile.removeCard(this);
+                AbstractDungeon.player.discardPile.removeCard(this);
+                AbstractDungeon.player.hand.addToTop(this);
+                AbstractDungeon.player.hand.refreshHandLayout();
+                AbstractDungeon.player.hand.applyPowers();
+            }
         }));
     }
 

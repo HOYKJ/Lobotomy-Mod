@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import lobotomyMod.card.AbstractLobotomyCard;
+import lobotomyMod.card.angelaCard.code.AbstractCodeCard;
 import lobotomyMod.card.deriveCard.AbstractDeriveCard;
 import lobotomyMod.patch.MeatLanternField;
 
@@ -26,12 +27,15 @@ public class EnterRoomPatch {
             }
     )
     public static class nextRoomTransition {
-        @SpireInsertPatch(rloc = 68)
+        @SpireInsertPatch(rloc = 79)
         public static void Insert(AbstractDungeon _inst, SaveFile saveFile) {
             if (nextRoom != null) {
                 for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
                     if (card instanceof AbstractLobotomyCard) {
                         ((AbstractLobotomyCard) card).onEnterRoom(nextRoom.room);
+                    }
+                    else if (card instanceof AbstractCodeCard) {
+                        ((AbstractCodeCard) card).onEnterRoom(nextRoom.room);
                     }
                 }
             }

@@ -32,7 +32,7 @@ public class WhiteAttacker extends AbstractOrdealMonster {
         this.attack = AbstractDungeon.aiRng.randomBoolean();
         this.stateData.setMix("Ready", "Attack", 0.1F);
         this.stateData.setMix("Ready1", "Attack1", 0.1F);
-        this.damage.add(new DamageInfo(this, 45, DamageInfo.DamageType.THORNS));
+        this.damage.add(new DamageInfo(this, 20, DamageInfo.DamageType.THORNS));
         this.nor = false;
         this.code = i;
         switch (i){
@@ -54,13 +54,13 @@ public class WhiteAttacker extends AbstractOrdealMonster {
                 e.setTime(4.33F);
                 break;
         }
+        this.hideHealthBar();
     }
 
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
         this.hideHealthBar();
-        this.halfDead = true;
     }
 
     protected void getMove(int num) {
@@ -93,6 +93,11 @@ public class WhiteAttacker extends AbstractOrdealMonster {
 
     @Override
     public void damage(DamageInfo info) {
+    }
+
+    @Override
+    public void showHealthBar() {
+        //super.showHealthBar();
     }
 
     public void die() {

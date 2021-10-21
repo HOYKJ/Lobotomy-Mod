@@ -114,6 +114,69 @@
       " to a random enemy."
     ]
   },
+  "ResistantPower": {
+    "NAME": "Resistant",
+    "DESCRIPTIONS": [
+      "Receive #b",
+      " % damage."
+    ]
+  },
+  "ChesedVulnerablePower": {
+    "NAME": "Damage countermeasure abnormal",
+    "DESCRIPTIONS": [
+      "Received damage increased by #b",
+      " %."
+    ]
+  },
+  "HokmaTimeWarpPower": {
+    "NAME": "Price of Silence",
+    "DESCRIPTIONS": [
+      "Whenever you play #b",
+      " cards, ends your turn and gains #b",
+      " #yStrength."
+    ]
+  },
+  "MalkuthConfusionPower": {
+    "NAME": "Order system fault",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card, randomize its cost between 0 to 3.",
+      "Whenever you draw a card, randomize its cost between 1 to 3."
+    ]
+  },
+  "YesodConfusionPower": {
+    "NAME": "Information system fault",
+    "DESCRIPTIONS": [
+      "The information of your drawn card will be confused."
+    ]
+  },
+  "SoulShieldPower": {
+    "NAME": "Auto Defense Systems",
+    "DESCRIPTIONS": [
+      "Each time you play a card, Angela gains #b",
+      " Block. At the end of Angela's turn, deal damage to yourself equal to her current Block."
+    ]
+  },
+  "SmallShieldPower": {
+    "NAME": "Harm Response",
+    "DESCRIPTIONS": [
+      "If more than #b10 HP is lost from a single instance, ",
+      "Gain #b1 Metallicize .",
+      "Gain #b1 Thorns .",
+      "Heal #g9 HP.",
+      " Switch to a different effect after triggering."
+    ]
+  },
+  "MidShieldPower": {
+    "NAME": "Damage Response",
+    "DESCRIPTIONS": [
+      "Each time #b20% of max HP is lost, ",
+      "Remove #b2 random debuffs.",
+      "Inflict #b2 Weak, Frail and Vulnerable to the player.",
+      "Gain #g5 Artifact .",
+      "Gain #g2 Intangible .",
+      " Increase the power of Auto Defense Systems by 1. Switch to a different effect after triggering."
+    ]
+  },
 
   "MutekiPower": {
     "NAME": "Pray",

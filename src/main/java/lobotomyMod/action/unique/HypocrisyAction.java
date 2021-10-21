@@ -22,7 +22,7 @@ public class HypocrisyAction extends AbstractGameAction
         if (this.duration == Settings.ACTION_DUR_FASTER)
         {
             for (AbstractCard c : ScrapeAction.scrapedCards) {
-                if ((c.costForTurn == 0) && (c.freeToPlayOnce))
+                if ((c.costForTurn == 0) || (c.freeToPlayOnce))
                 {
                     AbstractDungeon.player.hand.moveToDiscardPile(c);
                     c.triggerOnManualDiscard();

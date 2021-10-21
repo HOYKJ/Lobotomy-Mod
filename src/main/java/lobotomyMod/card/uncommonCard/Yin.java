@@ -36,7 +36,7 @@ public class Yin extends AbstractLobotomyCard implements CustomSavable<int[]> {
     private int counter;
 
     public Yin() {
-        super("Yin", Yin.NAME, Yin.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 102, 3, 2);
+        super("Yin", Yin.NAME, Yin.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 102, 3, 2, CardTarget.SELF);
         initInfo();
     }
 

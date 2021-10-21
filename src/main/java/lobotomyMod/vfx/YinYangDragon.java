@@ -28,7 +28,7 @@ public class YinYangDragon extends AbstractGameEffect {
 
         this.x = 0.0F - this.img.getWidth() / 1.0F;
         this.y = Settings.HEIGHT / 2.0F - this.img.getHeight() / 2.0F;
-        this.vX = MathUtils.random(2000.0F * Settings.scale, 2400.0F * Settings.scale);
+        this.vX = MathUtils.random(3000.0F * Settings.scale, 3600.0F * Settings.scale);
         CardCrawlGame.sound.play("YinYang_Dragon");
     }
 

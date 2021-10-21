@@ -32,7 +32,7 @@ public class SilentOrchestra extends AbstractLobotomyCard implements CustomSavab
     public static final String[] EXTENDED_DESCRIPTION;
 
     public SilentOrchestra() {
-        super("SilentOrchestra", SilentOrchestra.NAME, SilentOrchestra.DESCRIPTION, CardRarity.RARE, CardTarget.ENEMY, 31, 4, 0);
+        super("SilentOrchestra", SilentOrchestra.NAME, SilentOrchestra.DESCRIPTION, CardRarity.RARE, CardTarget.ENEMY, 31, 4, -2, CardTarget.NONE);
         initInfo();
     }
 

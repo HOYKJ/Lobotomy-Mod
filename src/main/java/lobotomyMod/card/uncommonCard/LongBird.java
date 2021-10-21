@@ -13,10 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.rooms.EventRoom;
-import com.megacrit.cardcrawl.rooms.MonsterRoom;
-import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
+import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import lobotomyMod.LobotomyMod;
@@ -54,7 +51,7 @@ public class LongBird extends AbstractLobotomyCard implements CustomSavable<int[
         if(AbstractDungeon.player.masterDeck.findCardById(ApocalypseBird.ID) != null){
             return;
         }
-        if(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss){
+        if(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss || AbstractDungeon.getCurrRoom() instanceof VictoryRoom){
             return;
         }
         if((AbstractDungeon.player.masterDeck.findCardById(PunishingBird.ID) != null) && (AbstractDungeon.player.masterDeck.findCardById(BigBird.ID) != null)){
@@ -94,6 +91,8 @@ public class LongBird extends AbstractLobotomyCard implements CustomSavable<int[
                 p.energy.use(this.realCost);
             }
         }
+        int tmp = this.damage;
+        this.damage = Math.max((int) ((float)m.maxHealth * this.magicNumber / 100F), tmp);
         AbstractDungeon.actionManager.addToTop(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 

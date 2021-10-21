@@ -20,7 +20,7 @@ public class AtDamageGivePatch {
             method = "applyPowers"
     )
     public static class applyPowers {
-        @SpireInsertPatch(rloc=28, localvars={"tmp"})
+        @SpireInsertPatch(rloc=34, localvars={"tmp"})
         public static void Insert(AbstractCard _inst, @ByRef float[] tmp){
             for(AbstractCard card : AbstractDungeon.player.drawPile.group) {
                 if (card instanceof AbstractLobotomyCard) {
@@ -39,7 +39,7 @@ public class AtDamageGivePatch {
             }
         }
 
-        @SpireInsertPatch(rloc=70, localvars={"tmp"})
+        @SpireInsertPatch(rloc=76, localvars={"tmp"})
         public static void Insert2(AbstractCard _inst, float[] tmp){
             for(int i = 0; i < tmp.length; i ++) {
                 for (AbstractCard card : AbstractDungeon.player.drawPile.group) {
@@ -66,7 +66,7 @@ public class AtDamageGivePatch {
             method = "calculateCardDamage"
     )
     public static class calculateCardDamage {
-        @SpireInsertPatch(rloc=38, localvars={"tmp"})
+        @SpireInsertPatch(rloc=24, localvars={"tmp"})
         public static void Insert(AbstractCard _inst, AbstractMonster mo, @ByRef float[] tmp){
             for(AbstractCard card : AbstractDungeon.player.drawPile.group) {
                 if (card instanceof AbstractLobotomyCard) {
@@ -85,7 +85,7 @@ public class AtDamageGivePatch {
             }
         }
 
-        @SpireInsertPatch(rloc=100, localvars={"tmp"})
+        @SpireInsertPatch(rloc=88, localvars={"tmp"})
         public static void Insert2(AbstractCard _inst, AbstractMonster mo, float[] tmp){
             for(int i = 0; i < tmp.length; i ++) {
                 for (AbstractCard card : AbstractDungeon.player.drawPile.group) {

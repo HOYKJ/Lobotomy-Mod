@@ -32,7 +32,7 @@ public class Harmony extends AbstractEgoCard {
     @Override
     public void ExhaustCard(AbstractCard card, boolean hand) {
         super.ExhaustCard(card, hand);
-        this.modifyCostForTurn(-1);
+        this.setCostForTurn(this.costForTurn - 1);
     }
 
     public void use(final AbstractPlayer p, final AbstractMonster m) {

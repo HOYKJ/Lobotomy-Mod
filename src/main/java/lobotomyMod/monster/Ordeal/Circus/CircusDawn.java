@@ -36,8 +36,8 @@ public class CircusDawn extends AbstractOrdealMonster {
         loadAnimation("lobotomyMod/images/monsters/Ordeal/Circus/Dawn/tjzjtm.atlas", "lobotomyMod/images/monsters/Ordeal/Circus/Dawn/tjzjtm.json", 3.2F);
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Default", true);
         e.setTime(e.getEndTime() * MathUtils.random());
-        this.stateData.setMix("Default", "Trick", 0.9F);
-        this.stateData.setMix("Default", "Dead", 0.9F);
+        //this.stateData.setMix("Default", "Trick", 0.9F);
+        //this.stateData.setMix("Default", "Dead", 0.9F);
         this.damage.add(new DamageInfo(this, 3));
         this.flipHorizontal = true;
         this.setHp(20, 24);

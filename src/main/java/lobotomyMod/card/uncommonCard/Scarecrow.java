@@ -1,6 +1,7 @@
 package lobotomyMod.card.uncommonCard;
 
 import basemod.abstracts.CustomSavable;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
@@ -45,6 +46,7 @@ public class Scarecrow extends AbstractLobotomyCard implements CustomSavable<int
         super.onUsedCard(card, hand, target);
         if(card.type == CardType.POWER){
             AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 4));
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
         }
     }
 

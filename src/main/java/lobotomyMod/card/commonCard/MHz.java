@@ -33,7 +33,7 @@ public class MHz extends AbstractLobotomyCard implements CustomSavable<int[]> {
     public ArrayList<AbstractCard> noiseTargets = new ArrayList<>();
 
     public MHz() {
-        super("MHz", MHz.NAME, MHz.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 27, 3, 1);
+        super("MHz", MHz.NAME, MHz.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 27, 3, 1, CardTarget.NONE);
         this.noiseTargets.add(this);
         initInfo();
     }

@@ -25,11 +25,12 @@ public class RedAltar extends AbstractOrdealMonster {
     private RedAttacker tentacles[] = new RedAttacker[2];
 
     public RedAltar(float x, float y, RedAttacker tentacle, RedAttacker tentacle2) {
-        super(NAME, "RedAltar", 600, 0.0F, 90.0F, 540.0F, 360.0F, "lobotomyMod/images/monsters/Ordeal/OutterGod/Midnight/Red.png", x - Settings.WIDTH * 0.75F / Settings.scale + 270, y - 90);
+        super(NAME, "RedAltar", 400, 0.0F, 90.0F, 540.0F, 360.0F, "lobotomyMod/images/monsters/Ordeal/OutterGod/Midnight/Red.png", x - Settings.WIDTH * 0.75F / Settings.scale + 270, y - 90);
         //this.flipHorizontal = true;
         AbstractDungeon.getCurrRoom().cannotLose = true;
         this.tentacles[0] = tentacle;
         this.tentacles[1] = tentacle2;
+        this.type = EnemyType.BOSS;
     }
 
     @Override
@@ -65,14 +66,18 @@ public class RedAltar extends AbstractOrdealMonster {
                 r.onMonsterDeath(this);
             }
             this.powers.clear();
+            for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+                if(m instanceof RedAttacker){
+                    m.die();
+                }
+            }
             boolean allDead = true;
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                if ((!m.halfDead) && !(m instanceof RedAttacker)) {
-                    allDead = false;
-                    break;
-                }
-                else if(m instanceof RedAttacker){
-                    m.die();
+                if (m instanceof PaleAltar || m instanceof BlackAltar || m instanceof WhiteAltar){
+                    if (!m.halfDead) {
+                        allDead = false;
+                        break;
+                    }
                 }
             }
             if (allDead) {

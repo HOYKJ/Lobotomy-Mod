@@ -31,7 +31,7 @@ public class Alriune extends AbstractLobotomyCard implements CustomSavable<int[]
     private int turns;
 
     public Alriune() {
-        super("Alriune", Alriune.NAME, Alriune.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 53, 3, -2);
+        super("Alriune", Alriune.NAME, Alriune.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 53, 3, -2, CardTarget.NONE);
         this.baseDamage = 20;
         this.isMultiDamage = true;
         initInfo();

@@ -20,7 +20,7 @@ public class LoseHPPatch {
             method = "damage"
     )
     public static class damage {
-        @SpireInsertPatch(rloc=60, localvars={"damageAmount"})
+        @SpireInsertPatch(rloc=57, localvars={"damageAmount"})
         public static void Insert(AbstractPlayer _inst, DamageInfo info, @ByRef int[] damageAmount){
             for(AbstractCard card : AbstractDungeon.player.drawPile.group) {
                 if (card instanceof AbstractLobotomyCard) {

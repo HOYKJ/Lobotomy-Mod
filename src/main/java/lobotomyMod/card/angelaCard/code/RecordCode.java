@@ -1,7 +1,5 @@
 package lobotomyMod.card.angelaCard.code;
 
-import com.megacrit.cardcrawl.actions.unique.ExhumeAction;
-import com.megacrit.cardcrawl.actions.unique.ReprogramAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,7 +8,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import lobotomyMod.action.unique.RecordCodeAction;
 import lobotomyMod.card.angelaCard.department.Hokma;
-import lobotomyMod.card.angelaCard.department.Yesod;
 
 /**
  * @author hoykj

@@ -62,8 +62,13 @@ public class SnowQueen extends AbstractLobotomyCard implements CustomSavable<int
             return;
         }
 
-        card.costForTurn = 1;
-        card.modifyCostForCombat(9);
+        if (card.costForTurn <= 0) {
+            card.costForTurn = 1;
+            card.modifyCostForCombat(8);
+        }
+        else {
+            card.modifyCostForCombat(9);
+        }
         AbstractDungeon.actionManager.addToTop(new MakeCardInHandAction(new Duel(card)));
     }
 

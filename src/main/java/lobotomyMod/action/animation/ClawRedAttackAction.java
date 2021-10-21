@@ -12,12 +12,12 @@ import lobotomyMod.monster.Ordeal.Claw;
 /**
  * @author hoykj
  */
-public class clawRedAttackAction extends AbstractGameAction {
+public class ClawRedAttackAction extends AbstractGameAction {
     private Claw m;
     private AbstractGameAction action;
     private boolean end;
 
-    public clawRedAttackAction(Claw m, AbstractGameAction action){
+    public ClawRedAttackAction(Claw m, AbstractGameAction action){
         this.m = m;
         this.action = action;
         this.end = false;

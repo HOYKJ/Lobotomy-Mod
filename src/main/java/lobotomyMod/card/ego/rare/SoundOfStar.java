@@ -38,18 +38,22 @@ public class SoundOfStar extends AbstractEgoCard {
             tmp += 2;
             p.getRelic("Chemical X").flash();
         }
+        if(this.upgraded){
+            tmp += 1;
+        }
         if(tmp <= 0){
             return;
         }
-        final ChooseAction choice = new ChooseAction(null, null, AbstractLobotomyCard.EXTENDED_DESCRIPTION[2],true,
-                (this.upgraded? tmp + 1: tmp), true);
+        final ChooseAction choice = new ChooseAction(null, null, AbstractLobotomyCard.EXTENDED_DESCRIPTION[2],true, tmp, true);
         for(AbstractCard card : AbstractDungeon.player.hand.group) {
             if(card == this){
                 continue;
             }
             choice.add(card, ()->{
                 AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
-                AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(card.cost));
+                if(card.cost > 0) {
+                    AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(card.cost));
+                }
                 AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
             });
         }

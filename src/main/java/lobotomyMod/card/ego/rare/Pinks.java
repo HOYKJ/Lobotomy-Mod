@@ -32,10 +32,13 @@ public class Pinks extends AbstractEgoCard {
             for(AbstractCard card : p.hand.group){
                 if(card.baseDamage > 0){
                     card.baseDamage += this.magicNumber;
+                    card.isDamageModified = true;
                 }
                 if(card.baseBlock > 0){
                     card.baseBlock += this.magicNumber;
+                    card.isBlockModified = true;
                 }
+                card.applyPowers();
             }
         }));
     }

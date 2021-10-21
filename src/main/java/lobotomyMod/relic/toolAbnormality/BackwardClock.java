@@ -1,20 +1,19 @@
 package lobotomyMod.relic.toolAbnormality;
 
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import lobotomyMod.LobotomyMod;
 import lobotomyMod.card.relicCard.AbstractLobotomyRelicCard;
 import lobotomyMod.card.relicCard.BackwardClockRelic;
 import lobotomyMod.character.LobotomyHandler;
 import lobotomyMod.vfx.BackwardEffect;
-import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -47,6 +46,12 @@ public class BackwardClock extends AbstractLobotomyAbnRelic {
     @Override
     protected void onRightClick() {
         super.onRightClick();
+        if (!(AbstractDungeon.getCurrRoom() instanceof MonsterRoom)){
+            return;
+        }
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMPLETE){
+            return;
+        }
         if(this.active){
             this.getRecord();
             this.active = false;

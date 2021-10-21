@@ -34,7 +34,7 @@ public class BlackSwan extends AbstractLobotomyCard implements CustomSavable<int
     private int counter, counter2;
 
     public BlackSwan() {
-        super("BlackSwan", BlackSwan.NAME, BlackSwan.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 70, 5, -2);
+        super("BlackSwan", BlackSwan.NAME, BlackSwan.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 70, 5, -2, CardTarget.NONE);
         this.baseMagicNumber = 5;
         this.magicNumber = this.baseMagicNumber;
         initInfo();

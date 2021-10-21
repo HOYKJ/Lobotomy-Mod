@@ -25,9 +25,10 @@ public class PaleAltar extends AbstractOrdealMonster {
     private PaleAttacker tentacle;
 
     public PaleAltar(float x, float y, PaleAttacker tentacle) {
-        super(NAME, "PaleAltar", 600, 0.0F, 90.0F, 540.0F, 360.0F, "lobotomyMod/images/monsters/Ordeal/OutterGod/Midnight/Pale.png", x - Settings.WIDTH * 0.75F / Settings.scale + 270, y - 90);
+        super(NAME, "PaleAltar", 400, 0.0F, 90.0F, 540.0F, 360.0F, "lobotomyMod/images/monsters/Ordeal/OutterGod/Midnight/Pale.png", x - Settings.WIDTH * 0.75F / Settings.scale + 270, y - 90);
         AbstractDungeon.getCurrRoom().cannotLose = true;
         this.tentacle = tentacle;
+        this.type = EnemyType.BOSS;
     }
 
     protected void getMove(int num) {
@@ -56,14 +57,18 @@ public class PaleAltar extends AbstractOrdealMonster {
                 r.onMonsterDeath(this);
             }
             this.powers.clear();
+            for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+                if(m instanceof PaleAttacker){
+                    m.die();
+                }
+            }
             boolean allDead = true;
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                if ((!m.halfDead) && !(m instanceof PaleAttacker)) {
-                    allDead = false;
-                    break;
-                }
-                else if(m instanceof PaleAttacker){
-                    m.die();
+                if (m instanceof BlackAltar || m instanceof RedAltar || m instanceof WhiteAltar){
+                    if (!m.halfDead) {
+                        allDead = false;
+                        break;
+                    }
                 }
             }
             if (allDead) {

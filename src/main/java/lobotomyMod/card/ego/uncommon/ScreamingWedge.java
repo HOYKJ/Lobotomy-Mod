@@ -25,7 +25,7 @@ public class ScreamingWedge extends AbstractEgoCard {
 
     public ScreamingWedge() {
         super("ScreamingWedge", ScreamingWedge.NAME, 2, ScreamingWedge.DESCRIPTION, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ALL);
-        this.baseBlock = 8;
+        this.baseBlock = 6;
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }
@@ -42,7 +42,7 @@ public class ScreamingWedge extends AbstractEgoCard {
     @Override
     public void upgrade() {
         this.upgradeName();
-        this.upgradeBlock(4);
+        this.upgradeBlock(3);
     }
 
     public AbstractCard makeCopy() {

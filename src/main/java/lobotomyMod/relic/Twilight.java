@@ -36,6 +36,9 @@ public class Twilight extends AbstractLobotomyRelic{
         }
         if(target instanceof AbstractMonster) {
             target.maxHealth -= info.base;
+            if (target.maxHealth < target.currentHealth){
+                target.maxHealth = target.currentHealth;
+            }
             if (target.maxHealth <= 0) {
                 target.maxHealth = 0;
                 target.hideHealthBar();

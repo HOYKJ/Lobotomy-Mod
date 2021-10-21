@@ -32,7 +32,7 @@ public class BodiesMountain extends AbstractLobotomyCard implements CustomSavabl
     private int counter;
 
     public BodiesMountain() {
-        super("BodiesMountain", BodiesMountain.NAME, BodiesMountain.DESCRIPTION, CardRarity.RARE, CardTarget.ENEMY, 75, 4, 1);
+        super("BodiesMountain", BodiesMountain.NAME, BodiesMountain.DESCRIPTION, CardRarity.RARE, CardTarget.ENEMY, 75, 4, 1, CardTarget.NONE);
         initInfo();
     }
 

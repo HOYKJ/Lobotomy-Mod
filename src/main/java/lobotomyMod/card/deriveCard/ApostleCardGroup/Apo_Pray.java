@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import lobotomyMod.card.deriveCard.AbstractDeriveCard;
 import lobotomyMod.power.Gospel;
 
@@ -34,6 +35,12 @@ public class Apo_Pray extends AbstractDeriveCard {
     @Override
     public AbstractCard makeCopy() {
         return new Apo_Pray();
+    }
+
+    @Override
+    public void obtain() {
+        super.obtain();
+        UnlockTracker.unlockCard(this.cardID);
     }
 
     static {

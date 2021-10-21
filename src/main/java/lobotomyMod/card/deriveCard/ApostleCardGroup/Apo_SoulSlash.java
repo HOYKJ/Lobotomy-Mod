@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import lobotomyMod.action.common.LatterAction;
 import lobotomyMod.card.deriveCard.AbstractDeriveCard;
 
@@ -30,10 +31,16 @@ public class Apo_SoulSlash extends AbstractDeriveCard {
 
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToTop(new LatterAction(()->{
+            if (m.maxHealth < 1){
+                m.maxHealth = 1;
+            }
             m.maxHealth -= this.damage;
         }));
         AbstractDungeon.actionManager.addToTop(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SMASH));
         AbstractDungeon.actionManager.addToTop(new LatterAction(()->{
+            if (m.maxHealth < 1){
+                m.maxHealth = 1;
+            }
             m.maxHealth -= this.damage;
         }));
         AbstractDungeon.actionManager.addToTop(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SMASH));
@@ -43,6 +50,12 @@ public class Apo_SoulSlash extends AbstractDeriveCard {
     @Override
     public AbstractCard makeCopy() {
         return new Apo_SoulSlash();
+    }
+
+    @Override
+    public void obtain() {
+        super.obtain();
+        UnlockTracker.unlockCard(this.cardID);
     }
 
     static {

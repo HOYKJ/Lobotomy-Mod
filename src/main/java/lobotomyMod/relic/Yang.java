@@ -19,12 +19,12 @@ import lobotomyMod.relic.toolAbnormality.AbstractLobotomyAbnRelic;
  * @author hoykj
  */
 public class Yang extends AbstractLobotomyAbnRelic {
-    public static final String ID = "Yang";
+    public static final String ID = "Yang_Lob";
     public boolean active;
 
     public Yang()
     {
-        super("Yang", RelicTier.RARE, LandingSound.MAGICAL);
+        super("Yang_Lob", RelicTier.RARE, LandingSound.MAGICAL);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class Yang extends AbstractLobotomyAbnRelic {
     protected void onRightClick() {
         super.onRightClick();
         this.active = false;
-        this.img = ImageMaster.loadImage(LobotomyHandler.lobotomyRelicImage("Yang"));
+        this.img = ImageMaster.loadImage(LobotomyHandler.lobotomyRelicImage("Yang_Lob"));
     }
 
     @Override

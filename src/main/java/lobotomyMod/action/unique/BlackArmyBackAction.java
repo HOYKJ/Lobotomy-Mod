@@ -16,6 +16,7 @@ public class BlackArmyBackAction extends AbstractGameAction {
     }
 
     public void update(){
+        this.isDone = true;
         if(AbstractDungeon.player.drawPile.findCardById(BlackArmyDerive.ID) != null){
             return;
         }

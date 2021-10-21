@@ -70,7 +70,7 @@ public class ParadiseLostBuffAction extends AbstractGameAction {
 
     private ArrayList<AbstractCard> getGroup(){
         final ArrayList<AbstractCard> cards = new ArrayList<>();
-        while (cards.size() < 3) {
+        while (cards.size() < Math.min(3, this.cards.size())) {
             AbstractCard card = this.getRandomCard();
             if (!cards.contains(card)) {
                 cards.add(card);

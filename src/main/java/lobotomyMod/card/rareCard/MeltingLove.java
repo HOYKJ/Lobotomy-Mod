@@ -31,7 +31,7 @@ public class MeltingLove extends AbstractLobotomyCard implements CustomSavable<i
     private int counter;
 
     public MeltingLove() {
-        super("MeltingLove", MeltingLove.NAME, MeltingLove.DESCRIPTION, CardRarity.RARE, CardTarget.ENEMY, 109, 5, 1);
+        super("MeltingLove", MeltingLove.NAME, MeltingLove.DESCRIPTION, CardRarity.RARE, CardTarget.ENEMY, 109, 5, 0, CardTarget.NONE);
         this.heart = null;
         initInfo();
     }

@@ -36,7 +36,7 @@ public class NakedNest extends AbstractLobotomyCard implements CustomSavable<int
     public ArrayList<AbstractCard> targets = new ArrayList<>();
 
     public NakedNest() {
-        super("NakedNest", NakedNest.NAME, NakedNest.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 74, 4, -2);
+        super("NakedNest", NakedNest.NAME, NakedNest.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 74, 4, -2, CardTarget.NONE);
         this.counter = 0;
         initInfo();
     }

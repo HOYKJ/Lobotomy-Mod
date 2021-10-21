@@ -11,8 +11,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import lobotomyMod.action.common.LatterAction;
 import lobotomyMod.monster.Ordeal.AbstractOrdealMonster;
+import lobotomyMod.relic.AtMidnight;
 import lobotomyMod.vfx.ordeal.OrdealTitleBack;
 
 /**
@@ -101,6 +103,12 @@ public class MachineNoon extends AbstractOrdealMonster {
         if(AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
             if(AbstractDungeon.getCurrRoom().monsters.monsters.get(0) instanceof MachineNight){
                 AbstractDungeon.topLevelEffects.add(new OrdealTitleBack(1, 3, true));
+                for(RewardItem ri : AbstractDungeon.getCurrRoom().rewards){
+                    if (ri.relic instanceof AtMidnight){
+                        return;
+                    }
+                }
+                AbstractDungeon.getCurrRoom().addRelicToRewards(new AtMidnight());
                 return;
             }
             AbstractDungeon.topLevelEffects.add(new OrdealTitleBack(1, 2, true));

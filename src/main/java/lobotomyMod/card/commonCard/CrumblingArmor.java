@@ -29,7 +29,7 @@ public class CrumblingArmor extends AbstractLobotomyCard implements CustomSavabl
     public static final String[] EXTENDED_DESCRIPTION;
 
     public CrumblingArmor() {
-        super("CrumblingArmor", CrumblingArmor.NAME, CrumblingArmor.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 61, 4, 1);
+        super("CrumblingArmor", CrumblingArmor.NAME, CrumblingArmor.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 61, 4, 1, CardTarget.SELF);
         this.baseBlock = 6;
         this.baseMagicNumber = 4;
         this.magicNumber = this.baseMagicNumber;

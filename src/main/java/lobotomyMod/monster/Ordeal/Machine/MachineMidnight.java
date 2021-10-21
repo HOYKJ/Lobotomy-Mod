@@ -25,19 +25,23 @@ public class MachineMidnight extends AbstractOrdealMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
 
     public MachineMidnight(float x, float y) {
-        super(NAME, "MachineMidnight", 2200, 0.0F, -24.0F, 720.0F, 460.0F, null, x, y);
+        super(NAME, "MachineMidnight", 1200, 0.0F, -24.0F, 720.0F, 460.0F, null, x, y);
         loadAnimation("lobotomyMod/images/monsters/Ordeal/Machine/Midnight/machine_Midnight.atlas", "lobotomyMod/images/monsters/Ordeal/Machine/Midnight/machine_Midnight.json", 1.0F);
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Start", false);
         e.setTime(1.3F);
-        this.state.addAnimation(0, "Exterminate", false, 0.0F).setTimeScale(Settings.FAST_MODE? 0.6F: 0.4F);
+        this.state.addAnimation(0, "Exterminate", false, 0.0F).setTimeScale(Settings.FAST_MODE? 0.3F: 0.2F);
+        this.type = EnemyType.BOSS;
     }
 
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        AbstractDungeon.actionManager.addToBottom(new LatterAction(()->{
+        AbstractDungeon.effectsQueue.add(new LatterEffect(()->{
             AbstractDungeon.effectsQueue.add(new LastHelixLaserEffect(this.skeleton, this.skeleton.findBone("bone"), this));
-        }, 8.3F));
+        }));
+//        AbstractDungeon.actionManager.addToBottom(new LatterAction(()->{
+//            AbstractDungeon.effectsQueue.add(new LastHelixLaserEffect(this.skeleton, this.skeleton.findBone("bone"), this));
+//        }, 8.3F));
     }
 
     protected void getMove(int num) {
@@ -46,7 +50,7 @@ public class MachineMidnight extends AbstractOrdealMonster {
 
     public void takeTurn() {
         if(this.nextMove == 1){
-            AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, 200));
+            AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, 100));
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
     }
@@ -72,7 +76,7 @@ public class MachineMidnight extends AbstractOrdealMonster {
         {
             case "RESTART":
                 this.state.addAnimation(0, "ReStart", false, 0.0F);
-                this.state.addAnimation(0, "Exterminate", false, 0.0F).setTimeScale(Settings.FAST_MODE? 0.6F: 0.4F);
+                this.state.addAnimation(0, "Exterminate", false, 0.0F).setTimeScale(Settings.FAST_MODE? 0.3F: 0.2F);
                 AbstractDungeon.effectsQueue.add(new LatterEffect(()->{
                     AbstractDungeon.effectsQueue.add(new LastHelixLaserEffect(this.skeleton, this.skeleton.findBone("bone"), this));
                 }, 5.0F));

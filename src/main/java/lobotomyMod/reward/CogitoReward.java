@@ -1,6 +1,7 @@
 package lobotomyMod.reward;
 
 import basemod.abstracts.CustomReward;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,6 +14,8 @@ import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import lobotomyMod.LobotomyMod;
 import lobotomyMod.card.AbstractLobotomyCard;
+import lobotomyMod.card.commonCard.CrumblingArmor;
+import lobotomyMod.card.commonCard.VoidDream;
 import lobotomyMod.card.uncommonCard.Yin;
 import lobotomyMod.character.LobotomyCardPool;
 import lobotomyMod.character.LobotomyHandler;
@@ -100,6 +103,15 @@ public class CogitoReward extends CustomReward {
                         containsDupe = true;
                         LobotomyMod.logger.info("test: " + rarity.toString());
                         break;
+                    }
+                }
+                if(card != null) {
+                    if ((AbstractDungeon.player.masterDeck.findCardById(VoidDream.ID) != null && card.cardID.equals(CrumblingArmor.ID)) ||
+                            (AbstractDungeon.player.masterDeck.findCardById(CrumblingArmor.ID) != null && card.cardID.equals(VoidDream.ID))) {
+                        if (MathUtils.randomBoolean(0.7F)) {
+                            containsDupe = true;
+                            LobotomyMod.logger.info("replace: " + card.cardID);
+                        }
                     }
                 }
             }

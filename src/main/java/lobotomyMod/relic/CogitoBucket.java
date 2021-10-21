@@ -1,35 +1,53 @@
 package lobotomyMod.relic;
 
 import basemod.abstracts.CustomSavable;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.events.beyond.SpireHeart;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.map.DungeonMap;
+import com.megacrit.cardcrawl.map.MapRoomNode;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.rooms.MonsterRoom;
-import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
-import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
+import com.megacrit.cardcrawl.rooms.*;
 import lobotomyMod.LobotomyMod;
 import lobotomyMod.action.common.LatterAction;
 import lobotomyMod.action.unique.RecallAbnormalityAction;
 import lobotomyMod.card.AbstractLobotomyCard;
+import lobotomyMod.card.angelaCard.department.Binah;
+import lobotomyMod.card.angelaCard.department.Geburah;
+import lobotomyMod.character.Angela;
 import lobotomyMod.helper.LobotomyUtils;
+import lobotomyMod.npc.AbstractNPC;
 import lobotomyMod.reward.CogitoReward;
+import lobotomyMod.room.NewVictoryRoom;
+import lobotomyMod.ui.LobotomyFtue;
+import lobotomyMod.vfx.action.LatterEffect;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import static com.megacrit.cardcrawl.core.CardCrawlGame.saveFile;
 
 /**
  * @author hoykj
  */
 public class CogitoBucket extends AbstractLobotomyRelic implements CustomSavable<int[]> {
+    public static ArrayList<AbstractNPC> npcs = new ArrayList<>();
+    public static ArrayList<AbstractNPC> npcs_t = new ArrayList<>();
     public static final String ID = "CogitoBucket";
     public static int[] level = new int[120];
     private int rightTime;
-    public static boolean reExtract;
-    private boolean canCount, changed;
+    public static boolean reExtract, reEnter = false;
+    public boolean clicked, changed;
 
     public CogitoBucket()
     {
@@ -40,11 +58,21 @@ public class CogitoBucket extends AbstractLobotomyRelic implements CustomSavable
     @Override
     public void obtain() {
         super.obtain();
+        if (LobotomyMod.deleteSave){
+            LobotomyMod.deleteSave = false;
+            LobotomyMod.PE = 0;
+            LobotomyMod.levelSave = new int[120];
+            level = new int[120];
+            try {
+                LobotomyMod.saveData();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         this.counter = LobotomyMod.PE;
         level[0] = 1;
         this.rightTime = 0;
         reExtract = false;
-        this.canCount = false;
         this.changed = false;
     }
 
@@ -54,18 +82,58 @@ public class CogitoBucket extends AbstractLobotomyRelic implements CustomSavable
 //            this.counter = 999;
 //        }
         //this.counter += 9999;
-        if(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss){
-            return;
+//        if(this.rightTime >= 19){
+//            level = new int[120];
+//        }
+//        if(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss){
+//            return;
+//        }
+
+        if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null){
+            if (AbstractDungeon.getCurrRoom() instanceof NewVictoryRoom){
+                return;
+            }
+            if (AbstractDungeon.getCurrRoom().monsters != null) {
+                if (AbstractDungeon.getMonsters().areMonstersDead() && !AbstractDungeon.getCurrRoom().isBattleOver && !AbstractDungeon.getCurrRoom().cannotLose) {
+                    AbstractDungeon.getCurrRoom().endBattle();
+                } else {
+                    for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                        if (!m.isDeadOrEscaped()) {
+                            LobotomyMod.logger.info(m.id);
+                        }
+                    }
+                }
+            }
         }
-        AbstractDungeon.actionManager.addToBottom(new RecallAbnormalityAction(this));
-        if(this.rightTime >= 19){
-            level = new int[120];
+        if (!this.clicked && !AbstractDungeon.isScreenUp) {
+            this.clicked = true;
+            AbstractDungeon.actionManager.addToBottom(new RecallAbnormalityAction(this));
         }
+    }
+
+    @Override
+    public void justEnteredRoom(AbstractRoom room) {
+        super.justEnteredRoom(room);
+        if(room instanceof VictoryRoom){
+            LobotomyMod.deadTime = 0;
+        }
+        if(!(room instanceof RestRoom)) {
+            Angela.tmpD = null;
+        }
+
+        npcs.clear();
+        npcs.addAll(npcs_t);
+        for (AbstractNPC npc: npcs){
+            npc.justEnteredRoom(room);
+        }
+
+        reEnter = false;
     }
 
     @Override
     public void atBattleStart() {
         super.atBattleStart();
+        this.rightTime = 0;
         LobotomyMod.PE = this.counter;
         System.arraycopy(CogitoBucket.level, 0, LobotomyMod.levelSave, 0, CogitoBucket.level.length);
         try {
@@ -74,7 +142,6 @@ public class CogitoBucket extends AbstractLobotomyRelic implements CustomSavable
             e.printStackTrace();
         }
 
-        this.canCount = false;
         if(this.changed){
             return;
         }
@@ -140,16 +207,27 @@ public class CogitoBucket extends AbstractLobotomyRelic implements CustomSavable
                     }
                 }
             }
-            this.canCount = true;
 //            this.changed = true;
             CogitoBucket.level[0] ++;
         }));
+
+        if(reEnter && AbstractDungeon.getCurrRoom() != null){
+            this.justEnteredRoom(AbstractDungeon.getCurrRoom());
+        }
+
+        for (AbstractNPC npc: npcs){
+            npc.atBattleStart();
+        }
+
+        this.initRecallTip();
     }
 
     @Override
-    public void onEnterRoom(AbstractRoom room) {
-        super.onEnterRoom(room);
-
+    public void onMasterDeckChange() {
+        super.onMasterDeckChange();
+        if(Angela.departments[Binah.departmentCode[0]] == 5) {
+            AbstractDungeon.player.gainGold(25);
+        }
     }
 
     @Override
@@ -174,9 +252,6 @@ public class CogitoBucket extends AbstractLobotomyRelic implements CustomSavable
         }
         this.rightTime = 0;
         LobotomyMod.PE = this.counter;
-        if(this.canCount){
-//            CogitoBucket.level[0] ++;
-        }
         this.changed = false;
         System.arraycopy(CogitoBucket.level, 0, LobotomyMod.levelSave, 0, CogitoBucket.level.length);
         try {
@@ -185,26 +260,67 @@ public class CogitoBucket extends AbstractLobotomyRelic implements CustomSavable
             e.printStackTrace();
         }
 
-//        if(this.canCount){
-//            CogitoBucket.level[0] ++;
-//        }
-//        this.changed = false;
+        npcs_t.clear();
+        for (AbstractNPC npc: npcs){
+            npc.onVictory();
+            if(!npc.needRemove){
+                npcs_t.add(npc);
+            }
+        }
     }
 
-//    @Override
-//    public void onLoseHp(int damageAmount) {
-//        super.onLoseHp(damageAmount);
-//        if(damageAmount >= AbstractDungeon.player.currentHealth){
-//            LobotomyMod.PE = this.counter;
-//            System.arraycopy(CogitoBucket.level, 0, LobotomyMod.levelSave, 0, CogitoBucket.level.length);
-//            try {
-//                LobotomyMod.saveData();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
+    @Override
+    public void onPreviewObtainCard(AbstractCard c) {
+        this.onObtainCard(c);
+    }
 
+    @Override
+    public void onObtainCard(AbstractCard c) {
+        if (Angela.departments[Binah.departmentCode[0]] > 3 && c.canUpgrade() && !c.upgraded) {
+            c.upgrade();
+        }
+        for(String id : RecallAbnormalityAction.recallMap.keySet()){
+            if (id.equals(c.cardID)){
+                if(LobotomyMod.activeTutorials[5]) {
+                    AbstractDungeon.ftue = new LobotomyFtue(5);
+                    LobotomyMod.activeTutorials[5] = false;
+                    initRecallTip();
+                }
+            }
+        }
+    }
+
+    @Override
+    public void atTurnStartPostDraw() {
+        super.atTurnStartPostDraw();
+        for (AbstractNPC npc: npcs){
+            npc.atTurnStartPostDraw();
+        }
+    }
+
+    @Override
+    public void onPlayerEndTurn() {
+        super.onPlayerEndTurn();
+        for (AbstractNPC npc: npcs){
+            npc.onPlayerEndTurn();
+        }
+    }
+
+    @Override
+    public void onLoseHp(int damageAmount) {
+        super.onLoseHp(damageAmount);
+        for (AbstractNPC npc: npcs){
+            npc.onLoseHp(damageAmount);
+        }
+    }
+
+    @Override
+    public void onMonsterDeath(AbstractMonster m) {
+        super.onMonsterDeath(m);
+        for (AbstractNPC npc: npcs){
+            npc.onMonsterDeath(m);
+        }
+    }
 
     @Override
     public void update() {
@@ -212,10 +328,85 @@ public class CogitoBucket extends AbstractLobotomyRelic implements CustomSavable
         if(AbstractDungeon.player == null){
             return;
         }
-        if(DungeonMap.boss == null && AbstractDungeon.bossKey.equals("FixerMidnight")){
+        if(AbstractDungeon.bossKey != null && DungeonMap.boss == null && AbstractDungeon.bossKey.equals("FixerMidnight")){
             DungeonMap.boss = ImageMaster.loadImage("lobotomyMod/images/ui/map/boss/claw.png");
             DungeonMap.bossOutline = ImageMaster.loadImage("lobotomyMod/images/ui/map/bossOutline/claw.png");
         }
+        if (AbstractDungeon.currMapNode != null) {
+            if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof VictoryRoom && !(AbstractDungeon.getCurrRoom() instanceof NewVictoryRoom) && LobotomyMod.meltdownCode != -1) {
+                if (LobotomyMod.activeAngela && LobotomyMod.challengeEvent) {
+                    MapRoomNode node = new MapRoomNode(-1, 15);
+                    node.room = new NewVictoryRoom(VictoryRoom.EventType.HEART);
+                    AbstractDungeon.nextRoom = node;
+                    AbstractDungeon.closeCurrentScreen();
+                    AbstractDungeon.nextRoomTransitionStart();
+                }
+            }
+        }
+
+        for (AbstractNPC npc: npcs){
+            //LobotomyMod.logger.info(npc.ID);
+            if(npc.needRemove){
+                LobotomyMod.logger.info("remove");
+                AbstractDungeon.effectList.add(new LatterEffect(()->{
+                    npcs.remove(npc);
+                    npc.dispose();
+                }));
+            }
+            else {
+                //LobotomyMod.logger.info("update");
+                npc.update();
+            }
+        }
+    }
+
+//    @Override
+//    protected void initializeTips() {
+//
+//        super.initializeTips();
+//        for (PowerTip tip : this.tips){
+//            if (tip.header.equals(this.name)){
+//                tip.body = this.description;
+//            }
+//        }
+//    }
+
+    private void initRecallTip(){
+        for (int i = 0; i < this.tips.size(); i ++){
+            if (this.tips.get(i).header.equals(this.DESCRIPTIONS[1])){
+                this.tips.remove(i);
+                break;
+            }
+        }
+        if(!LobotomyMod.activeTutorials[5]){
+            StringBuilder str = new StringBuilder();
+            int no = 1;
+            for(String id : RecallAbnormalityAction.recallMap.keySet()){
+                AbstractCard card = CardLibrary.getCard(id).makeCopy();
+                if(card != null){
+                    str.append(no).append(". ").append(card.name).append(" NL ");
+                    no ++;
+                }
+            }
+            this.tips.add(new PowerTip(this.DESCRIPTIONS[1], str.toString()));
+        }
+    }
+
+    //    @Override
+//    public void renderInTopPanel(SpriteBatch sb) {
+//        super.renderInTopPanel(sb);
+//        for (AbstractNPC npc: npcs){
+//            npc.render(sb);
+//        }
+//    }
+
+    public static boolean hasNPC(String ID){
+        for(AbstractNPC npc : npcs){
+            if(npc.ID.equals(ID)){
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

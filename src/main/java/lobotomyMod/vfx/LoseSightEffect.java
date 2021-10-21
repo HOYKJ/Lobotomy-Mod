@@ -22,7 +22,7 @@ public class LoseSightEffect extends AbstractGameEffect
 
     public void update()
     {
-        float targetAlpha = 0.75F;
+        float targetAlpha = 0.7F;
         this.duration -= Gdx.graphics.getDeltaTime();
 
         if(this.end){

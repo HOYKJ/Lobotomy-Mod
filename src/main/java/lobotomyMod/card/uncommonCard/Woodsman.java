@@ -30,7 +30,7 @@ public class Woodsman extends AbstractLobotomyCard implements CustomSavable<int[
     public Woodsman() {
         super("Woodsman", Woodsman.NAME, Woodsman.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 32, 3, -2);
         this.baseDamage = 5;
-        this.baseMagicNumber = 5;
+        this.baseMagicNumber = 6;
         this.magicNumber = this.baseMagicNumber;
         this.skill = true;
         initInfo();

@@ -1,6 +1,7 @@
 package lobotomyMod.helper;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -10,6 +11,10 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
  */
 public class LobotomyImageMaster {
     //    public static TextureAtlas.AtlasRegion S_CHEST_OPEN;
+    public static TextureAtlas.AtlasRegion GEBURAH_SPEAR;
+    public static TextureAtlas.AtlasRegion GEBURAH_DACAPO;
+    public static TextureAtlas.AtlasRegion GEBURAH_MIMICRY;
+    public static TextureAtlas.AtlasRegion GEBURAH_GREED;
     public static Texture CLOCK_SHADER;
     public static Texture WITCH_GIFT;
     public static Texture WITCH_GIFT_2;
@@ -36,10 +41,32 @@ public class LobotomyImageMaster {
     public static Texture RABBIT_HALMET;
     public static Texture[] RABBIT_TEAM_UI = new Texture[14];
     public static Texture[] AIM_SELECT_UI = new Texture[12];
+    public static Texture TOMB_STONE;
+    public static Texture BINAH_BACKGROUND;
+    public static Texture CHESED_BACKGROUND;
+    public static Texture HOKMA_BACKGROUND;
+    public static Texture GEBURAH_BACKGROUND;
+    public static Texture HOD_BACKGROUND;
+    public static Texture MALKUTH_BACKGROUND;
+    public static Texture NETZACH_BACKGROUND;
+    public static Texture TIPHERETH_BACKGROUND;
+    public static Texture YESOD_BACKGROUND;
+    public static Texture ANGELA_BOSS_BACKGROUND;
+    public static Texture[] SMALL_SHIELD = new Texture[3];
+    public static Texture[] MID_SHIELD = new Texture[4];
+//    public static Texture[] BOSS_RUSH = new Texture[11];
+//    public static Texture[] BOSS_RUSH_P = new Texture[9];
+    public static Texture[] FEAR_LEVEL = new Texture[7];
+    public static Color[] FEAR_LEVEL_COLOR = new Color[]{new Color(31 / 255.0F, 1, 174 / 255.0F, 1), new Color(31 / 255.0F, 1, 174 / 255.0F, 1),
+            new Color(1, 1, 161 / 255.0F, 1), new Color(252 / 255.0F, 201 / 255.0F, 58 / 255.0F, 1),
+            new Color(252 / 255.0F, 119 / 255.0F, 58 / 255.0F, 1), new Color(252 / 255.0F, 58 / 255.0F, 58 / 255.0F, 1), Color.WHITE.cpy()};
 
     public static void initialize(){
-//        TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("lobotomyMod/images/texture/backEffect.atlas"));
-//        halo = atlas.findRegion("0407");
+        TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("lobotomyMod/images/monsters/Sephirah/Geburah/gebura.atlas"));
+        GEBURAH_SPEAR = atlas.findRegion("spear");
+        GEBURAH_DACAPO = atlas.findRegion("Weapon_Unique_Silent");
+        GEBURAH_MIMICRY = atlas.findRegion("nullthing");
+        GEBURAH_GREED = atlas.findRegion("Weapon_Unique_Greed");
         CLOCK_SHADER = ImageMaster.loadImage("lobotomyMod/images/texture/ClockShader.png");
         WITCH_GIFT = ImageMaster.loadImage("lobotomyMod/images/texture/Heart1.png");
         WITCH_GIFT_2 = ImageMaster.loadImage("lobotomyMod/images/texture/Heart2.png");
@@ -90,5 +117,34 @@ public class LobotomyImageMaster {
         AIM_SELECT_UI[9] = ImageMaster.loadImage("lobotomyMod/images/texture/aim/lock.png");
         AIM_SELECT_UI[10] = ImageMaster.loadImage("lobotomyMod/images/texture/aim/ArrowDefault.png");
         AIM_SELECT_UI[11] = ImageMaster.loadImage("lobotomyMod/images/texture/aim/ArrowGlow.png");
+        TOMB_STONE = ImageMaster.loadImage("lobotomyMod/images/monsters/Sephirah/Binah/TombStone.png");
+        BINAH_BACKGROUND = ImageMaster.loadImage("lobotomyMod/images/monsters/Sephirah/Binah/Binah_Main.png");
+        CHESED_BACKGROUND = ImageMaster.loadImage("lobotomyMod/images/monsters/Sephirah/Chesed/chesedBK.png");
+        HOKMA_BACKGROUND = ImageMaster.loadImage("lobotomyMod/images/monsters/Sephirah/Hokma/Chokhmah_Main.png");
+        GEBURAH_BACKGROUND = ImageMaster.loadImage("lobotomyMod/images/monsters/Sephirah/Geburah/geburaBK.png");
+        HOD_BACKGROUND = ImageMaster.loadImage("lobotomyMod/images/monsters/Sephirah/Hod/hodBK.png");
+        MALKUTH_BACKGROUND = ImageMaster.loadImage("lobotomyMod/images/monsters/Sephirah/Malkuth/malkuthBK.png");
+        NETZACH_BACKGROUND = ImageMaster.loadImage("lobotomyMod/images/monsters/Sephirah/Netzach/netzachBK.png");
+        TIPHERETH_BACKGROUND = ImageMaster.loadImage("lobotomyMod/images/monsters/Sephirah/Tiphereth/tipherethBK.png");
+        YESOD_BACKGROUND = ImageMaster.loadImage("lobotomyMod/images/monsters/Sephirah/Yesod/yesodBK.png");
+        ANGELA_BOSS_BACKGROUND = ImageMaster.loadImage("lobotomyMod/images/characters/angela/angela_black/carmenBK1.png");
+        SMALL_SHIELD[0] = ImageMaster.loadImage("lobotomyMod/images/powers/32/RedShield.png");
+        SMALL_SHIELD[1] = ImageMaster.loadImage("lobotomyMod/images/powers/32/BlackShield.png");
+        SMALL_SHIELD[2] = ImageMaster.loadImage("lobotomyMod/images/powers/32/HPRecovery.png");
+        MID_SHIELD[0] = ImageMaster.loadImage("lobotomyMod/images/powers/32/MPRecovery.png");
+        MID_SHIELD[1] = ImageMaster.loadImage("lobotomyMod/images/powers/32/SlowAim.png");
+        MID_SHIELD[2] = ImageMaster.loadImage("lobotomyMod/images/powers/32/WhiteShield.png");
+        MID_SHIELD[3] = ImageMaster.loadImage("lobotomyMod/images/powers/32/PaleShield.png");
+//        for(int i = 0; i < 11; i ++) {
+//            BOSS_RUSH[i] = ImageMaster.loadImage("lobotomyMod/images/events/bossRush_" + i + ".png");
+//        }
+//        for(int i = 0; i < 9; i ++) {
+//            BOSS_RUSH_P[i] = ImageMaster.loadImage("lobotomyMod/images/events/bossRush_" + (i + 2) + ".png");
+//        }
+        FEAR_LEVEL[0] = ImageMaster.loadImage("lobotomyMod/images/texture/FearLevel_1.png");
+        FEAR_LEVEL[1] = ImageMaster.loadImage("lobotomyMod/images/texture/FearLevel_1.png");
+        for(int i = 2; i < 7; i ++) {
+            FEAR_LEVEL[i] = ImageMaster.loadImage("lobotomyMod/images/texture/FearLevel_" + (i - 1) + ".png");
+        }
     }
 }

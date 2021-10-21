@@ -53,7 +53,7 @@ public class ControlCode extends AbstractCodeCard {
 //                if(card instanceof AbstractLobotomyCard){
 //                    ((AbstractLobotomyCard) card).changeCost(((AbstractLobotomyCard) card).realCost - 1);
 //                }
-                card.modifyCostForTurn(-1);
+                card.setCostForTurn(card.costForTurn - 1);
             });
         }
         if(AbstractDungeon.player instanceof Angela && Angela.departments[0] >= 3){
@@ -62,7 +62,7 @@ public class ControlCode extends AbstractCodeCard {
                     continue;
                 }
                 choice.add(card, ()->{
-                    card.modifyCostForTurn(-1);
+                    card.setCostForTurn(card.costForTurn - 1);
                 });
             }
             for(AbstractCard card : AbstractDungeon.player.discardPile.group) {
@@ -70,7 +70,7 @@ public class ControlCode extends AbstractCodeCard {
                     continue;
                 }
                 choice.add(card, ()->{
-                    card.modifyCostForTurn(-1);
+                    card.setCostForTurn(card.costForTurn - 1);
                 });
             }
         }

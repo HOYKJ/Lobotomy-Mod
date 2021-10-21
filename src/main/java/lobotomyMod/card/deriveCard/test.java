@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.EventRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.BattleStartEffect;
@@ -16,9 +17,13 @@ import lobotomyMod.LobotomyMod;
 import lobotomyMod.action.common.LatterAction;
 import lobotomyMod.card.angelaCard.department.*;
 import lobotomyMod.character.Angela;
+import lobotomyMod.event.BossRushEvent;
+import lobotomyMod.event.Champagne;
 import lobotomyMod.helper.LobotomyUtils;
 import lobotomyMod.monster.friendlyMonster.RabbitTeam;
+import lobotomyMod.relic.CogitoBucket;
 import lobotomyMod.reward.CogitoReward;
+import lobotomyMod.vfx.FairiesEffect;
 import lobotomyMod.vfx.HellTrainEffect;
 import lobotomyMod.vfx.action.ChooseEffect;
 import lobotomyMod.vfx.action.LatterEffect;
@@ -56,18 +61,28 @@ public class test extends AbstractCard {
 
 //        CogitoReward tmp = new CogitoReward();
 //        tmp.getAbnormalityTool();
-        AbstractDungeon.effectList.add(new LatterEffect(()->{
-            LobotomyUtils.OrdealStart(3, 4);
+//        AbstractDungeon.effectList.add(new LatterEffect(()->{
+//            LobotomyUtils.OrdealStart(3, 4);
+//        }, 0.2F));
+
+        AbstractDungeon.actionManager.addToBottom(new LatterAction(()->{
+            AbstractDungeon.currMapNode.room = new MonsterRoom();
+            AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter("FixerMidnight");
+            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
+            AbstractDungeon.getCurrRoom().monsters.init();
+            AbstractRoom.waitTimer = 0.1F;
+            AbstractDungeon.player.preBattlePrep();
+            CardCrawlGame.fadeIn(1.5F);
+            AbstractDungeon.rs = AbstractDungeon.RenderScene.NORMAL;
         }, 0.2F));
 
 //        AbstractDungeon.actionManager.addToBottom(new LatterAction(()->{
-//            AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter("FixerMidnight");
-//            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
-//            AbstractDungeon.getCurrRoom().monsters.init();
-//            AbstractRoom.waitTimer = 0.1F;
-//            AbstractDungeon.player.preBattlePrep();
+//            AbstractDungeon.currMapNode.room = new EventRoom();
+//            AbstractDungeon.getCurrRoom().event = new BossRushEvent();
+//            AbstractDungeon.getCurrRoom().event.onEnterRoom();
 //            CardCrawlGame.fadeIn(1.5F);
-//            AbstractDungeon.rs = AbstractDungeon.RenderScene.NORMAL;
+//            AbstractDungeon.rs = AbstractDungeon.RenderScene.EVENT;
+//            AbstractDungeon.closeCurrentScreen();
 //        }, 0.2F));
 
         //LobotomyMod.rabbitOrderScreen = new RabbitOrderScreen();
@@ -78,6 +93,14 @@ public class test extends AbstractCard {
 
 //        Angela.departments[18] += 6;
 //        LobotomyUtils.hireDepartment();
+
+        //AbstractDungeon.effectList.add(new FairiesEffect(AbstractDungeon.getCurrRoom().monsters.monsters.get(0).hb.cX));
+
+//        AbstractDungeon.player.getRelic(CogitoBucket.ID).counter += 200;
+//        LobotomyMod.deadTime ++;
+
+//        CogitoReward reward = new CogitoReward();
+//        reward.getAbnormalityTool();
     }
 
     public AbstractCard makeCopy() {

@@ -22,7 +22,7 @@ public class CentralCode extends AbstractCodeCard {
     public static final String[] EXTENDED_DESCRIPTION;
 
     public CentralCode() {
-        super("CentralCode", CentralCode.NAME, Tiphereth.ID, 1, CentralCode.DESCRIPTION, CardTarget.SELF);
+        super("CentralCode", CentralCode.NAME, Tiphereth.ID, 0, CentralCode.DESCRIPTION, CardTarget.SELF);
         this.baseBlock = 6 + this.timesUpgraded * 3;
         if(this.timesUpgraded < 1){
             return;

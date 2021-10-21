@@ -28,8 +28,8 @@ public class DreamingCurrent extends AbstractLobotomyCard implements CustomSavab
     public static final String[] EXTENDED_DESCRIPTION;
 
     public DreamingCurrent() {
-        super("DreamingCurrent", DreamingCurrent.NAME, DreamingCurrent.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 71, 3, 1);
-        this.baseMagicNumber = 5;
+        super("DreamingCurrent", DreamingCurrent.NAME, DreamingCurrent.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 71, 3, 1, CardTarget.SELF);
+        this.baseMagicNumber = 6;
         this.magicNumber = this.baseMagicNumber;
         initInfo();
     }

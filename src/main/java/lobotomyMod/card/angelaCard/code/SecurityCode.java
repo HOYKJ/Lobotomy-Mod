@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import lobotomyMod.card.angelaCard.department.Netzach;
 import lobotomyMod.character.Angela;
 
@@ -50,6 +51,14 @@ public class SecurityCode extends AbstractCodeCard {
     }
 
     public void use(final AbstractPlayer p, final AbstractMonster m) {
+    }
+
+    @Override
+    public void onEnterRoom(AbstractRoom room) {
+        super.onEnterRoom(room);
+        if(AbstractDungeon.player instanceof Angela && Angela.departments[2] >= 5){
+            AbstractDungeon.player.heal((int)(this.magicNumber * 0.5F));
+        }
     }
 
     @Override

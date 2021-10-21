@@ -31,7 +31,7 @@ public class ShyLook extends AbstractLobotomyCard implements CustomSavable<int[]
     public int face;
 
     public ShyLook() {
-        super("ShyLook", ShyLook.NAME, ShyLook.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 92, 3, 0);
+        super("ShyLook", ShyLook.NAME, ShyLook.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 92, 3, 0, CardTarget.SELF);
         this.baseBlock = 0;
         this.timer = 0;
         this.face = 0;

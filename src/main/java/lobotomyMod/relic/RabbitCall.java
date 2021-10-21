@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import lobotomyMod.LobotomyMod;
+import lobotomyMod.room.NewVictoryRoom;
 import lobotomyMod.vfx.rabbitTeam.order.RabbitOrderScreen;
 
 import java.io.IOException;
@@ -59,7 +60,7 @@ public class RabbitCall extends AbstractLobotomyRelic{
             LobotomyMod.logger.info("not your turn or run out");
             return;
         }
-        if(AbstractDungeon.currMapNode == null || !(AbstractDungeon.getCurrRoom() instanceof MonsterRoom)){
+        if(AbstractDungeon.currMapNode == null || (!(AbstractDungeon.getCurrRoom() instanceof MonsterRoom) && !(AbstractDungeon.getCurrRoom() instanceof NewVictoryRoom))){
             LobotomyMod.logger.info("not monster room");
             return;
         }

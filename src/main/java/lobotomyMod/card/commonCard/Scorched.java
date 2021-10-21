@@ -28,7 +28,7 @@ public class Scorched extends AbstractLobotomyCard implements CustomSavable<int[
     public static final String[] EXTENDED_DESCRIPTION;
 
     public Scorched() {
-        super("Scorched", Scorched.NAME, Scorched.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 2, 2, 2);
+        super("Scorched", Scorched.NAME, Scorched.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 2, 2, 2, CardTarget.ALL_ENEMY);
         this.baseDamage = 20;
         this.isMultiDamage = true;
         this.isEthereal = true;

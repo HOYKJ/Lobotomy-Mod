@@ -14,6 +14,7 @@ import lobotomyMod.LobotomyMod;
 import lobotomyMod.card.AbstractLobotomyCard;
 import lobotomyMod.character.Angela;
 import lobotomyMod.character.LobotomyHandler;
+import lobotomyMod.event.Champagne;
 import lobotomyMod.event.FirstMeet;
 import lobotomyMod.event.RabbitProtocol;
 import lobotomyMod.neow.GetBucket;
@@ -82,10 +83,10 @@ public class NeowEventPatch {
             Method m = NeowEvent.class.getDeclaredMethod("talk", String.class);
             m.setAccessible(true);
             m.invoke(_inst, "...");
-//            if(unlockEnough()) {
-//                _inst.roomEventText.addDialogOption(FirstMeet.DESCRIPTIONS[0]);
-//            }
-            _inst.roomEventText.addDialogOption(FirstMeet.DESCRIPTIONS[0]);
+            if(FirstMeet.unlockEnough(0.1F)) {
+                _inst.roomEventText.addDialogOption(FirstMeet.DESCRIPTIONS[0]);
+            }
+            //_inst.roomEventText.addDialogOption(FirstMeet.DESCRIPTIONS[0]);
         }
 
         @SpireInsertPatch(rloc=82)
@@ -93,6 +94,25 @@ public class NeowEventPatch {
             if (buttonPressed > 0) {
                 if(AbstractDungeon.player instanceof Angela){
                     LobotomyMod.activeFixer = true;
+                    if(LobotomyMod.deadTime >= 3) {
+                        AbstractDungeon.topLevelEffects.clear();
+                        AbstractDungeon.effectList.clear();
+                        AbstractDungeon.getCurrRoom().event = new Champagne();
+                        AbstractDungeon.getCurrRoom().event.onEnterRoom();
+                        if (AbstractDungeon.scene instanceof TheBottomScene) {
+                            try {
+                                Field torches = SuperclassFinder.getSuperclassField(AbstractDungeon.scene.getClass(), "torches");
+                                torches.setAccessible(true);
+                                ((ArrayList) torches.get(AbstractDungeon.scene)).clear();
+                            } catch (NoSuchFieldException | IllegalAccessException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        CardCrawlGame.fadeIn(1.5F);
+                        AbstractDungeon.rs = AbstractDungeon.RenderScene.EVENT;
+                        AbstractDungeon.closeCurrentScreen();
+                        return SpireReturn.Return(null);
+                    }
                     return SpireReturn.Continue();
                 }
                 if(LobotomyMod.defeatFixer && !LobotomyMod.activeRabbit){

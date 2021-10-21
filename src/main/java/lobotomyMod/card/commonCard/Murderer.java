@@ -29,7 +29,7 @@ public class Murderer extends AbstractLobotomyCard implements CustomSavable<int[
     public static final String[] EXTENDED_DESCRIPTION;
 
     public Murderer() {
-        super("Murderer", Murderer.NAME, Murderer.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 54, 2, 1);
+        super("Murderer", Murderer.NAME, Murderer.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 54, 2, 1, CardTarget.NONE);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
         initInfo();

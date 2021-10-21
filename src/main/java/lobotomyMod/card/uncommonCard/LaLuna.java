@@ -26,7 +26,7 @@ public class LaLuna extends AbstractLobotomyCard implements CustomSavable<int[]>
     private int counter;
 
     public LaLuna() {
-        super("LaLuna", LaLuna.NAME, LaLuna.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 105, 3, -2);
+        super("LaLuna", LaLuna.NAME, LaLuna.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 105, 3, -2, CardTarget.NONE);
         initInfo();
         this.counter = 0;
     }

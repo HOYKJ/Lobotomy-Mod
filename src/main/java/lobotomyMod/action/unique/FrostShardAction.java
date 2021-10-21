@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import lobotomyMod.card.ego.uncommon.FeatherOfHonor;
+import lobotomyMod.card.relicCard.ResearcherNoteRelic;
+import lobotomyMod.relic.toolAbnormality.ResearcherNote;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -54,7 +56,7 @@ public class FrostShardAction extends AbstractGameAction {
             if (!SoulGroup.isActive()) {
                 if (deckSize + discardSize == 0) {
                     this.isDone = true;
-                } else if (AbstractDungeon.player.hand.size() == 10) {
+                } else if (AbstractDungeon.player.hand.size() == 10 && !AbstractDungeon.player.hasRelic(ResearcherNote.ID)) {
                     AbstractDungeon.player.createHandIsFullDialog();
                     this.isDone = true;
                 } else {

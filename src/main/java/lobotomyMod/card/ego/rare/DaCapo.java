@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import lobotomyMod.card.angelaCard.bullets.AbstractBulletCard;
 import lobotomyMod.card.angelaCard.bullets.SpecialBullet;
 import lobotomyMod.card.ego.AbstractEgoCard;
 
@@ -42,30 +43,39 @@ public class DaCapo extends AbstractEgoCard {
     @Override
     public void onUsedCard(AbstractCard card, boolean hand, AbstractCreature target) {
         super.onUsedCard(card, hand, target);
-        if(card instanceof DaCapo){
+        if (card instanceof DaCapo) {
             return;
         }
 
-            flash();
-            AbstractMonster mo = null;
-            if (target != null) {
-                mo = (AbstractMonster)target;
-            }
-            AbstractCard tmp = card.makeSameInstanceOf();
-            //AbstractDungeon.player.limbo.addToBottom(tmp);
-            tmp.current_x = card.current_x;
-            tmp.current_y = card.current_y;
-            tmp.target_x = (Settings.WIDTH / 2.0F - 300.0F * Settings.scale);
-            tmp.target_y = (Settings.HEIGHT / 2.0F);
-            if (tmp.cost > 0) {
-                tmp.freeToPlayOnce = true;
-            }
-            if (mo != null) {
-                tmp.calculateCardDamage(mo);
-            }
-            tmp.purgeOnUse = true;
-            this.queue.add(new CardQueueItem(tmp, mo, card.energyOnUse, true));
-
+        flash();
+        AbstractMonster mo = null;
+//        if (target != null) {
+//            mo = (AbstractMonster) target;
+//        }
+        mo = AbstractDungeon.getRandomMonster();
+        AbstractCard tmp = card.makeSameInstanceOf();
+        //AbstractDungeon.player.limbo.addToBottom(tmp);
+        tmp.current_x = card.current_x;
+        tmp.current_y = card.current_y;
+        tmp.target_x = (Settings.WIDTH / 2.0F - 300.0F * Settings.scale);
+        tmp.target_y = (Settings.HEIGHT / 2.0F);
+        if (tmp.cost > 0) {
+            tmp.freeToPlayOnce = true;
+        }
+        if(tmp instanceof SpecialBullet){
+            ((SpecialBullet) tmp).tb = (AbstractBulletCard)((SpecialBullet) card).tb.makeCopy();
+            //((SpecialBullet) tmp).tb.freeToPlayOnce = true;
+            ((SpecialBullet) tmp).tb.purgeOnUse = true;
+            //tmp.freeToPlayOnce = true;
+        }
+        if (mo != null) {
+            tmp.calculateCardDamage(mo);
+        }
+        tmp.purgeOnUse = true;
+//        if(tmp instanceof SpecialBullet){
+//            tmp.freeToPlayOnce = true;
+//        }
+        this.queue.add(new CardQueueItem(tmp, mo, card.energyOnUse, true));
     }
 
     @Override

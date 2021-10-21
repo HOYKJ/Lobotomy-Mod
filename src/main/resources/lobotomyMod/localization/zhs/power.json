@@ -114,6 +114,69 @@
       " 点伤害."
     ]
   },
+  "ResistantPower": {
+    "NAME": "抗性",
+    "DESCRIPTIONS": [
+      "受到 #b",
+      " %的伤害."
+    ]
+  },
+  "ChesedVulnerablePower": {
+    "NAME": "伤害应对失常",
+    "DESCRIPTIONS": [
+      "受到的伤害增加 #b",
+      " %."
+    ]
+  },
+  "HokmaTimeWarpPower": {
+    "NAME": "沉默的代价",
+    "DESCRIPTIONS": [
+      "每当你打出 #b",
+      " 张牌, 你的回合会强制结束, 并且Hokma获得 #b",
+      " 点 #y力量 ."
+    ]
+  },
+  "MalkuthConfusionPower": {
+    "NAME": "指令系统故障",
+    "DESCRIPTIONS": [
+      "抽到的卡费用在0-3间随机.",
+      "抽到的卡费用在1-3间随机."
+    ]
+  },
+  "YesodConfusionPower": {
+    "NAME": "情报显示系统故障",
+    "DESCRIPTIONS": [
+      "抽到的卡的信息将会混乱."
+    ]
+  },
+  "SoulShieldPower": {
+    "NAME": "自动防御系统",
+    "DESCRIPTIONS": [
+      "每当你打出1张卡, Angela获得 #b",
+      " 点 格挡 . 在Angela回合结束时对你造成等同其格挡的伤害."
+    ]
+  },
+  "SmallShieldPower": {
+    "NAME": "伤害应对",
+    "DESCRIPTIONS": [
+      "如果一次失去超过 #b10 点的生命, ",
+      "获得 #b1 层 金属化 .",
+      "获得 #b1 层 荆棘 .",
+      "恢复 #g9 点生命.",
+      "触发后更换效果."
+    ]
+  },
+  "MidShieldPower": {
+    "NAME": "损害应对",
+    "DESCRIPTIONS": [
+      "每失去 #b20% 的生命, ",
+      "随机移除 #b2 个debuff.",
+      "给予玩家 #b2 层 虚弱 , 脆弱 和 易伤 .",
+      "获得 #g5 层 人工制品 .",
+      "获得 #g2 层 无实体 .",
+      "提高自动防御系统的数值1点. 触发后更换效果."
+    ]
+  },
 
   "MutekiPower": {
     "NAME": "祈祷",

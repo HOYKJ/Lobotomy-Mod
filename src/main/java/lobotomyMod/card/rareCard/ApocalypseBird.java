@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import lobotomyMod.card.AbstractLobotomyCard;
 import lobotomyMod.card.deriveCard.*;
@@ -33,7 +34,7 @@ public class ApocalypseBird extends AbstractLobotomyCard implements CustomSavabl
     private int counter;
 
     public ApocalypseBird() {
-        super("ApocalypseBird", ApocalypseBird.NAME, ApocalypseBird.DESCRIPTION, CardRarity.RARE, CardTarget.ENEMY, 63, 1, -2);
+        super("ApocalypseBird", ApocalypseBird.NAME, ApocalypseBird.DESCRIPTION, CardRarity.RARE, CardTarget.ENEMY, 63, 1, -2, CardTarget.NONE);
         this.baseMagicNumber = 6;
         this.magicNumber = this.baseMagicNumber;
         this.baseDamage = 0;
@@ -79,6 +80,12 @@ public class ApocalypseBird extends AbstractLobotomyCard implements CustomSavabl
 
     public AbstractCard makeCopy() {
         return new ApocalypseBird();
+    }
+
+    @Override
+    public void obtain() {
+        super.obtain();
+        UnlockTracker.unlockCard(this.cardID);
     }
 
     @Override

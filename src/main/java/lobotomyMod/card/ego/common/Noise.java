@@ -25,7 +25,7 @@ public class Noise extends AbstractEgoCard {
     public static final String[] EXTENDED_DESCRIPTION;
 
     public Noise() {
-        super("Noise", Noise.NAME, 1, Noise.DESCRIPTION, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
+        super("Noise", Noise.NAME, 0, Noise.DESCRIPTION, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }

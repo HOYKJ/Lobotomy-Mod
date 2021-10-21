@@ -26,7 +26,7 @@ public class WristCuter extends AbstractEgoCard {
 
     public WristCuter() {
         super("WristCuter", WristCuter.NAME, 1, WristCuter.DESCRIPTION, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        this.baseDamage = 12;
+        this.baseDamage = 8;
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }
@@ -39,8 +39,8 @@ public class WristCuter extends AbstractEgoCard {
     @Override
     public void upgrade() {
         this.upgradeName();
-        this.upgradeDamage(2);
-        this.upgradeMagicNumber(1);
+        this.upgradeDamage(4);
+//        this.upgradeMagicNumber(1);
     }
 
     public AbstractCard makeCopy() {

@@ -19,6 +19,8 @@ import lobotomyMod.card.rareCard.WhiteNight;
 import lobotomyMod.monster.ApocalypseBirdMonster;
 import lobotomyMod.monster.LongArm;
 import lobotomyMod.monster.WhiteNightMonster;
+import lobotomyMod.monster.sephirah.Binah.Binah;
+import lobotomyMod.monster.sephirah.Hokma;
 import lobotomyMod.vfx.WhiteNightWordsEffect;
 
 /**
@@ -80,8 +82,24 @@ public class WhiteNightControlPatch {
                     }
                     else if ((AbstractDungeon.getCurrRoom().monsters.monsters.get(0) instanceof ApocalypseBirdMonster) && (AbstractDungeon.getCurrRoom().monsters.monsters.get(2) instanceof LongArm)) {
                         if(!AbstractDungeon.getCurrRoom().monsters.monsters.get(2).halfDead) {
+                            InputHelper.pressedEscape = false;
+                            CInputActionSet.settings.unpress();
+                            InputHelper.justClickedLeft = false;
                             return SpireReturn.Return(null);
                         }
+                    }
+                    else if ((AbstractDungeon.getCurrRoom().monsters.monsters.get(0) instanceof Binah) && (((Binah) AbstractDungeon.getCurrRoom().monsters.monsters.get(0)).unableButton())) {
+                        InputHelper.pressedEscape = false;
+                        CInputActionSet.settings.unpress();
+                        InputHelper.justClickedLeft = false;
+                        return SpireReturn.Return(null);
+                    }
+                    else if ((AbstractDungeon.getCurrRoom().monsters.monsters.get(0) instanceof Hokma)) {
+                        ((Hokma) AbstractDungeon.getCurrRoom().monsters.monsters.get(0)).priceForStop();
+                        InputHelper.pressedEscape = false;
+                        CInputActionSet.settings.unpress();
+                        InputHelper.justClickedLeft = false;
+                        return SpireReturn.Return(null);
                     }
                 }
             }

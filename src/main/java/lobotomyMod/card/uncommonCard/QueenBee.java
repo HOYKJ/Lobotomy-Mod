@@ -31,7 +31,7 @@ public class QueenBee extends AbstractLobotomyCard implements CustomSavable<int[
     public ArrayList<AbstractCard> list2 = new ArrayList<>();
 
     public QueenBee() {
-        super("QueenBee", QueenBee.NAME, QueenBee.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 50, 4, 0);
+        super("QueenBee", QueenBee.NAME, QueenBee.DESCRIPTION, CardRarity.UNCOMMON, CardTarget.ENEMY, 50, 4, 0, CardTarget.ALL_ENEMY);
         this.baseDamage = 10;
         this.isMultiDamage = true;
         this.baseMagicNumber = 1;
@@ -73,7 +73,7 @@ public class QueenBee extends AbstractLobotomyCard implements CustomSavable<int[
             }
         }
 
-        for(int i = 0; i < 3; i ++){
+        for(int i = 0; i < 2; i ++){
             AbstractCard card;
             if(draw.size() > 0){
                 card = draw.get(AbstractDungeon.cardRng.random(draw.size() - 1));

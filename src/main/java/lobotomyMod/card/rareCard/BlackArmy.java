@@ -31,7 +31,7 @@ public class BlackArmy extends AbstractLobotomyCard implements CustomSavable<int
     private int counter;
 
     public BlackArmy() {
-        super("BlackArmy", BlackArmy.NAME, BlackArmy.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 106, 4, 0);
+        super("BlackArmy", BlackArmy.NAME, BlackArmy.DESCRIPTION, CardRarity.COMMON, CardTarget.ENEMY, 106, 4, 0, CardTarget.SELF);
         initInfo();
     }
 
@@ -60,7 +60,7 @@ public class BlackArmy extends AbstractLobotomyCard implements CustomSavable<int
     @Override
     public void changeCost(int cost) {
         super.changeCost(cost);
-        if(this.realCost >= 3){
+        if(this.realCost == 3){
             AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.drawPile));
             AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
             AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.discardPile));

@@ -67,7 +67,7 @@ public class Beak extends AbstractEgoCard {
     @Override
     public void upgrade() {
         this.upgradeName();
-        this.upgradeMagicNumber(1);
+        this.upgradeDamage(1);
     }
 
     public AbstractCard makeCopy() {

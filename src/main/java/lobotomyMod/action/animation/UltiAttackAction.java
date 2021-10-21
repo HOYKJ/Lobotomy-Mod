@@ -12,14 +12,14 @@ import lobotomyMod.monster.Ordeal.Claw;
 /**
  * @author hoykj
  */
-public class ultiAttackAction extends AbstractGameAction {
+public class UltiAttackAction extends AbstractGameAction {
     private Claw m;
     private DamageInfo info;
     private int attack;
     private boolean delay, end, attacked, changeFlip;
     private float timer;
 
-    public ultiAttackAction(Claw m, AbstractCreature target, DamageInfo info, AttackEffect effect){
+    public UltiAttackAction(Claw m, AbstractCreature target, DamageInfo info, AttackEffect effect){
         this.m = m;
         this.info = info;
         this.setValues(target, info);

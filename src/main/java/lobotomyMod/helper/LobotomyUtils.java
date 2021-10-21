@@ -1,6 +1,7 @@
 package lobotomyMod.helper;
 
 import basemod.ReflectionHacks;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -146,12 +147,12 @@ public class LobotomyUtils {
 
         ArrayList<AbstractCard> tmp = new ArrayList<>();
         for (int i = 0; i < num; i ++){
-            AbstractCard card = list.get(AbstractDungeon.cardRng.random(list.size() - 1));
-            tmp.add(card);
-            list.remove(card);
             if(list.size() == 0){
                 break;
             }
+            AbstractCard card = list.get(AbstractDungeon.cardRng.random(list.size() - 1));
+            tmp.add(card);
+            list.remove(card);
         }
 
         return tmp;
@@ -265,9 +266,10 @@ public class LobotomyUtils {
         AbstractDungeon.rs = AbstractDungeon.RenderScene.NORMAL;
         AbstractDungeon.getCurrRoom().rewards.add(new CogitoReward(true));
 
-        AbstractDungeon.effectsQueue.add(new LatterEffect(()->{
-            AbstractDungeon.topLevelEffects.add(new OrdealTitleBack(code, difficulty, false));
-        }, (Settings.FAST_MODE? 2.1F: 4.2F)));
+//        AbstractDungeon.effectsQueue.add(new LatterEffect(()->{
+//            AbstractDungeon.topLevelEffects.add(new OrdealTitleBack(code, difficulty, false));
+//        }, (Settings.FAST_MODE? 2.1F: 4.2F)));
+        AbstractDungeon.actionManager.addToTop(new VFXAction(null, new OrdealTitleBack(code, difficulty, false), 6, true));
     }
 
     public static void addAbnormalityRelic(AbstractRelic relic){
@@ -279,6 +281,11 @@ public class LobotomyUtils {
 //        RelicLibrary.totalRelicCount += 1;
         RelicLibrary.add(relic);
         RelicViewScreenPatch.abnormalityPool.add(relic);
+    }
+
+    public static void addEgoRelic(AbstractRelic relic){
+        RelicLibrary.add(relic);
+        RelicViewScreenPatch.egoPool.add(relic);
     }
 
 
@@ -301,7 +308,7 @@ public class LobotomyUtils {
         else {
             ((SkipCardButton) ReflectionHacks.getPrivate(crs, CardRewardScreen.class, "skipButton")).hide();
         }
-        crs.onCardSelect = true;
+        //crs.onCardSelect = true;
         AbstractDungeon.topPanel.unhoverHitboxes();
         crs.rewardGroup = cards;
         AbstractDungeon.isScreenUp = true;

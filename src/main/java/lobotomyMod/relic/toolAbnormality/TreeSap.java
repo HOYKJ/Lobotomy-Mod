@@ -34,6 +34,9 @@ public class TreeSap extends AbstractLobotomyAbnRelic {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new RegenPower(AbstractDungeon.player, 6), 6));
         if(AbstractDungeon.cardRng.random(100) < this.reduce){
             AbstractDungeon.player.maxHealth -= 15;
+            if (AbstractDungeon.player.maxHealth < 1){
+                AbstractDungeon.player.maxHealth = 1;
+            }
             if(AbstractDungeon.player.currentHealth > AbstractDungeon.player.maxHealth){
                 AbstractDungeon.player.currentHealth = AbstractDungeon.player.maxHealth;
             }

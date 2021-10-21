@@ -1,15 +1,14 @@
 package lobotomyMod.card.ego.uncommon;
 
 import basemod.helpers.TooltipInfo;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import lobotomyMod.action.common.LatterAction;
 import lobotomyMod.card.ego.AbstractEgoCard;
 import lobotomyMod.helper.LobotomyUtils;
 
@@ -30,11 +29,21 @@ public class Amita extends AbstractEgoCard {
     }
 
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractCard card = p.drawPile.getTopCard();
-        AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(card, p.drawPile));
-        if(card.cost > 0) {
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(card.cost * 3));
+        if(p.drawPile.size() == 0 && p.discardPile.size() != 0){
+            this.addToTop(new EmptyDeckShuffleAction());
         }
+        else if(p.drawPile.size() == 0 && p.discardPile.size() == 0){
+            return;
+        }
+        this.addToBot(new LatterAction(()->{
+            AbstractCard card = p.drawPile.getTopCard();
+            if(card != null) {
+                AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(card, p.drawPile));
+                if (card.cost > 0) {
+                    AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(card.cost * 3));
+                }
+            }
+        }));
     }
 
     @Override
